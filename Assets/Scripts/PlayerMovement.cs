@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController controller;
     private CapsuleCollider cpCol;
     private CameraMovement cameraMov;
-    private SwipeController swControl;
 
     [Header("Line")]
     public float lineDistance = 4;
@@ -29,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        swControl = FindObjectOfType<SwipeController>().GetComponent<SwipeController>();
         cpCol = GetComponent<CapsuleCollider>();
         controller = GetComponent<CharacterController>();
         cameraMov = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovement>();
@@ -40,10 +38,10 @@ public class PlayerMovement : MonoBehaviour
     {
         isGround = controller.isGrounded;
         //Гравитация
-        if (isGround && playerVelocity.y < 0)
+        if (isGround)
             playerVelocity.y = 0;
         else
-            playerVelocity.y += gravityValue * Time.deltaTime;
+         playerVelocity.y += gravityValue * Time.deltaTime;
 
         //Передвижение вперед
         if (!isLose)
@@ -95,24 +93,12 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("Ground"))
-        {
-            isGround = true;
-            anim.SetBool("isRunning", true);
-        }
         if (collision.collider.CompareTag("Obstacle"))
         {
             GameOver();
         }
     }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.collider.CompareTag("Ground"))
-        {
-            isGround = false;
-            anim.SetBool("isRunning", false);
-        }
-    }
+
     private void Jump()
     {
         playerVelocity.y = Mathf.Sqrt(jumpPower * -3.0f * gravityValue);
@@ -120,15 +106,19 @@ public class PlayerMovement : MonoBehaviour
     }
     private IEnumerator Slide()
     {
-        cpCol.center = new Vector3(0, 0.4f, -0.12f);
-        cpCol.height = 0.8f;
+        controller.height = 0;
+        controller.center = new Vector3(0, 0.49f, 0);
+        //cpCol.center = new Vector3(0, 0.4f, -0.12f);
+        //cpCol.height = 0.8f;
         //isSliding = true;
         anim.SetTrigger("Slide");
         cameraMov.distance += new Vector3(0, -0.3f, 0);
         yield return new WaitForSeconds(1);
 
-        cpCol.center = new Vector3(0, 0.83f, 0.03f);
-        cpCol.height = 1.64f;
+        controller.height = 1.75f;
+        controller.center = new Vector3(0, 0.86f, 0);
+        //cpCol.center = new Vector3(0, 0.83f, 0.03f);
+        //cpCol.height = 1.64f;
         cameraMov.distance += new Vector3(0, 0.3f, 0);
     }
     private IEnumerator SpeedIncrease()

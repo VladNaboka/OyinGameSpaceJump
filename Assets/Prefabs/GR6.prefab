@@ -73,8 +73,8 @@ GameObject:
   - component: {fileID: 2690519061218286960}
   - component: {fileID: 8947155431576856795}
   - component: {fileID: 2317186040317079805}
-  - component: {fileID: 11553689}
   - component: {fileID: 11553690}
+  - component: {fileID: 6909318324932336790}
   m_Layer: 0
   m_Name: GR6
   m_TagString: Ground
@@ -149,19 +149,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &11553689
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4241295657528140015}
-  m_Material: {fileID: 13400000, guid: 7c765ace7255b1d488d8a38ccc7815fe, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.6944377, y: 0.34565717, z: 12.161169}
-  m_Center: {x: 0, y: 0, z: -0.00000023841858}
 --- !u!114 &11553690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,3 +163,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   begin: {fileID: 1823034312}
   end: {fileID: 1470772658}
+--- !u!64 &6909318324932336790
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4241295657528140015}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 814382533718356068, guid: bb093be7be8c45a4aa8b2e0468bb731f, type: 3}
