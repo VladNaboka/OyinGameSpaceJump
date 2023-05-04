@@ -9,36 +9,49 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float maxSpeed;
     [SerializeField] private float switchSpeed;
     [SerializeField] private float jumpPower;
+    [SerializeField] private float gravityValue = -9.81f;
+
+    private Vector3 playerVelocity;
 
     private Animator anim;
-    private Rigidbody rb;
+    private CharacterController controller;
     private CapsuleCollider cpCol;
     private CameraMovement cameraMov;
+    private SwipeController swControl;
 
-    [Header("Scripts")]
-    public SwipeController swControl;
     [Header("Line")]
-    private int lineToMove = 1;
     public float lineDistance = 4;
+    private int lineToMove = 1;
 
     private bool isGround;
     private bool isLose;
-    //private bool isSliding;
 
-    //private bool isSliding;
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
+        swControl = FindObjectOfType<SwipeController>().GetComponent<SwipeController>();
         cpCol = GetComponent<CapsuleCollider>();
+        controller = GetComponent<CharacterController>();
         cameraMov = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovement>();
+
         StartCoroutine(SpeedIncrease());
     }
-    private void FixedUpdate()
+    private void Update()
     {
-        //if (!isLose)
-        //    rb.velocity = new Vector3(transform.position.x, transform.position.y, transform.position.z * movementSpeed * Time.deltaTime);
+        isGround = controller.isGrounded;
+        //Гравитация
+        if (isGround && playerVelocity.y < 0)
+            playerVelocity.y = 0;
+        else
+            playerVelocity.y += gravityValue * Time.deltaTime;
 
+        //Передвижение вперед
+        if (!isLose)
+        {
+            playerVelocity.z = movementSpeed;
+            controller.Move(playerVelocity * Time.deltaTime);
+        }
+        //Переход влево, вправо
         lineToMove = Mathf.Clamp(lineToMove, 0, 2);
         if (SwipeController.swipeRight && isLose == false)
         {
@@ -58,7 +71,8 @@ public class PlayerMovement : MonoBehaviour
         }
         if (SwipeController.swipeUp && isLose == false)
         {
-            Jump();
+            if (isGround)
+                Jump();
         }
         if (SwipeController.swipeDown && isLose == false)
         {
@@ -70,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
         else if (lineToMove == 2)
             targetPosition += Vector3.right * lineDistance;
 
-        transform.position = Vector3.Lerp(transform.position, targetPosition, switchSpeed * Time.fixedDeltaTime);
+        transform.position = Vector3.Lerp(transform.position, targetPosition, switchSpeed * Time.deltaTime);
     }
 
     private void GameOver()
@@ -101,12 +115,8 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Jump()
     {
-        //playerPos.Translate(Vector3.up * jumpPower * Time.fixedDeltaTime);
-        if (isGround == true)
-        {
-            rb.AddForce(Vector3.up * jumpPower * Time.fixedDeltaTime, ForceMode.Impulse);
-            anim.SetTrigger("Jump");
-        }
+        playerVelocity.y = Mathf.Sqrt(jumpPower * -3.0f * gravityValue);
+        anim.SetTrigger("Jump");
     }
     private IEnumerator Slide()
     {
@@ -123,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private IEnumerator SpeedIncrease()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         if (movementSpeed < maxSpeed)
         {
             movementSpeed += 1;
