@@ -41,6 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7495340650684791311}
+  - component: {fileID: 7661017800008450366}
   m_Layer: 0
   m_Name: Plane05
   m_TagString: Untagged
@@ -67,6 +68,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7661017800008450366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4642254790771327545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6313c2a3626c5a45b44f5060c7884f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  begin: {fileID: 5752239747003389363}
+  end: {fileID: 5752239746250933875}
 --- !u!1 &5752239746250933872
 GameObject:
   m_ObjectHideFlags: 0
