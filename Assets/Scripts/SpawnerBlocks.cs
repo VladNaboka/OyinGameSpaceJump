@@ -17,17 +17,16 @@ public class SpawnerBlocks : MonoBehaviour
     }
     void Update()
     {
-        if (player.transform.position.z > spawnChunks[spawnChunks.Count - 1].end.position.z - 80)
+        if (player.transform.position.z > spawnChunks[spawnChunks.Count - 1].end.position.z-2)
         {
             SpawnChunk();
         }
     }
     public void SpawnChunk()
     {
-        Plane newPlanes = Instantiate(panelPrefabs[Random.Range(0, panelPrefabs.Length)]);
-        newPlanes.transform.position = spawnChunks[spawnChunks.Count - 1].end.position - newPlanes.begin.localPosition;
-        spawnChunks.Add(newPlanes);
-        Debug.Log(newPlanes.name);
+        Plane newPlane = Instantiate(panelPrefabs[Random.Range(0, panelPrefabs.Length)]);
+        newPlane.transform.position = spawnChunks[spawnChunks.Count - 1].end.position - newPlane.begin.localPosition;
+        spawnChunks.Add(newPlane);
 
         if (spawnChunks.Count > 8)
         {
