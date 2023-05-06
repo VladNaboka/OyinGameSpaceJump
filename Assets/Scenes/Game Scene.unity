@@ -169,10 +169,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   maxSpeed: 50
-  switchSpeed: 10
+  switchSpeed: 5
   jumpPower: 1
   gravityValue: -9.81
-  lineDistance: 1.75
+  lineDistance: 1.5
 --- !u!143 &369593338
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2489,7 +2489,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8839554122897705153}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6}
+  m_LocalPosition: {x: 0, y: 0, z: -5.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2534,7 +2534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8839554123334500084}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6}
+  m_LocalPosition: {x: 0, y: 0, z: 15.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

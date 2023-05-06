@@ -17,7 +17,7 @@ public class SpawnerBlocks : MonoBehaviour
     }
     void Update()
     {
-        if (player.transform.position.z > spawnChunks[spawnChunks.Count - 1].end.position.z-2)
+        if (player.transform.position.z > spawnChunks[spawnChunks.Count - 1].end.position.z-60)
         {
             SpawnChunk();
         }
