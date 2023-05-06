@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         playerVelocity.y = Mathf.Sqrt(jumpPower * -3.0f * gravityValue);
-        anim.SetTrigger("Jump");
+        //anim.SetTrigger("Jump");
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
