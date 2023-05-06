@@ -12,12 +12,12 @@ public class CoinManager : MonoBehaviour
     {
         if(PlayerPrefs.HasKey("Coins"))
             LoadProgress();
-        _textMP.text = "Монеток: " + NumberCoin.ToString();
+        _textMP.text = "Монет:" + NumberCoin.ToString();
     }
     public void AddCoinToCollect()
     {
         NumberCoin++;
-        _textMP.text = "Монеток: " + NumberCoin.ToString();
+        _textMP.text = "Монет:" + NumberCoin.ToString();
         SaveProgress();
     }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -15,8 +16,9 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator anim;
     private CharacterController controller;
-    private CapsuleCollider cpCol;
     private CameraMovement cameraMov;
+    private UIManager uiManager;
+    private Transform player;
 
     [Header("Line")]
     public float lineDistance = 4;
@@ -28,9 +30,10 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        cpCol = GetComponent<CapsuleCollider>();
         controller = GetComponent<CharacterController>();
+        player = GetComponent<Transform>();
         cameraMov = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovement>();
+        uiManager = FindObjectOfType<UIManager>().GetComponent<UIManager>();
 
         StartCoroutine(SpeedIncrease());
     }
@@ -42,13 +45,10 @@ public class PlayerMovement : MonoBehaviour
             playerVelocity.y = 0;
         else
          playerVelocity.y += gravityValue * Time.deltaTime;
-
         //Передвижение вперед
         if (!isLose)
-        {
             playerVelocity.z = movementSpeed;
-            controller.Move(playerVelocity * Time.deltaTime);
-        }
+        controller.Move(playerVelocity * Time.deltaTime);
         //Переход влево, вправо
         lineToMove = Mathf.Clamp(lineToMove, 0, 2);
         if (SwipeController.swipeRight && isLose == false)
@@ -83,42 +83,41 @@ public class PlayerMovement : MonoBehaviour
             targetPosition += Vector3.right * lineDistance;
 
         transform.position = Vector3.Lerp(transform.position, targetPosition, switchSpeed * Time.deltaTime);
+
+        if (player.position.y < -2)
+            GameOver();
     }
 
-    private void GameOver()
+    public void GameOver()
     {
+        playerVelocity.z = 0;
         isLose = true;
         anim.SetBool("isRunning", false);
         anim.SetBool("isLose", true);
+        uiManager.GameOverScreen();
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.CompareTag("Obstacle"))
-        {
-            GameOver();
-        }
-    }
-
     private void Jump()
     {
         playerVelocity.y = Mathf.Sqrt(jumpPower * -3.0f * gravityValue);
         anim.SetTrigger("Jump");
     }
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if(hit.collider.CompareTag("Obstacle"))
+            GameOver();
+    }
     private IEnumerator Slide()
     {
         controller.height = 0;
         controller.center = new Vector3(0, 0.49f, 0);
-        //cpCol.center = new Vector3(0, 0.4f, -0.12f);
-        //cpCol.height = 0.8f;
-        //isSliding = true;
+
         anim.SetTrigger("Slide");
         cameraMov.distance += new Vector3(0, -0.3f, 0);
         yield return new WaitForSeconds(1);
 
         controller.height = 1.75f;
         controller.center = new Vector3(0, 0.86f, 0);
-        //cpCol.center = new Vector3(0, 0.83f, 0.03f);
-        //cpCol.height = 1.64f;
+
         cameraMov.distance += new Vector3(0, 0.3f, 0);
     }
     private IEnumerator SpeedIncrease()
