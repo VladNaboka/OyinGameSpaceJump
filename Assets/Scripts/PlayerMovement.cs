@@ -41,10 +41,10 @@ public class PlayerMovement : MonoBehaviour
     {
         isGround = controller.isGrounded;
         //Гравитация
-        if (isGround)
+        if (isGround && playerVelocity.y < 0)
             playerVelocity.y = 0;
         else
-         playerVelocity.y += gravityValue * Time.deltaTime;
+            playerVelocity.y += gravityValue * Time.deltaTime;
         //Передвижение вперед
         if (!isLose)
             playerVelocity.z = movementSpeed;
@@ -67,9 +67,10 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetTrigger("MoveLeft");
             }
         }
-        if (SwipeController.swipeUp && isLose == false)
+        if (SwipeController.swipeUp || Input.GetKeyDown(KeyCode.Space) && isLose == false)
         {
-            if (isGround)
+            Debug.Log("Jump");
+            if (isGround && !isLose)
                 Jump();
         }
         if (SwipeController.swipeDown && isLose == false)
@@ -86,6 +87,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (player.position.y < -2)
             GameOver();
+        //Если на земле то бежит. Потом наверное надо заменить на отдельный метод с вовзращаемым результатом
+        if (isGround)
+            anim.SetBool("isRunning", true);
     }
 
     public void GameOver()
@@ -99,7 +103,8 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         playerVelocity.y = Mathf.Sqrt(jumpPower * -3.0f * gravityValue);
-        //anim.SetTrigger("Jump");
+        anim.SetBool("isRunning", false);
+        anim.SetTrigger("Jump");
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
