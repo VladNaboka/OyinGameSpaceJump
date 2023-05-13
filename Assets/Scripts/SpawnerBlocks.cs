@@ -7,9 +7,8 @@ public class SpawnerBlocks : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private Plane[] panelPrefabs;
     [SerializeField] private Plane firstPrefab;
-
+    [SerializeField] private float spawnDistance;
     private List<Plane> spawnChunks = new List<Plane>();
-        
     void Start()
     {
         spawnChunks.Add(firstPrefab);
@@ -17,7 +16,7 @@ public class SpawnerBlocks : MonoBehaviour
     }
     void Update()
     {
-        if (player.transform.position.z > spawnChunks[spawnChunks.Count - 1].end.position.z-60)
+        if (player.transform.position.z > spawnChunks[spawnChunks.Count - 1].end.position.z-spawnDistance)
         {
             SpawnChunk();
         }
