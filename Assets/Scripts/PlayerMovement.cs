@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float maxSpeed;
     [SerializeField] private float switchSpeed;
     [SerializeField] private float jumpPower;
-    [SerializeField] private float gravityValue = -9.81f;
+    [SerializeField] private float gravityValue = -15f;
 
     private Vector3 playerVelocity;
 
