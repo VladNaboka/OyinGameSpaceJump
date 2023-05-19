@@ -108,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if(hit.collider.CompareTag("Obstacle"))
+        if (hit.collider.CompareTag("Obstacle"))
             GameOver();
     }
     private IEnumerator Slide()
