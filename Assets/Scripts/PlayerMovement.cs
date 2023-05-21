@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -19,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private CameraMovement cameraMov;
     private UIManager uiManager;
     private Transform player;
+    private GroundCheck gCheck;
 
     [Header("Line")]
     public float lineDistance = 4;
@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        gCheck = GetComponent<GroundCheck>();
         controller = GetComponent<CharacterController>();
         player = GetComponent<Transform>();
         cameraMov = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovement>();
@@ -39,12 +40,12 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        isGround = controller.isGrounded;
+        isGround = gCheck.groundCheck;
         //Гравитация
-        if (isGround && playerVelocity.y < 0)
-            playerVelocity.y = 0;
-        else
-            playerVelocity.y += gravityValue * Time.deltaTime;
+        //if (playerVelocity.y < 0)
+            //playerVelocity.y = 0;
+        //else
+        playerVelocity.y += gravityValue * Time.deltaTime;
         //Передвижение вперед
         if (!isLose)
             playerVelocity.z = movementSpeed;

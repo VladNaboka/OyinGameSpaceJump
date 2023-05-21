@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 6661241302212206582}
   - component: {fileID: 8905178740612672316}
   - component: {fileID: 4273506229809783366}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "platform V1.0 \u21165"
   m_TagString: Ground
   m_Icon: {fileID: 0}

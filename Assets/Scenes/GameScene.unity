@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 98834300}
   - component: {fileID: 98834299}
   - component: {fileID: 98834302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: platform_01.010
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -480,12 +480,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364e982bda2377c489616ea02b487571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 7
+  movementSpeed: 10
   maxSpeed: 50
   switchSpeed: 10
   jumpPower: 1
-  gravityValue: -9.81
-  lineDistance: 1
+  gravityValue: -15
+  lineDistance: 1.25
 --- !u!143 &369593338
 CharacterController:
   m_ObjectHideFlags: 0
@@ -504,6 +504,19 @@ CharacterController:
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.86, z: 0}
+--- !u!114 &369593339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369593329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac34392c5ebc403468d0d29644dd4340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayDistance: 0.3
 --- !u!1 &503012238
 GameObject:
   m_ObjectHideFlags: 0
