@@ -11,11 +11,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpPower;
     [SerializeField] private float gravityValue = -15f;
 
-    private Vector3 playerVelocity;
+    public float JumpPower => jumpPower;
+    public float GravityValue => gravityValue;
+
+    public PlayerBaseState currentState;
+    public PlayerBaseState jumpState = new PlayerJumpState();
+    public PlayerBaseState slideState = new PlayerSlideState();
+
+    [HideInInspector] public Vector3 playerVelocity;
 
     private Animator anim;
+    public Animator Anim => anim;
     private CharacterController controller;
+    public CharacterController Controller => controller;
     private CameraMovement cameraMov;
+    public CameraMovement CameraMov => cameraMov;
     private UIManager uiManager;
     private Transform player;
     private GroundCheck gCheck;
@@ -25,7 +35,9 @@ public class PlayerMovement : MonoBehaviour
     private int lineToMove = 1;
 
     private bool isGround;
+    public bool IsGround => isGround;
     private bool isLose;
+    public bool IsLose => isLose;
 
     private void Awake()
     {
@@ -41,16 +53,16 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         isGround = gCheck.groundCheck;
-        //Гравитация
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         //if (playerVelocity.y < 0)
             //playerVelocity.y = 0;
         //else
         playerVelocity.y += gravityValue * Time.deltaTime;
-        //Передвижение вперед
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         if (!isLose)
             playerVelocity.z = movementSpeed;
         controller.Move(playerVelocity * Time.deltaTime);
-        //Переход влево, вправо
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ
         lineToMove = Mathf.Clamp(lineToMove, 0, 2);
         if (SwipeController.swipeRight && isLose == false)
         {
@@ -72,11 +84,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Jump");
             if (isGround && !isLose)
-                Jump();
+                SwitchState(jumpState);
         }
         if (SwipeController.swipeDown && isLose == false)
         {
-            StartCoroutine(Slide());
+            SwitchState(slideState);
         }
         Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
         if (lineToMove == 0)
@@ -88,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (player.position.y < -2)
             GameOver();
-        //Если на земле то бежит. Потом наверное надо заменить на отдельный метод с вовзращаемым результатом
+        //пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (isGround)
             anim.SetBool("isRunning", true);
     }
@@ -101,31 +113,13 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("isLose", true);
         uiManager.GameOverScreen();
     }
-    private void Jump()
-    {
-        playerVelocity.y = Mathf.Sqrt(jumpPower * -3.0f * gravityValue);
-        anim.SetBool("isRunning", false);
-        anim.SetTrigger("Jump");
-    }
+
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.collider.CompareTag("Obstacle"))
             GameOver();
     }
-    private IEnumerator Slide()
-    {
-        controller.height = 0;
-        controller.center = new Vector3(0, 0.49f, 0);
 
-        anim.SetTrigger("Slide");
-        cameraMov.distance += new Vector3(0, -0.3f, 0);
-        yield return new WaitForSeconds(1);
-
-        controller.height = 1.75f;
-        controller.center = new Vector3(0, 0.86f, 0);
-
-        cameraMov.distance += new Vector3(0, 0.3f, 0);
-    }
     private IEnumerator SpeedIncrease()
     {
         yield return new WaitForSeconds(10);
@@ -135,5 +129,11 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log(movementSpeed);
         }
         StartCoroutine(SpeedIncrease());
+    }
+
+    public void SwitchState(PlayerBaseState state)
+    {
+        currentState = state;
+        StartCoroutine(state.UpdateState(this));
     }
 }
