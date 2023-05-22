@@ -6,7 +6,7 @@ public class PlayerJumpState : PlayerBaseState
 {
     public override IEnumerator UpdateState(PlayerMovement playerMovement)
     {
-        if (SwipeController.swipeDown && playerMovement.IsLose == false)
+        if (PlayerInput.swipeDown && playerMovement.IsLose == false)
         {
             playerMovement.SwitchState(playerMovement.slideState);
         }

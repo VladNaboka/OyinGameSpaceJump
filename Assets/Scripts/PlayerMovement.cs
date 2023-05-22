@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(playerVelocity * Time.deltaTime);
         //������� �����, ������
         lineToMove = Mathf.Clamp(lineToMove, 0, 2);
-        if (SwipeController.swipeRight && isLose == false)
+        if (PlayerInput.swipeRight && isLose == false)
         {
             if (lineToMove < 2)
             {
@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetTrigger("MoveRight");
             }
         }
-        if (SwipeController.swipeLeft && isLose == false)
+        if (PlayerInput.swipeLeft && isLose == false)
         {
             if (lineToMove > 0)
             {
@@ -80,13 +80,13 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetTrigger("MoveLeft");
             }
         }
-        if (SwipeController.swipeUp || Input.GetKeyDown(KeyCode.Space) && isLose == false)
+        if (PlayerInput.swipeUp || Input.GetKeyDown(KeyCode.Space) && isLose == false)
         {
             Debug.Log("Jump");
             if (isGround && !isLose)
                 SwitchState(jumpState);
         }
-        if (SwipeController.swipeDown && isLose == false)
+        if (PlayerInput.swipeDown && isLose == false)
         {
             SwitchState(slideState);
         }

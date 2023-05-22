@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class PlayerBaseState
 {
-    public SwipeController swipeController;
+    public PlayerInput swipeController;
 
     public abstract IEnumerator UpdateState(PlayerMovement playerMovement);
 

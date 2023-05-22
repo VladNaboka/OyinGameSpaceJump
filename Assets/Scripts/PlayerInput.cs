@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class SwipeController : MonoBehaviour
+public class PlayerInput : MonoBehaviour
 {
     public static bool tap, swipeLeft, swipeRight, swipeUp, swipeDown;
     private bool isDraging = false;
     private Vector2 startTouch, swipeDelta;
 
+    public event Action Jumped = default;
+    public event Action Slided = default;
+    public event Action<bool> Swiped = default;
+
     private void Update()
     {
         tap = swipeDown = swipeUp = swipeLeft = swipeRight = false;
-        #region ПК-версия
+        #region пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅ
         if (Input.GetMouseButtonDown(0))
         {
             tap = true;
@@ -25,7 +30,7 @@ public class SwipeController : MonoBehaviour
         }
         #endregion
 
-        #region Мобильная версия
+        #region пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         if (Input.touches.Length > 0)
         {
             if (Input.touches[0].phase == TouchPhase.Began)
@@ -42,7 +47,7 @@ public class SwipeController : MonoBehaviour
         }
         #endregion
 
-        //Просчитать дистанцию
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         swipeDelta = Vector2.zero;
         if (isDraging)
         {
@@ -52,27 +57,27 @@ public class SwipeController : MonoBehaviour
                 swipeDelta = (Vector2)Input.mousePosition - startTouch;
         }
 
-        //Проверка на пройденность расстояния
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (swipeDelta.magnitude > 100)
         {
-            //Определение направления
+            //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             float x = swipeDelta.x;
             float y = swipeDelta.y;
             if (Mathf.Abs(x) > Mathf.Abs(y))
             {
 
                 if (x < 0)
-                    swipeLeft = true;
+                    Swiped?.Invoke(true);
                 else
-                    swipeRight = true;
+                    Swiped?.Invoke(false);
             }
             else
             {
 
                 if (y < 0)
-                    swipeDown = true;
+                    Slided?.Invoke();
                 else
-                    swipeUp = true;
+                    Jumped?.Invoke();
             }
 
             Reset();

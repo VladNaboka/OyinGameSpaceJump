@@ -180,30 +180,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d28c213b73c964eb37bd468c11284d, type: 3}
---- !u!1 &5858738668384450219 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5161021242944269153, guid: b3d28c213b73c964eb37bd468c11284d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1644318259833888202}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2012936262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5858738668384450219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
-  outlineWidth: 3
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!4 &8323582085174268637 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7301046863888142103, guid: b3d28c213b73c964eb37bd468c11284d,
