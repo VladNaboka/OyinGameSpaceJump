@@ -12,7 +12,7 @@ public class SpawnerBlocks : MonoBehaviour
     void Start()
     {
         spawnChunks.Add(firstPrefab);
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
     }
     void Update()
     {
@@ -27,7 +27,7 @@ public class SpawnerBlocks : MonoBehaviour
         newPlane.transform.position = spawnChunks[spawnChunks.Count - 1].end.position - newPlane.begin.localPosition;
         spawnChunks.Add(newPlane);
 
-        if (spawnChunks.Count > 6)
+        if (spawnChunks.Count > 12)
         {
             Destroy(spawnChunks[0].gameObject);
             spawnChunks.RemoveAt(0);
