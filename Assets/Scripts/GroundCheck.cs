@@ -11,6 +11,6 @@ public class GroundCheck : MonoBehaviour
     private void Update()
     {
         groundCheck = Physics.Raycast(transform.position, Vector3.down, rayDistance, LayerMask.GetMask("Ground"));
-        Debug.DrawRay(transform.position, new Vector3(0, rayDistance, 0), Color.green);
+        Debug.DrawRay(transform.position, new Vector3(0, rayDistance * -1f, 0), Color.green);
     }
 }

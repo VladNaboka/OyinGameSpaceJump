@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        _isGrounded = groundCheck.groundCheck;
         CheckGround();
         Move();
     }
@@ -49,8 +48,9 @@ public class PlayerController : MonoBehaviour
 
     private void CheckGround()
     {
-        //_groundedPlayer = _characterController.isGrounded;
-        if (_isGrounded && _playerVelocity.y < 0)
+        _groundedPlayer = _characterController.isGrounded;
+        //_isGrounded = groundCheck.groundCheck;
+        if (_groundedPlayer && _playerVelocity.y < 0)
         {
             _playerVelocity.y = 0f;
         }
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnJumped()
     {
-        if (_isGrounded)
+        if (_groundedPlayer)
         {
             _playerVelocity.y += Mathf.Sqrt(_jumpHeight * -3.0f * _gravityValue);
         }
@@ -101,12 +101,12 @@ public class PlayerController : MonoBehaviour
     private IEnumerator SlideDown()
     {
         _characterController.height = 0;
-        _characterController.center = new Vector3(0, 0.49f, 0);
+        //_characterController.center = new Vector3(0, 0.49f, 0);
 
         //Anim.SetTrigger("Slide");
         yield return new WaitForSeconds(1);
 
-        _characterController.height = 1.75f;
-        _characterController.center = new Vector3(0, 0, 0);
+        _characterController.height = 1.38f;
+        //_characterController.center = new Vector3(0, 0, 0);
     }
 }

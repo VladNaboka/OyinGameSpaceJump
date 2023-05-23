@@ -1017,12 +1017,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b722bb4c0510efd408683a8e7efab9e9,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 80.000084
+      value: 80.000114
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b722bb4c0510efd408683a8e7efab9e9,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 80
+      value: 80.00003
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b722bb4c0510efd408683a8e7efab9e9,
         type: 3}
@@ -1032,7 +1032,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b722bb4c0510efd408683a8e7efab9e9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.946
+      value: -0.662
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b722bb4c0510efd408683a8e7efab9e9,
         type: 3}
@@ -1306,7 +1306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453744507}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.096, z: 0.246}
+  m_LocalPosition: {x: 0, y: 0.851, z: 0.246}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1342,7 +1342,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.83
+  m_Height: 1.38
   m_Radius: 0.32
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -1361,7 +1361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac34392c5ebc403468d0d29644dd4340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayDistance: 0.3
+  rayDistance: 1.15
 --- !u!1 &1460019050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,7 +1585,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 171.25
+  m_fontSize: 126.95
   m_fontSizeBase: 97
   m_fontWeight: 400
   m_enableAutoSizing: 1
