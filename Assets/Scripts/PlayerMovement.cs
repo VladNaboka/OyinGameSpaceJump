@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         isGround = gCheck.groundCheck;
-        //����������
+        
         //if (playerVelocity.y < 0)
             //playerVelocity.y = 0;
         //else
@@ -100,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (player.position.y < -2)
             GameOver();
-        //���� �� ����� �� �����. ����� �������� ���� �������� �� ��������� ����� � ������������ �����������
+
         if (isGround)
             anim.SetBool("isRunning", true);
     }

@@ -10,11 +10,6 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private Vector3 _distance;
     public Transform playerPos;
 
-    private void Awake()
-    {
-        Application.targetFrameRate = 60;
-    }
-
     private void OnEnable()
     {
         _swipeController.Slided += OnSlided;
