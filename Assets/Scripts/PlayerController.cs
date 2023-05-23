@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private float _gravityValue = -9.81f;
     private bool _isGrounded;
 
+    public Animator anim;
     private void OnEnable()
     {
         _playerInput.Jumped += OnJumped;
@@ -60,6 +61,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_groundedPlayer)
         {
+            anim.SetTrigger("Jump");
             _playerVelocity.y += Mathf.Sqrt(_jumpHeight * -3.0f * _gravityValue);
         }
     }
@@ -103,7 +105,7 @@ public class PlayerController : MonoBehaviour
         _characterController.height = 0;
         //_characterController.center = new Vector3(0, 0.49f, 0);
 
-        //Anim.SetTrigger("Slide");
+        anim.SetTrigger("Slide");
         yield return new WaitForSeconds(1);
 
         _characterController.height = 1.38f;

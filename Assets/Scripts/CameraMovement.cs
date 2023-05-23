@@ -34,8 +34,8 @@ public class CameraMovement : MonoBehaviour
 
     private IEnumerator SlideDown()
     {
-        _distance += new Vector3(0, -0.3f, 0);
+        _distance += new Vector3(0, -0.2f, 0);
         yield return new WaitForSeconds(1);
-        _distance += new Vector3(0, 0.3f, 0);
+        _distance += new Vector3(0, 0.2f, 0);
     }
 }
