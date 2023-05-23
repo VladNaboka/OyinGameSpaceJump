@@ -3,7 +3,92 @@ guid: 1340d7e3a94e8f149b8bd2aca37e4811
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: banner_warnnig.png
+    second: {fileID: 2100000, guid: 8fda55a7a2282144ba89dd9dfa842d71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: banner_warnnig_fencing
+    second: {fileID: 2100000, guid: 3a58fa314f4b2f9499a4f703134197de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: banner_warnnig_fencing_tile
+    second: {fileID: 2100000, guid: 2eab9738f645845438591b287f6ed221, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dome_platform
+    second: {fileID: 2100000, guid: e118e04844c8f8a4ea96754ebb3fcbf6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass_dome
+    second: {fileID: 2100000, guid: cf06ae03249c3b2479f8b68b63a7620f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: island_space
+    second: {fileID: 2100000, guid: eaa4c9a4aa998204c953d4c2bd3e9260, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rack guard
+    second: {fileID: 2100000, guid: 5bc1ce2cd7f7e0c4bb0c8d1336c4e61d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tex platforms 1
+    second: {fileID: 2100000, guid: 3589565549bd554429a6d7bd2a01505b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tex platforms 1.001
+    second: {fileID: 2100000, guid: c45f2cfe6b4e27a4d860c595892e6744, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tex platforms 1.002
+    second: {fileID: 2100000, guid: ee405bc562dafbe4ba20c7e6973f7de1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tex platforms 1.003
+    second: {fileID: 2100000, guid: 8d01801fb41a76f4cba21da001e0aba6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_obstacle
+    second: {fileID: 2100000, guid: 5f1e1606534d973438a4f36c9c9fd6c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B"
+    second: {fileID: 2100000, guid: c96658d9d8741c44fadaa18d6dd14793, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B.001"
+    second: {fileID: 2100000, guid: 416806e086f64e845a9d3e448a6bcb6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B.002"
+    second: {fileID: 2100000, guid: 2842b1a7f223e8348aae35cc3b3aede5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B.003"
+    second: {fileID: 2100000, guid: 51092ce23fdc97b4e96a410f23828085, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B.004"
+    second: {fileID: 2100000, guid: 39cb25743f91b6840ae94674241165af, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
