@@ -6,10 +6,11 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private CharacterController _characterController;
     [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private PlayerDeath _playerDeath;
     [SerializeField] private GroundCheck groundCheck;
+    [SerializeField] private CharacterController _characterController;
+    [SerializeField] private Animator _animator;
     [SerializeField] private float _playerSpeed = 2.0f;
     [SerializeField] private float _switchDelay;
     private int _lineToMove = 1;
@@ -19,10 +20,8 @@ public class PlayerController : MonoBehaviour
     private float _gravityValue = -9.81f;
     private bool _isGrounded;
     private bool _isSliding;
+    private Vector3 _playerVelocity;
 
-    public Vector3 playerVelocity;
-
-    public Animator anim;
     private void OnEnable()
     {
         _playerInput.Jumped += OnJumped;
@@ -47,17 +46,17 @@ public class PlayerController : MonoBehaviour
     {
         _characterController.Move(transform.forward * _playerSpeed * Time.deltaTime);
         
-        playerVelocity.y += _gravityValue * Time.deltaTime;
-        _characterController.Move(playerVelocity * Time.deltaTime);
+        _playerVelocity.y += _gravityValue * Time.deltaTime;
+        _characterController.Move(_playerVelocity * Time.deltaTime);
     }
 
     private void CheckGround()
     {
         _groundedPlayer = _characterController.isGrounded;
         //_isGrounded = groundCheck.groundCheck;
-        if (_groundedPlayer && playerVelocity.y < 0)
+        if (_groundedPlayer && _playerVelocity.y < 0)
         {
-            playerVelocity.y = 0f;
+            _playerVelocity.y = 0f;
         }
     }
 
@@ -65,8 +64,8 @@ public class PlayerController : MonoBehaviour
     {
         if (_groundedPlayer)
         {
-            anim.SetTrigger("Jump");
-            playerVelocity.y += Mathf.Sqrt(_jumpHeight * -3.0f * _gravityValue);
+            _animator.SetTrigger("Jump");
+            _playerVelocity.y += Mathf.Sqrt(_jumpHeight * -3.0f * _gravityValue);
         }
     }
 
@@ -108,15 +107,15 @@ public class PlayerController : MonoBehaviour
     private IEnumerator SlideDown()
     {
         _characterController.height = 0;
-        playerVelocity.y = -10f;
+        _playerVelocity.y = -10f;
         _isSliding = true;
         //_characterController.center = new Vector3(0, 0.49f, 0);
 
-        anim.SetTrigger("Slide");
+        _animator.SetTrigger("Slide");
         yield return new WaitForSeconds(1);
 
 
-        playerVelocity.y = 0f;
+        _playerVelocity.y = 0f;
         _characterController.height = 1.38f;
         _isSliding = false;
         //_characterController.center = new Vector3(0, 0, 0);

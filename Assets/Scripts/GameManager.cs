@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening;
 
 
 public class GameManager : MonoBehaviour
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     }
     public void LoadScene()
     {
+        DOTween.Clear(true);
         SceneManager.LoadScene(sceneToLoad);
     }
     //public void MainMenu()
