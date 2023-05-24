@@ -70,9 +70,10 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayDeathSound()
     {
-        StopWalkSound();
+        walkSound.Stop();
         jumpSound.Stop();
         slideSound.Stop();
+        landingSound.Stop();
         deathSound.Play();
 
     }
