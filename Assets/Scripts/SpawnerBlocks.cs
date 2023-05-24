@@ -7,7 +7,7 @@ public class SpawnerBlocks : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private Plane[] panelPrefabs;
     [SerializeField] private Plane firstPrefab;
-    [SerializeField] private float spawnDistance = 100;
+    [SerializeField] private float spawnDistance;
     private List<Plane> spawnChunks = new List<Plane>();
     void Start()
     {
@@ -27,7 +27,7 @@ public class SpawnerBlocks : MonoBehaviour
         newPlane.transform.position = spawnChunks[spawnChunks.Count - 1].end.position - newPlane.begin.localPosition;
         spawnChunks.Add(newPlane);
 
-        if (spawnChunks.Count > 12)
+        if (spawnChunks.Count > 5)
         {
             Destroy(spawnChunks[0].gameObject);
             spawnChunks.RemoveAt(0);
