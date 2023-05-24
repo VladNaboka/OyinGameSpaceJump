@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour
 {
-    [SerializeField]private PlayerController _playerController;
-    [SerializeField]private GameManager _gameManager;
-    [SerializeField]private CameraMovement _cameraMovement;
-    [SerializeField]private Animator _anim;
+    [SerializeField] private PlayerInput _playerInput;
+    [SerializeField] private GameManager _gameManager;
+    [SerializeField] private CameraMovement _cameraMovement;
+    [SerializeField] private Animator _anim;
+
+    public event Action OnPlayerDied = default;
 
     //[NonSerialized]public bool isDead;
     public SoundManager sfx;
@@ -51,14 +53,17 @@ public class PlayerDeath : MonoBehaviour
     private void FallLose()
     {
         //_cameraMovement.enabled = false;
-        _playerController.enabled = false;
+        OnPlayerDied?.Invoke();
+        _playerInput.enabled = false;
         _gameManager.GameOverScreen();
     }
 
     private void HitLose()
     {
-        _cameraMovement.enabled = false;
-        _playerController.enabled = false;
+        
+        //_cameraMovement.enabled = false;
+        OnPlayerDied?.Invoke();
+        _playerInput.enabled = false;
         _gameManager.GameOverScreen();
     }
 }

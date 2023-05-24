@@ -1581,7 +1581,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b722bb4c0510efd408683a8e7efab9e9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.83
+      value: -0.84
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b722bb4c0510efd408683a8e7efab9e9,
         type: 3}
@@ -2205,7 +2205,6 @@ MonoBehaviour:
   groundCheck: {fileID: 1453744511}
   _characterController: {fileID: 1453744510}
   _animator: {fileID: 1300138766}
-  _playerSpeed: 5
   _switchDelay: 0.3
 --- !u!143 &1453744510
 CharacterController:
@@ -2250,6 +2249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8518e782e2718e4ab7a39ee6cdc2aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerInput: {fileID: 819309855}
   _playerController: {fileID: 1453744509}
   _gameManager: {fileID: 1141372214}
   _cameraMovement: {fileID: 963194229}

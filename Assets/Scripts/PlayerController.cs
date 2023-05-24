@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GroundCheck groundCheck;
     [SerializeField] private CharacterController _characterController;
     [SerializeField] private Animator _animator;
-    [SerializeField] private float _playerSpeed = 2.0f;
     [SerializeField] private float _switchDelay;
+    private float _playerSpeed = 5f;
     private float _controllerHeight = 1.38f;
     private int _lineToMove = 1;
     private float _lineDistance = 1f;
@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
         _playerInput.Jumped += OnJumped;
         _playerInput.Slided += OnSlided;
         _playerInput.Swiped += OnSwiped;
+        _playerDeath.OnPlayerDied += OnDied;
     }
 
     private void OnDisable()
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
         _playerInput.Jumped -= OnJumped;
         _playerInput.Slided -= OnSlided;
         _playerInput.Swiped -= OnSwiped;
+        _playerDeath.OnPlayerDied -= OnDied;
     }
 
     private void Update()
@@ -71,6 +73,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnDied()
+    {
+        _playerSpeed = 0f;
+    }
+
     private void OnJumped()
     {
         if (_groundedPlayer)
@@ -84,6 +91,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnSlided()
     {
+        if(!_isSliding)
         StartCoroutine(SlideDown());
     }
 
@@ -118,16 +126,17 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator SlideDown()
     {
+        _isSliding = true;
         DOTween.To(() => _characterController.height, x => _characterController.height = x, 0, 0.10f);
         transform.DOMoveY(0.2f, 0.32f);
         
-        _isSliding = true;
-
         _animator.SetTrigger("Slide");
         _soundManager.PlaySlideSound();
         yield return new WaitForSeconds(0.8f);
 
         DOTween.To(() => _characterController.height, x => _characterController.height = x, _controllerHeight, 0.20f);
+
+        yield return new WaitForSeconds(0.3f);
         _isSliding = false;
     }
 }
