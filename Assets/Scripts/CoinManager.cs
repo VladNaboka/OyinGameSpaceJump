@@ -8,6 +8,7 @@ public class CoinManager : MonoBehaviour
     public int NumberCoin = 0;
     [SerializeField] TextMeshProUGUI _textMP;
 
+    public SoundManager sfx;
     private void Start()
     {
         if(PlayerPrefs.HasKey("Coins"))
@@ -17,6 +18,7 @@ public class CoinManager : MonoBehaviour
     public void AddCoinToCollect()
     {
         NumberCoin++;
+        sfx.PlayCoinPickupSound();
         _textMP.text = NumberCoin.ToString();
         SaveProgress();
     }

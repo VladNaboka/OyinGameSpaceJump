@@ -11,6 +11,8 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField]private Animator _anim;
 
     //[NonSerialized]public bool isDead;
+    public SoundManager sfx;
+
     private void Update()
     {
         //kostyl
@@ -20,6 +22,7 @@ public class PlayerDeath : MonoBehaviour
             _anim.Play("Fall Flat");
             if(gameObject.transform.position.y < -3.5f)
                 FallLose();
+                sfx.PlayDeathSound();
         }
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -37,6 +40,8 @@ public class PlayerDeath : MonoBehaviour
             //ElectricityLose()
             //_anim.Play("");
             HitLose();
+
+            sfx.PlayDeathSound();
         }
     }
 

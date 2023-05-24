@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using System;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +22,13 @@ public class PlayerController : MonoBehaviour
     private bool _isGrounded;
     private bool _isSliding;
     private Vector3 _playerVelocity;
+
+    public SoundManager sfx;
+
+    private void Awake()
+    {
+        sfx.PlayWalkSound();
+    }
 
     private void OnEnable()
     {
@@ -66,6 +74,7 @@ public class PlayerController : MonoBehaviour
         {
             _animator.SetTrigger("Jump");
             _playerVelocity.y += Mathf.Sqrt(_jumpHeight * -3.0f * _gravityValue);
+            sfx.PlayJumpSound();
         }
     }
 
@@ -112,6 +121,7 @@ public class PlayerController : MonoBehaviour
         //_characterController.center = new Vector3(0, 0.49f, 0);
 
         _animator.SetTrigger("Slide");
+        sfx.PlaySlideSound();
         yield return new WaitForSeconds(1);
 
 
