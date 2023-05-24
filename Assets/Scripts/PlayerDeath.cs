@@ -31,6 +31,8 @@ public class PlayerDeath : MonoBehaviour
         {
             _anim.Play("Hit");
             HitLose();
+
+            sfx.PlayDeathSound();
         }
     }
     private void OnTriggerEnter(Collider other)
