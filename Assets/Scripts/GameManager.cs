@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     }
     public void LoadScene()
     {
+        Time.timeScale = 1f;
         DOTween.Clear(true);
         SceneManager.LoadScene(sceneToLoad);
     }
