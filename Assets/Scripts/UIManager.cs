@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-//Этот скрипт используется для взаимодействия с UI элементами
+
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject gameOver;

@@ -9,6 +9,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private PlayerInput _swipeController;
     [SerializeField] private Vector3 _distance;
     public Transform playerPos;
+    private bool _isSliding;
 
     private void OnEnable()
     {
@@ -29,13 +30,16 @@ public class CameraMovement : MonoBehaviour
 
     private void OnSlided()
     {
-        StartCoroutine(SlideDown());
+        if(_isSliding != true)
+            StartCoroutine(SlideDown());
     }
 
     private IEnumerator SlideDown()
     {
+        _isSliding = true;
         _distance += new Vector3(0, -0.2f, 0);
         yield return new WaitForSeconds(1);
+        _isSliding = false;
         _distance += new Vector3(0, 0.2f, 0);
     }
 }
