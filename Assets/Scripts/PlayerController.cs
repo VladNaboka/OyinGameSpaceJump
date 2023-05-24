@@ -107,7 +107,8 @@ public class PlayerController : MonoBehaviour
     private IEnumerator SlideDown()
     {
         _characterController.height = 0;
-        _playerVelocity.y = -10f;
+        transform.DOMoveY(0.2f, 0.32f);
+        
         _isSliding = true;
         //_characterController.center = new Vector3(0, 0.49f, 0);
 
@@ -115,7 +116,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(1);
 
 
-        _playerVelocity.y = 0f;
+        //_playerVelocity.y = 0f;
         _characterController.height = 1.38f;
         _isSliding = false;
         //_characterController.center = new Vector3(0, 0, 0);
