@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerDeath : MonoBehaviour
 {
     [SerializeField]private PlayerController _playerController;
-    [SerializeField]private UIManager _uiManager;
+    [SerializeField]private GameManager _gameManager;
     [SerializeField]private CameraMovement _cameraMovement;
     [SerializeField]private Animator _anim;
 
@@ -44,13 +44,13 @@ public class PlayerDeath : MonoBehaviour
     {
         //_cameraMovement.enabled = false;
         _playerController.enabled = false;
-        _uiManager.GameOverScreen();
+        _gameManager.GameOverScreen();
     }
 
     private void HitLose()
     {
         _cameraMovement.enabled = false;
         _playerController.enabled = false;
-        _uiManager.GameOverScreen();
+        _gameManager.GameOverScreen();
     }
 }

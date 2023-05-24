@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController Controller => controller;
     private CameraMovement cameraMov;
     public CameraMovement CameraMov => cameraMov;
-    private UIManager uiManager;
+    private GameManager gameManager;
     private Transform player;
     private GroundCheck gCheck;
 
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         player = GetComponent<Transform>();
         cameraMov = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovement>();
-        uiManager = FindObjectOfType<UIManager>().GetComponent<UIManager>();
+        gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
 
         StartCoroutine(SpeedIncrease());
     }
@@ -111,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
         isLose = true;
         anim.SetBool("isRunning", false);
         anim.SetBool("isLose", true);
-        uiManager.GameOverScreen();
+        gameManager.GameOverScreen();
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
