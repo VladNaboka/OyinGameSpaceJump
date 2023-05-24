@@ -2201,12 +2201,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInput: {fileID: 819309855}
   _playerDeath: {fileID: 1453744512}
+  _soundManager: {fileID: 963194232}
   groundCheck: {fileID: 1453744511}
   _characterController: {fileID: 1453744510}
   _animator: {fileID: 1300138766}
   _playerSpeed: 5
   _switchDelay: 0.3
-  sfx: {fileID: 963194232}
 --- !u!143 &1453744510
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2222,7 +2222,7 @@ CharacterController:
   m_Radius: 0.2
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.0001
+  m_SkinWidth: 0.001
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1453744511
@@ -2606,7 +2606,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.05
+  m_fontSize: 102.55
   m_fontSizeBase: 97
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2680,7 +2680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1625134189}
   m_Layer: 0
-  m_Name: ------------------------------------ (1)
+  m_Name: ------------------------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

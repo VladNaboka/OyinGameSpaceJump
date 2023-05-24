@@ -9,11 +9,13 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private PlayerDeath _playerDeath;
+    [SerializeField] private SoundManager _soundManager;
     [SerializeField] private GroundCheck groundCheck;
     [SerializeField] private CharacterController _characterController;
     [SerializeField] private Animator _animator;
     [SerializeField] private float _playerSpeed = 2.0f;
     [SerializeField] private float _switchDelay;
+    private float _controllerHeight = 1.38f;
     private int _lineToMove = 1;
     private float _lineDistance = 1f;
     private bool _groundedPlayer;
@@ -23,11 +25,10 @@ public class PlayerController : MonoBehaviour
     private bool _isSliding;
     private Vector3 _playerVelocity;
 
-    public SoundManager sfx;
 
     private void Awake()
     {
-        sfx.PlayWalkSound();
+        _soundManager.PlayWalkSound();
     }
 
     private void OnEnable()
@@ -48,6 +49,8 @@ public class PlayerController : MonoBehaviour
     {
         CheckGround();
         Move();
+
+        
     }
 
     private void Move()
@@ -73,15 +76,15 @@ public class PlayerController : MonoBehaviour
         if (_groundedPlayer)
         {
             _animator.SetTrigger("Jump");
+            _characterController.height = _controllerHeight;
             _playerVelocity.y += Mathf.Sqrt(_jumpHeight * -3.0f * _gravityValue);
-            sfx.PlayJumpSound();
+            _soundManager.PlayJumpSound();
         }
     }
 
     private void OnSlided()
     {
-        if(_isSliding != true)
-            StartCoroutine(SlideDown());
+        StartCoroutine(SlideDown());
     }
 
     private void OnSwiped(bool isLeft)
@@ -115,20 +118,16 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator SlideDown()
     {
-        _characterController.height = 0;
+        DOTween.To(() => _characterController.height, x => _characterController.height = x, 0, 0.10f);
         transform.DOMoveY(0.2f, 0.32f);
         
         _isSliding = true;
-        //_characterController.center = new Vector3(0, 0.49f, 0);
 
         _animator.SetTrigger("Slide");
-        sfx.PlaySlideSound();
-        yield return new WaitForSeconds(1);
+        _soundManager.PlaySlideSound();
+        yield return new WaitForSeconds(0.8f);
 
-
-        //_playerVelocity.y = 0f;
-        _characterController.height = 1.38f;
+        DOTween.To(() => _characterController.height, x => _characterController.height = x, _controllerHeight, 0.20f);
         _isSliding = false;
-        //_characterController.center = new Vector3(0, 0, 0);
     }
 }
