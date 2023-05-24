@@ -26,7 +26,7 @@ public class PlayerDeath : MonoBehaviour
     {
         if (hit.collider.CompareTag("Obstacle"))
         {
-            //_anim.Play("");
+            _anim.Play("Hit");
             HitLose();
         }
     }
@@ -35,7 +35,8 @@ public class PlayerDeath : MonoBehaviour
         if (other.gameObject.CompareTag("Electricity"))
         {
             //ElectricityLose()
-            //_anim.Play("");
+            //Vmesto hit, animatia sgoryania
+            _anim.Play("Hit");
             HitLose();
         }
     }
