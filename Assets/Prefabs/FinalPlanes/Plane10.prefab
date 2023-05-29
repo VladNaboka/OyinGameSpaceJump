@@ -1521,7 +1521,6 @@ GameObject:
   - component: {fileID: 4463509396374036086}
   - component: {fileID: 4463509396374036087}
   - component: {fileID: 8130200971742004910}
-  - component: {fileID: 1513134410}
   m_Layer: 0
   m_Name: pipe.001 (12)
   m_TagString: Obstacle
@@ -1595,20 +1594,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &8130200971742004910
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4463509396374036072}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2385631187915255487, guid: 1340d7e3a94e8f149b8bd2aca37e4811, type: 3}
---- !u!64 &1513134410
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

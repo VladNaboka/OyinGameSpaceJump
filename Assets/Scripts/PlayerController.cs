@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 using System;
 using UnityEngine.UI;
@@ -52,7 +53,11 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         CheckGround();
-        Move();  
+        Move();
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     private void Move()
@@ -140,13 +145,12 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         _isSliding = false;
     }
-
     IEnumerator IncreaseSpeed()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(1);
         if (_playerSpeed < _maxPlayerSpeed)
         {
-            _playerSpeed += 2f;
+            _playerSpeed += 0.005f;
             Debug.Log(_playerSpeed);
             StartCoroutine("IncreaseSpeed");
         }

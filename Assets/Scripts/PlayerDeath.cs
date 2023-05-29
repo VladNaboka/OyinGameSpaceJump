@@ -23,14 +23,17 @@ public class PlayerDeath : MonoBehaviour
             _cameraMovement.enabled = false;
             _anim.Play("Fall Flat");
             if(gameObject.transform.position.y < -3.5f)
+            {
                 FallLose();
                 sfx.PlayDeathSound();
+            }
         }
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.collider.CompareTag("Obstacle"))
         {
+            Debug.Log(hit.gameObject.name);
             _anim.Play("Hit");
             HitLose();
 
@@ -60,7 +63,6 @@ public class PlayerDeath : MonoBehaviour
 
     private void HitLose()
     {
-        
         //_cameraMovement.enabled = false;
         OnPlayerDied?.Invoke();
         _playerInput.enabled = false;

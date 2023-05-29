@@ -75,6 +75,17 @@ public class SoundManager : MonoBehaviour
         slideSound.Stop();
         landingSound.Stop();
         deathSound.Play();
-
+    }
+    public void MuteSoundOff()
+    {
+        walkSound.Stop();
+        jumpSound.Stop();
+        slideSound.Stop();
+        landingSound.Stop();
+        deathSound.Stop();
+    }
+    public void MuteSoundOn()
+    {
+        walkSound.Play();
     }
 }

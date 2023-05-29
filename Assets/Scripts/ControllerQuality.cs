@@ -5,6 +5,7 @@ using UnityEngine;
 public class ControllerQuality : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public SoundManager sfx;
     public void SetQualityLevel(int level)
     {
         // Проверить, что уровень находится в допустимом диапазоне
@@ -22,8 +23,14 @@ public class ControllerQuality : MonoBehaviour
     {
         pauseMenu.SetActive(!pauseMenu.activeSelf);
         if (pauseMenu.activeSelf)
+        {
             Time.timeScale = 0f;
+            sfx.MuteSoundOff();
+        }
         if (!pauseMenu.activeSelf)
+        {
             Time.timeScale = 1f;
+            sfx.MuteSoundOn();
+        }
     }
 }
