@@ -3165,6 +3165,7 @@ MonoBehaviour:
   _characterController: {fileID: 1453744510}
   _animator: {fileID: 1300138766}
   _switchDelay: 0.3
+  _playerSpeed: 6
 --- !u!143 &1453744510
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3697,7 +3698,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 102.55
+  m_fontSize: 156.7
   m_fontSizeBase: 97
   m_fontWeight: 400
   m_enableAutoSizing: 1
