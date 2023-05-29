@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private float _switchDelay;
     private float _playerSpeed = 5f;
+    private float _maxPlayerSpeed = 20f;
     private float _controllerHeight = 1.38f;
     private int _lineToMove = 1;
     private float _lineDistance = 1f;
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _soundManager.PlayWalkSound();
+        StartCoroutine("IncreaseSpeed");
     }
 
     private void OnEnable()
@@ -50,9 +52,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         CheckGround();
-        Move();
-
-        
+        Move();  
     }
 
     private void Move()
@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour
     private void OnDied()
     {
         _playerSpeed = 0f;
+        StopCoroutine("IncreaseSpeed");
     }
 
     private void OnJumped()
@@ -138,5 +139,17 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(0.3f);
         _isSliding = false;
+    }
+
+    IEnumerator IncreaseSpeed()
+    {
+        yield return new WaitForSeconds(10);
+        if (_playerSpeed < _maxPlayerSpeed)
+        {
+            _playerSpeed += 1f;
+            Debug.Log(_playerSpeed);
+            StartCoroutine("IncreaseSpeed");
+        }
+      
     }
 }
