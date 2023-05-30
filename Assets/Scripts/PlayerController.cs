@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private float _switchDelay;
     [SerializeField] private float _playerSpeed = 8f;
+    [SerializeField] private float _increaseAmount;
     private float _maxPlayerSpeed = 20f;
     private float _controllerHeight = 1.38f;
     private int _lineToMove = 1;
@@ -54,10 +55,6 @@ public class PlayerController : MonoBehaviour
     {
         CheckGround();
         Move();
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(1);
-        }
     }
 
     private void Move()
@@ -150,7 +147,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(1);
         if (_playerSpeed < _maxPlayerSpeed)
         {
-            _playerSpeed += 0.005f;
+            _playerSpeed += _increaseAmount;
             Debug.Log(_playerSpeed);
             StartCoroutine("IncreaseSpeed");
         }
