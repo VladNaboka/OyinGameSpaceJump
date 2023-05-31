@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animation/Canvas.controller.meta
+guid: 9cd4adf0bd73e8f4e9f9c154179cffd2
+NativeFormatImporter:
+========
 guid: acc7d9a5516cf2945b3eb79074304a9c
 PrefabImporter:
+>>>>>>>> c61e7f4db9a29aedd5b8862a42ba987ec3051f67:Assets/Prefabs/Obstacles/Barrels.prefab.meta
   externalObjects: {}
+  mainObjectFileID: 9100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
