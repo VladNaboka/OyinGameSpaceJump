@@ -7,12 +7,12 @@ public class CoinManager : MonoBehaviour
 {
     public int NumberCoin = 0;
     [SerializeField] TextMeshProUGUI _textMP;
+    private GameData _gameData = new GameData();
 
     public SoundManager sfx;
     private void Start()
     {
-        if(PlayerPrefs.HasKey("Coins"))
-            LoadProgress();
+        LoadData();
         _textMP.text = NumberCoin.ToString();
     }
     public void AddCoinToCollect()
@@ -20,17 +20,19 @@ public class CoinManager : MonoBehaviour
         NumberCoin++;
         sfx.PlayCoinPickupSound();
         _textMP.text = NumberCoin.ToString();
-        SaveProgress();
+        SaveData();
     }
 
-    //Потом заменить на JSON
-    public void SaveProgress()
+    //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ JSON
+    public void SaveData()
     {
-        PlayerPrefs.SetInt("Coins", NumberCoin);
+        _gameData.coins = NumberCoin;
+        SaveSystem.SaveData(_gameData);
     }
-    public void LoadProgress()
+    public void LoadData()
     {
-        NumberCoin = PlayerPrefs.GetInt("Coins");
+        _gameData = SaveSystem.LoadData();
+        NumberCoin = _gameData.coins;
     }
     /*public void SpendMoney(int value)
     {
