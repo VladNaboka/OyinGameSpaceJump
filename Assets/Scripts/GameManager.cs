@@ -40,4 +40,12 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void LoadIntro(string sceneName)
+    {
+        sceneToLoad = sceneName;
+        _anim.SetTrigger("FadeOut");
+        PlayerPrefs.DeleteAll();
+
+    }
 }
