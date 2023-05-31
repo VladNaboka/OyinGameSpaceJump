@@ -3166,6 +3166,7 @@ MonoBehaviour:
   _animator: {fileID: 1300138766}
   _switchDelay: 0.3
   _playerSpeed: 6
+  _increaseAmount: 0.01
 --- !u!143 &1453744510
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4084,6 +4085,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: eaa4c9a4aa998204c953d4c2bd3e9260, type: 2}
+    - target: {fileID: 476772457180590326, guid: 5ed8fe9632ff1c640bace589be0715c3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 476772457180590326, guid: 5ed8fe9632ff1c640bace589be0715c3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 476772457180590326, guid: 5ed8fe9632ff1c640bace589be0715c3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.39
+      objectReference: {fileID: 0}
     - target: {fileID: 476772457201603714, guid: 5ed8fe9632ff1c640bace589be0715c3,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
