@@ -142,7 +142,8 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         _isSliding = false;
     }
-    IEnumerator IncreaseSpeed()
+
+    private IEnumerator IncreaseSpeed()
     {
         yield return new WaitForSeconds(1);
         if (_playerSpeed < _maxPlayerSpeed)
