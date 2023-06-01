@@ -4,12 +4,17 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using Newtonsoft.Json;
+using System.Security.Cryptography;
+using System.Text;
 
 public class SaveSystem
 {
-    public static string SAVE_PATH = Application.persistentDataPath + "/save" + ".json";
+    public readonly static string SAVE_PATH = Application.persistentDataPath + "/save" + ".json";
+    private const string KEY = "Jt/qF7h5tPhKPcJhPYP38xxpo7/npwZ6F0xdopl7o9E=";
+    private const string IV = "cagcP6zkzWBCdo+eJgQFOg==";
+    private static bool encrypted = true;
 
-    public static void CreateDataFile(GameData saveData)
+    public static void CreateDataFile(GameData levelData)
     {
         try
         {
@@ -23,8 +28,15 @@ public class SaveSystem
                 Debug.Log("Data does not exist. Creating new file!");
             }
             using FileStream stream = File.Create(SAVE_PATH);
-            stream.Close();
-            File.WriteAllText(SAVE_PATH, JsonConvert.SerializeObject(saveData));
+            if(encrypted)
+            {
+                WriteEncryptedData(levelData, stream);
+            }
+            else
+            {
+                stream.Close();
+                File.WriteAllText(SAVE_PATH, JsonConvert.SerializeObject(levelData));
+            }
         }
         catch (Exception e)
         {
@@ -46,13 +58,33 @@ public class SaveSystem
                 Debug.Log("Data does not exist. Creating new file!");
             }
             using FileStream stream = File.Create(SAVE_PATH);
-            stream.Close();
-            File.WriteAllText(SAVE_PATH, JsonConvert.SerializeObject(levelData));
+            if(encrypted)
+            {
+                WriteEncryptedData(levelData, stream);
+            }
+            else
+            {
+                stream.Close();
+                File.WriteAllText(SAVE_PATH, JsonConvert.SerializeObject(levelData));
+            }
         }
         catch (Exception e)
         {
             Debug.LogError("Error while saving data: " + e.Message);
         }
+    }
+
+    private static void WriteEncryptedData(GameData levelData, FileStream stream)
+    {
+        using Aes aesProvider = Aes.Create();
+
+        aesProvider.Key = Convert.FromBase64String(KEY);
+        aesProvider.IV = Convert.FromBase64String(IV);
+        
+        using ICryptoTransform cryptoTransform = aesProvider.CreateEncryptor();
+        using CryptoStream cryptoStream = new CryptoStream(stream, cryptoTransform, CryptoStreamMode.Write);
+
+        cryptoStream.Write(Encoding.ASCII.GetBytes(JsonConvert.SerializeObject(levelData)));
     }
 
     public static GameData LoadData()
@@ -64,7 +96,15 @@ public class SaveSystem
         }
         try
         {
-            GameData data = JsonConvert.DeserializeObject<GameData>(File.ReadAllText(SAVE_PATH));
+            GameData data;
+            if(encrypted)
+            {
+                data = ReadEncryptedData();
+            } 
+            else
+            {
+                data = JsonConvert.DeserializeObject<GameData>(File.ReadAllText(SAVE_PATH));;   
+            }
             return data;
         }
         catch (Exception e)
@@ -72,6 +112,24 @@ public class SaveSystem
             Debug.LogError("Error while loading data: " + e.Message);
             return null;
         }
+    }
+
+    private static GameData ReadEncryptedData()
+    {
+        byte[] fileBytes = File.ReadAllBytes(SAVE_PATH);
+        using Aes aesProvider = Aes.Create();
+
+        aesProvider.Key = Convert.FromBase64String(KEY);
+        aesProvider.IV = Convert.FromBase64String(IV);
+
+        using ICryptoTransform cryptoTransform = aesProvider.CreateDecryptor(aesProvider.Key, aesProvider.IV);
+        using MemoryStream decryptionStream = new MemoryStream(fileBytes);
+        using CryptoStream cryptoStream = new CryptoStream(decryptionStream, cryptoTransform, CryptoStreamMode.Read);
+        using StreamReader reader = new StreamReader(cryptoStream);
+
+        string result = reader.ReadToEnd();
+
+        return JsonConvert.DeserializeObject<GameData>(result);
     }
 
     public static void DeleteSave()
