@@ -6,6 +6,8 @@ public class ControllerQuality : MonoBehaviour
 {
     public GameObject pauseMenu;
     public SoundManager sfx;
+    public GameObject player;
+    public Animator robotAn;
     public void SetQualityLevel(int level)
     {
         // Проверить, что уровень находится в допустимом диапазоне
@@ -24,12 +26,18 @@ public class ControllerQuality : MonoBehaviour
         pauseMenu.SetActive(!pauseMenu.activeSelf);
         if (pauseMenu.activeSelf)
         {
-            Time.timeScale = 0f;
+            robotAn.StartPlayback();
+            player.GetComponent<PlayerController>().enabled = false;
+            player.GetComponent<GroundCheck>().enabled = false;
+            player.GetComponent<PlayerDeath>().enabled = false;
             sfx.MuteSoundOff();
         }
         if (!pauseMenu.activeSelf)
         {
-            Time.timeScale = 1f;
+            robotAn.StopPlayback();
+            player.GetComponent<PlayerController>().enabled = true;
+            player.GetComponent<GroundCheck>().enabled = true;
+            player.GetComponent<PlayerDeath>().enabled = true;
             sfx.MuteSoundOn();
         }
     }
