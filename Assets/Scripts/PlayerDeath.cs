@@ -10,6 +10,8 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] private CameraMovement _cameraMovement;
     [SerializeField] private Animator _anim;
 
+    private bool _isDead;
+
     public event Action OnPlayerDied = default;
 
     //[NonSerialized]public bool isDead;
@@ -22,7 +24,7 @@ public class PlayerDeath : MonoBehaviour
         {
             _cameraMovement.enabled = false;
             _anim.Play("Fall Flat");
-            if(gameObject.transform.position.y < -3.5f)
+            if(gameObject.transform.position.y < -3.5f && !_isDead)
             {
                 FallLose();
                 sfx.PlayDeathSound();
@@ -56,6 +58,7 @@ public class PlayerDeath : MonoBehaviour
     private void FallLose()
     {
         //_cameraMovement.enabled = false;
+        _isDead = true;
         OnPlayerDied?.Invoke();
         _playerInput.enabled = false;
         _gameManager.GameOverScreen();
@@ -64,6 +67,7 @@ public class PlayerDeath : MonoBehaviour
     private void HitLose()
     {
         //_cameraMovement.enabled = false;
+        _isDead = true;
         OnPlayerDied?.Invoke();
         _playerInput.enabled = false;
         _gameManager.GameOverScreen();

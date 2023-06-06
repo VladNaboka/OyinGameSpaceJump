@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using DG.Tweening;
 using System;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,11 +33,11 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _soundManager.PlayWalkSound();
-        StartCoroutine("IncreaseSpeed");
     }
 
     private void OnEnable()
     {
+        StartCoroutine("IncreaseSpeed");
         _playerInput.Jumped += OnJumped;
         _playerInput.Slided += OnSlided;
         _playerInput.Swiped += OnSwiped;
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
+        StopCoroutine("IncreaseSpeed");
         _playerInput.Jumped -= OnJumped;
         _playerInput.Slided -= OnSlided;
         _playerInput.Swiped -= OnSwiped;
@@ -143,7 +145,7 @@ public class PlayerController : MonoBehaviour
         _isSliding = false;
     }
 
-    private IEnumerator IncreaseSpeed()
+    public IEnumerator IncreaseSpeed()
     {
         yield return new WaitForSeconds(1);
         if (_playerSpeed < _maxPlayerSpeed)
@@ -154,4 +156,6 @@ public class PlayerController : MonoBehaviour
         }
       
     }
+
+    
 }

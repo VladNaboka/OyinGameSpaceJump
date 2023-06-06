@@ -1682,7 +1682,7 @@ Transform:
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0.9999998}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1948,7 +1948,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819309853}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3465,8 +3465,8 @@ MonoBehaviour:
   _characterController: {fileID: 1453744510}
   _animator: {fileID: 1300138766}
   _switchDelay: 0.3
-  _playerSpeed: 6
-  _increaseAmount: 0.05
+  _playerSpeed: 6.5
+  _increaseAmount: 0.025
 --- !u!143 &1453744510
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4835,6 +4835,8 @@ MonoBehaviour:
   sfx: {fileID: 963194232}
   player: {fileID: 1453744507}
   robotAn: {fileID: 1300138766}
+  curvedAnim: {fileID: 1723896305}
+  levelAnim: {fileID: 705507997}
 --- !u!1 &1899788998
 GameObject:
   m_ObjectHideFlags: 0
