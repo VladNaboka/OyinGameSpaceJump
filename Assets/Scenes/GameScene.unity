@@ -3465,7 +3465,7 @@ MonoBehaviour:
   _characterController: {fileID: 1453744510}
   _animator: {fileID: 1300138766}
   _switchDelay: 0.3
-  _playerSpeed: 6.5
+  _playerSpeed: 6.7
   _increaseAmount: 0.025
 --- !u!143 &1453744510
 CharacterController:
@@ -3998,7 +3998,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 171.25
+  m_fontSize: 49.05
   m_fontSizeBase: 97
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4837,6 +4837,7 @@ MonoBehaviour:
   robotAn: {fileID: 1300138766}
   curvedAnim: {fileID: 1723896305}
   levelAnim: {fileID: 705507997}
+  isPause: 0
 --- !u!1 &1899788998
 GameObject:
   m_ObjectHideFlags: 0
