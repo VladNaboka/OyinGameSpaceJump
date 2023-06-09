@@ -10,6 +10,7 @@ public class ControllerQuality : MonoBehaviour
     public Animator robotAn;
     public Animator curvedAnim;
     public Animator levelAnim;
+    public PlayerInput playerInput;
     public bool isPause;
 
     private IEnumerator _speedCoroutine;
@@ -40,6 +41,7 @@ public class ControllerQuality : MonoBehaviour
             curvedAnim.speed = 0;
             levelAnim.speed = 0;
             isPause = true;
+            playerInput.enabled = false;
             player.GetComponent<PlayerController>().enabled = false;
             player.GetComponent<GroundCheck>().enabled = false;
             player.GetComponent<PlayerDeath>().enabled = false;
@@ -51,6 +53,7 @@ public class ControllerQuality : MonoBehaviour
             curvedAnim.speed = 1;
             levelAnim.speed = 1;
             isPause = false;
+            playerInput.enabled = true;
             player.GetComponent<PlayerController>().enabled = true;
             player.GetComponent<GroundCheck>().enabled = true;
             player.GetComponent<PlayerDeath>().enabled = true;
