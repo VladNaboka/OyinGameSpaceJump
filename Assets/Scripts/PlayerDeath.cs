@@ -9,7 +9,6 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private CameraMovement _cameraMovement;
     [SerializeField] private Animator _anim;
-    [SerializeField] private GameObject _vfx;
 
     private bool _isDead;
 
@@ -27,7 +26,7 @@ public class PlayerDeath : MonoBehaviour
             _anim.Play("Fall Flat");
             if(gameObject.transform.position.y < -3.5f && !_isDead)
             {
-                Death();
+                FallLose();
                 sfx.PlayDeathSound();
             }
         }
@@ -38,7 +37,7 @@ public class PlayerDeath : MonoBehaviour
         {
             Debug.Log(hit.gameObject.name);
             _anim.Play("Hit");
-            Death();
+            HitLose();
 
             sfx.PlayDeathSound();
         }
@@ -47,16 +46,16 @@ public class PlayerDeath : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Electricity"))
         {
+            //ElectricityLose()
             //Vmesto hit, animatia sgoryania
             _anim.Play("Hit");
-            ElectricityDeath();
-            //HitLose();
+            HitLose();
 
             sfx.PlayDeathSound();
         }
     }
 
-    private void Death()
+    private void FallLose()
     {
         //_cameraMovement.enabled = false;
         _isDead = true;
@@ -64,9 +63,13 @@ public class PlayerDeath : MonoBehaviour
         _playerInput.enabled = false;
         _gameManager.GameOverScreen();
     }
-    private void ElectricityDeath()
+
+    private void HitLose()
     {
-        Death();
-        _vfx.gameObject.SetActive(true);
+        //_cameraMovement.enabled = false;
+        _isDead = true;
+        OnPlayerDied?.Invoke();
+        _playerInput.enabled = false;
+        _gameManager.GameOverScreen();
     }
 }
