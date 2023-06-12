@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private bool _isGrounded;
     private bool _isSliding;
     private Vector3 _playerVelocity;
+    private Coroutine _slideCoroutine;
 
 
     private void Awake()
@@ -88,7 +89,9 @@ public class PlayerController : MonoBehaviour
         if (_groundedPlayer)
         {
             _animator.SetTrigger("Jump");
+            StopCoroutine(_slideCoroutine);
             _characterController.height = _controllerHeight;
+            _isSliding = false;
             _playerVelocity.y += Mathf.Sqrt(_jumpHeight * -3.0f * _gravityValue);
             _soundManager.PlayJumpSound();
         }
@@ -97,7 +100,7 @@ public class PlayerController : MonoBehaviour
     private void OnSlided()
     {
         if(!_isSliding)
-        StartCoroutine(SlideDown());
+        _slideCoroutine = StartCoroutine(SlideDown());
     }
 
     private void OnSwiped(bool isLeft)
@@ -156,6 +159,4 @@ public class PlayerController : MonoBehaviour
         }
       
     }
-
-    
 }
