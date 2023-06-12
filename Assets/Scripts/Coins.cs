@@ -23,8 +23,11 @@ public class Coins : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        FindObjectOfType<CoinManager>().AddCoinToCollect();
-        pickupAnimation.SpawnText();
-        Destroy(gameObject);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            FindObjectOfType<CoinManager>().AddCoinToCollect();
+            pickupAnimation.SpawnText();
+            Destroy(gameObject);
+        }
     }
 }
