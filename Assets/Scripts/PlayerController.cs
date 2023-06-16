@@ -89,7 +89,10 @@ public class PlayerController : MonoBehaviour
         if (_groundedPlayer)
         {
             _animator.SetTrigger("Jump");
-            StopCoroutine(_slideCoroutine);
+            if(_isSliding && _slideCoroutine != null)
+            {
+                StopCoroutine(_slideCoroutine);
+            }
             _characterController.height = _controllerHeight;
             _isSliding = false;
             _playerVelocity.y += Mathf.Sqrt(_jumpHeight * -3.0f * _gravityValue);
