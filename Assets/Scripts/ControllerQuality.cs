@@ -1,4 +1,4 @@
-using System;
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +13,6 @@ public class ControllerQuality : MonoBehaviour
     public Animator levelAnim;
     public PlayerInput playerInput;
     public bool isPause;
-    public GameObject[] gameObjects;
 
     private IEnumerator _speedCoroutine;
 
@@ -48,12 +47,7 @@ public class ControllerQuality : MonoBehaviour
             player.GetComponent<GroundCheck>().enabled = false;
             player.GetComponent<PlayerDeath>().enabled = false;
             sfx.MuteSoundOff();
-
-            for (int i = 0; i < gameObjects.Length; i++)
-            {
-                gameObjects[i].gameObject.SetActive(false);
-            }
-
+            DOTween.Clear(true);
         }
         if (!pauseMenu.activeSelf)
         {
@@ -66,12 +60,6 @@ public class ControllerQuality : MonoBehaviour
             player.GetComponent<GroundCheck>().enabled = true;
             player.GetComponent<PlayerDeath>().enabled = true;
             sfx.MuteSoundOn();
-
-            for (int i = 0; i < gameObjects.Length; i++)
-            {
-                gameObjects[i].gameObject.SetActive(true);
-            }
         }
     }
-
 }

@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
     {
         sceneToLoad = sceneName;
         _anim.SetTrigger("FadeOut");
-        PlayerPrefs.DeleteAll();
 
     }
 }

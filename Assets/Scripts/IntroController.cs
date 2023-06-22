@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class IntroController : MonoBehaviour
 {
-    private int _isWatched;
 
     private void Awake()
     {
