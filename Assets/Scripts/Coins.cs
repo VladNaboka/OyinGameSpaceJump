@@ -18,7 +18,7 @@ public class Coins : MonoBehaviour
     {
         if (!_pauseController.isPause)
         {
-            transform.Rotate(0, rotationCoin * Time.deltaTime, 0);
+            transform.Rotate(0, 0, rotationCoin * Time.deltaTime);
         }
     }
     private void OnTriggerEnter(Collider other)

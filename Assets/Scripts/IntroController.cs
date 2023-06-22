@@ -10,12 +10,12 @@ public class IntroController : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("_isWatched"))
             if (PlayerPrefs.GetInt("_isWatched") == 1)
-                SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+                SceneManager.LoadScene("Soon", LoadSceneMode.Single);
     }
     public void Next()
     {
         PlayerPrefs.SetInt("_isWatched", 1);
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        SceneManager.LoadScene("Soon", LoadSceneMode.Single);
     }
 
     public void Reset()
