@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TeaserScene.unity
     guid: b82f52ae1c0f960459754a7acff7017c
   - enabled: 1
+    path: Assets/Scenes/Soon.unity
+    guid: e3b103c045dc8cf4180e19cf7748fb85
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
@@ -18,9 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/GameScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/SupportUs.unity
+    path: Assets/Scenes/AboutUS.unity
     guid: 2f886b41c7e522248a5ed2850527c656
   - enabled: 1
-    path: Assets/Scenes/Soon.unity
-    guid: e3b103c045dc8cf4180e19cf7748fb85
+    path: Assets/Scenes/Settings.unity
+    guid: 6c977a611ff699941a89fc311999aa65
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 185b6d647b616ab4894a9cb4281ad050
   m_configObjects: {}
