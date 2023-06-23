@@ -9,11 +9,8 @@ public class SwitchLanguage : MonoBehaviour
     private int countSlides;
     void Start()
     {
-
         countSlides = slides.Length;
-
     }
-
 
     void Update()
     {

@@ -2293,7 +2293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 5
   _swipeController: {fileID: 819309855}
-  _distance: {x: 0, y: 2.2, z: -3.3}
+  _distance: {x: 0, y: 2, z: -3.3}
   playerPos: {fileID: 1194104166319326267}
 --- !u!114 &963194230
 MonoBehaviour:
@@ -3828,7 +3828,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 86.55
+  m_fontSize: 171.25
   m_fontSizeBase: 97
   m_fontWeight: 400
   m_enableAutoSizing: 1
