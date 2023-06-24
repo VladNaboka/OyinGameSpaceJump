@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ControllerQuality : MonoBehaviour
 {
+    public GameObject[] gameObjects;
     public GameObject pauseMenu;
     public SoundManager sfx;
     public GameObject player;
@@ -48,6 +49,11 @@ public class ControllerQuality : MonoBehaviour
             player.GetComponent<PlayerDeath>().enabled = false;
             sfx.MuteSoundOff();
             DOTween.Clear(true);
+
+            for (int i = 0; i < gameObjects.Length; i++)
+            {
+                gameObjects[i].gameObject.SetActive(false);
+            }
         }
         if (!pauseMenu.activeSelf)
         {
@@ -60,6 +66,11 @@ public class ControllerQuality : MonoBehaviour
             player.GetComponent<GroundCheck>().enabled = true;
             player.GetComponent<PlayerDeath>().enabled = true;
             sfx.MuteSoundOn();
+
+            for (int i = 0; i < gameObjects.Length; i++)
+            {
+                gameObjects[i].gameObject.SetActive(true);
+            }
         }
     }
 }
