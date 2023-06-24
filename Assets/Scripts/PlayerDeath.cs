@@ -51,8 +51,6 @@ public class PlayerDeath : MonoBehaviour
             //Vmesto hit, animatia sgoryania
             _anim.Play("Hit");
             ElectricityDeath();
-
-            sfx.PlayDeathSound();
         }
     }
 
@@ -68,6 +66,7 @@ public class PlayerDeath : MonoBehaviour
     private void ElectricityDeath()
     {
         Death();
+        sfx.PlayEDeathSound();
         _vfx.SetActive(true);
     }
 }

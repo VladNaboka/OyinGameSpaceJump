@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource slideSound;
     public AudioSource coinPickupSound;
     public AudioSource deathSound;
+    public AudioSource edeathSound;
     public AudioSource landingSound;
 
     private bool isWalking;
@@ -75,6 +76,14 @@ public class SoundManager : MonoBehaviour
         slideSound.Stop();
         landingSound.Stop();
         deathSound.Play();
+    }
+    public void PlayEDeathSound()
+    {
+        walkSound.Stop();
+        jumpSound.Stop();
+        slideSound.Stop();
+        landingSound.Stop();
+        edeathSound.Play();
     }
     public void MuteSoundOff()
     {
