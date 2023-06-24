@@ -9,19 +9,12 @@ public class SwitchLanguage : MonoBehaviour
     private int countSlides;
     void Start()
     {
-        countSlides = slides.Length;
+        countSlides = slides.Length - 1;
     }
 
     void Update()
     {
-        if (index >= countSlides)
-        {
-            index = countSlides;
-        }
-        if (index < 0)
-        {
-            index = 0;
-        }
+        index = Mathf.Clamp(index, 0, countSlides);
         if (index == 0)
         {
             slides[0].gameObject.SetActive(true);
@@ -31,8 +24,8 @@ public class SwitchLanguage : MonoBehaviour
 
     public void Next()
     {
-        index = Mathf.Clamp(index, 0, slides.Length);
         index += 1;
+        index = Mathf.Clamp(index, 0, countSlides);
 
         for (int i = 0; i < slides.Length; i++)
         {
@@ -42,8 +35,8 @@ public class SwitchLanguage : MonoBehaviour
     }
     public void Previous()
     {
-        index = Mathf.Clamp(index, 0, slides.Length);
         index -= 1;
+        index = Mathf.Clamp(index, 0, countSlides);
 
         for (int i = 0; i < slides.Length; i++)
         {
