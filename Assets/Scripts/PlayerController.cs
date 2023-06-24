@@ -160,6 +160,5 @@ public class PlayerController : MonoBehaviour
             Debug.Log(_playerSpeed);
             StartCoroutine("IncreaseSpeed");
         }
-      
     }
 }

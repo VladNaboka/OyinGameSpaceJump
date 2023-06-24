@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DataManager : MonoBehaviour
 {
@@ -17,12 +18,14 @@ public class DataManager : MonoBehaviour
 
     private void OnEnable()
     {
-        _playerDeath.OnPlayerDied += OnDied;
+        if (SceneManager.GetActiveScene().name == "GameScene")
+            _playerDeath.OnPlayerDied += OnDied;
     }
 
     private void OnDisable()
     {
-        _playerDeath.OnPlayerDied -= OnDied;
+        if (SceneManager.GetActiveScene().name == "GameScene")
+            _playerDeath.OnPlayerDied -= OnDied;
     }
 
     private void OnDied()

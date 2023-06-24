@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
@@ -20,11 +21,14 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        _scoreText.text = ((int)(_player.position.z / 2)).ToString();
-        if (HighScore < (int)(_player.position.z / 2))
+        if(SceneManager.GetActiveScene().name == "GameScene")
         {
-            HighScore = (int)(_player.position.z / 2);
-            _highScoreText.text = HighScore.ToString();
+            _scoreText.text = ((int)(_player.position.z / 2)).ToString();
+            if (HighScore < (int)(_player.position.z / 2))
+            {
+                HighScore = (int)(_player.position.z / 2);
+                _highScoreText.text = HighScore.ToString();
+            }
         }
     }
 }
