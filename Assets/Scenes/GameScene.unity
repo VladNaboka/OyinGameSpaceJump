@@ -3415,7 +3415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 5
   _swipeController: {fileID: 819309855}
-  _distance: {x: 0, y: 2.2, z: -3.3}
+  _distance: {x: 0, y: 2, z: -3.3}
   playerPos: {fileID: 1194104166319326267}
 --- !u!114 &963194230
 MonoBehaviour:
