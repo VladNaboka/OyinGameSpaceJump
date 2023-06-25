@@ -2896,7 +2896,7 @@ MonoBehaviour:
   language: 
   textRu: "\u0412\u042B \u041C\u0415\u0422\u0410\u041B\u041B\u041E\u041B\u041E\u041C!"
   textEng: YOU ARE SCRAP!
-  textKz: 
+  textKz: "\u0416\u0410\u0417\u042B\u041B\u042B\u04A2\u042B\u0417"
 --- !u!1 &784245297
 GameObject:
   m_ObjectHideFlags: 0
@@ -4064,7 +4064,7 @@ MonoBehaviour:
   language: 
   textRu: "\u0421\u0420\u0415\u0414\u041D\u0418\u0419"
   textEng: MEDIUM
-  textKz: 
+  textKz: "\u041E\u0420\u0422\u0410\u0428\u0410"
 --- !u!114 &1091304854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4278,7 +4278,7 @@ PrefabInstance:
     - target: {fileID: 3080398320231142747, guid: b2de50736c018aa4bbeafa54b6c24e1c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3080398320231142747, guid: b2de50736c018aa4bbeafa54b6c24e1c,
         type: 3}
@@ -4449,7 +4449,7 @@ MonoBehaviour:
   language: 
   textRu: "\u041C\u0423\u0417\u042B\u041A\u0410"
   textEng: MUSIC
-  textKz: 
+  textKz: "\u041C\u0423\u0417\u042B\u041A\u0410"
 --- !u!114 &1168589095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5923,7 +5923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 
   textRu: "\u0412\u042B\u0421\u041E\u041A\u0418\u0419"
-  textEng: HIGHT
+  textEng: HIGH
   textKz: "\u0416\u041E\u0492\u0410\u0420\u042B"
 --- !u!114 &1609412314
 MonoBehaviour:
@@ -7587,7 +7587,7 @@ MonoBehaviour:
   language: 
   textRu: "\u041D\u0418\u0417\u041A\u0418\u0419"
   textEng: LOW
-  textKz: 
+  textKz: "\u0422\u04E8\u041C\u0415\u041D"
 --- !u!114 &2032812576
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -408,7 +408,7 @@ MonoBehaviour:
   language: 
   textRu: "\u041E \u041D\u0410\u0421"
   textEng: ABOUT US
-  textKz: 
+  textKz: "\u0411\u0406\u0417 \u0422\u0423\u0420\u0410\u041B\u042B"
 --- !u!1 &128543202
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,7 +694,7 @@ MonoBehaviour:
   language: 
   textRu: "\u041F\u0420\u0418\u041A\u041B\u042E\u0427\u0415\u041D\u0418\u0415"
   textEng: ADVENTURE
-  textKz: 
+  textKz: "\u041E\u049A\u0418\u0492\u0410"
 --- !u!1 &244383948
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,7 +922,7 @@ MonoBehaviour:
   language: 
   textRu: "\u041D\u041E\u0412\u0410\u042F \u0418\u0413\u0420\u0410"
   textEng: NEW GAME
-  textKz: 
+  textKz: "\u0416\u0410\u04A2\u0410 \u041E\u0419\u042B\u041D"
 --- !u!1 &280432624
 GameObject:
   m_ObjectHideFlags: 0
