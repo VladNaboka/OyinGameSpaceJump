@@ -926,7 +926,7 @@ MonoBehaviour:
   language: 
   textRu: "\u041D\u0410\u0417\u0410\u0414"
   textEng: RETURN
-  textKz: 
+  textKz: "\u0411\u04B0\u0420\u042B\u041D"
 --- !u!1 &646035149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1644,7 +1644,7 @@ MonoBehaviour:
   language: 
   textRu: "\u0421\u041B\u0415\u0414\u0418\u0422\u0415 \u0417\u0410 \u041D\u0410\u041C\u0418"
   textEng: FOLLOW US
-  textKz: 
+  textKz: "\u0416\u0410\u0417\u042B\u041B\u042B\u04A2\u042B\u0417"
 --- !u!1 &1719662860
 GameObject:
   m_ObjectHideFlags: 0
