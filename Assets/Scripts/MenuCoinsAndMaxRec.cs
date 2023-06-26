@@ -8,6 +8,7 @@ public class MenuCoinsAndMaxRec : MonoBehaviour
     private GameData _gameData = new GameData();
     [SerializeField] private TextMeshProUGUI _scoreManagerText;
     [SerializeField] private TextMeshProUGUI _coinManagerText;
+
     private void Awake()
     {
         Load();
