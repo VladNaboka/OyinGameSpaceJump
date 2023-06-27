@@ -13,7 +13,7 @@ public class ShopClosed : MonoBehaviour
     public void OpenShopTab()
     {
         _textBlock.SetActive(false);
-        int randNum = Random.Range(0, _texts.Length + 1);
+        int randNum = Random.Range(0, _texts.Length);
 
         _textField.text = _texts[randNum];
         _textBlock.SetActive(true);
