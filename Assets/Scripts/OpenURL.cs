@@ -6,7 +6,7 @@ public class OpenURL : MonoBehaviour
 {
     public void OpenTelegram()
     {
-        Application.OpenURL("https://web.telegram.org/k/#@oiyndev");
+        Application.OpenURL("tg://web.telegram.org/k/#@oiyndev");
     }
     public void OpenInstagram()
     {
