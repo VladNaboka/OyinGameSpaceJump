@@ -45,14 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5431681371641162399, guid: ef9e2b292b1a74e4594b9eabb88d0e3a, type: 3}
+  - {fileID: 116133141847522823, guid: 4528396530d6c2348b8f4c3bea21429a, type: 3}
