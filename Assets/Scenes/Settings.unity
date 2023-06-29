@@ -1250,6 +1250,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1608919497}
+    - target: {fileID: 2380387680190302197, guid: 5eceb4a3a8a356e4381fdc0ca0ee10ac,
+        type: 3}
+      propertyPath: textKz
+      value: "\u04D8\u0423\u0415\u041D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380387680498210833, guid: 5eceb4a3a8a356e4381fdc0ca0ee10ac,
+        type: 3}
+      propertyPath: textKz
+      value: "\u0410\u0420\u0422\u049A\u0410"
+      objectReference: {fileID: 0}
     - target: {fileID: 2380387680557082419, guid: 5eceb4a3a8a356e4381fdc0ca0ee10ac,
         type: 3}
       propertyPath: m_IsActive
