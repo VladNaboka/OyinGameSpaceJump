@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class TextLanguage : MonoBehaviour
 {
     public string language;
-    TextMeshProUGUI text;
+    Text text;
 
     public string textRu;
     public string textEng;
@@ -15,7 +14,7 @@ public class TextLanguage : MonoBehaviour
 
     void Start()
     {
-        text = GetComponent<TextMeshProUGUI>();
+        text = GetComponent<Text>();
     }
 
     // Update is called once per frame

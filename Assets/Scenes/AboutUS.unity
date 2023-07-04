@@ -364,7 +364,7 @@ RectTransform:
   - {fileID: 2098838897}
   - {fileID: 1029554104}
   - {fileID: 2073314556}
-  - {fileID: 1412484781}
+  - {fileID: 565712725}
   - {fileID: 1955409776}
   - {fileID: 2129007015}
   - {fileID: 820014289}
@@ -776,7 +776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbedcec4b7fe194fac13abc09a56c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &619939465
+--- !u!1 &565712724
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -784,47 +784,63 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 619939466}
-  - component: {fileID: 619939468}
-  - component: {fileID: 619939467}
-  - component: {fileID: 619939469}
+  - component: {fileID: 565712725}
+  - component: {fileID: 565712728}
+  - component: {fileID: 565712727}
+  - component: {fileID: 565712726}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Follow Us
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &619939466
+--- !u!224 &565712725
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619939465}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 565712724}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2098838897}
-  m_RootOrder: 0
+  m_Father: {fileID: 191039023}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.00017166, y: -259.9999}
+  m_SizeDelta: {x: 301.75, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &619939467
+--- !u!114 &565712726
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619939465}
+  m_GameObject: {fileID: 565712724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Script: {fileID: 11500000, guid: ff881f7be7bdaaf46aec2bd026bacf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 
+  textRu: "\u0421\u041B\u0415\u0414\u0418\u0422\u0415 \u0417\u0410 \u041D\u0410\u041C\u0418"
+  textEng: FOLLOW US
+  textKz: "\u0416\u0410\u0417\u042B\u041B\u042B\u04A2\u042B\u0417"
+--- !u!114 &565712727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565712724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -835,100 +851,28 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: RETURN
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f7dc23af98da284478e77cf41d4edceb, type: 2}
-  m_sharedMaterial: {fileID: -1517009147826847940, guid: f7dc23af98da284478e77cf41d4edceb,
-    type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4293702655
-  m_fontColor: {r: 1, g: 0.7028302, b: 0.9266827, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &619939468
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: a7c5a4b273d520744a17747e7946dd1b, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 3
+    m_MaxSize: 30
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: FOLLOW US
+--- !u!222 &565712728
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619939465}
+  m_GameObject: {fileID: 565712724}
   m_CullTransparentMesh: 1
---- !u!114 &619939469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619939465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff881f7be7bdaaf46aec2bd026bacf9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  language: 
-  textRu: "\u041D\u0410\u0417\u0410\u0414"
-  textEng: RETURN
-  textKz: "\u0411\u04B0\u0420\u042B\u041D"
 --- !u!1 &646035149
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,6 +941,103 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &706145575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 706145576}
+  - component: {fileID: 706145579}
+  - component: {fileID: 706145578}
+  - component: {fileID: 706145577}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &706145576
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706145575}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2098838897}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &706145577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706145575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff881f7be7bdaaf46aec2bd026bacf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 
+  textRu: "\u041D\u0410\u0417\u0410\u0414"
+  textEng: RETURN
+  textKz: "\u0411\u04B0\u0420\u042B\u041D"
+--- !u!114 &706145578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706145575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.7019608, b: 0.9254902, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: a7c5a4b273d520744a17747e7946dd1b, type: 3}
+    m_FontSize: 20
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: RETURN
+--- !u!222 &706145579
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706145575}
+  m_CullTransparentMesh: 1
 --- !u!1 &820014288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,14 +1070,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1889012723}
+  - {fileID: 1083916734}
   m_Father: {fileID: 191039023}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.7803, y: 67.698}
-  m_SizeDelta: {x: 192.61, y: 346.69}
+  m_AnchoredPosition: {x: 1.7803001, y: 70.69648}
+  m_SizeDelta: {x: 192.61, y: 340.6969}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &820014291
 MonoBehaviour:
@@ -1088,7 +1129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Content: {fileID: 1889012723}
+  m_Content: {fileID: 1083916734}
   m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 2
@@ -1481,6 +1522,218 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1083916733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1083916734}
+  - component: {fileID: 1083916736}
+  - component: {fileID: 1083916735}
+  - component: {fileID: 1083916737}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1083916734
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083916733}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 820014289}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.0015259, y: -189.30804}
+  m_SizeDelta: {x: 292.61, y: 819.313}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1083916735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083916733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: a7c5a4b273d520744a17747e7946dd1b, type: 3}
+    m_FontSize: 20
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 18
+    m_MaxSize: 20
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Hello, let's get acquainted! We are a team of developers from the city
+    of Semey. And the game you are holding in your hands is our first project - Station
+    "A.I.D.A.".   Even before development began, we immediately determined the main
+    credo, which makes our indie studio unique. We will be making games about Kazakhstan
+    and Kazakhstanis!  We believe that games in a unique national style will be as
+    good as the others. Show the world the fortress of spirit, morality and spirituality
+    of our people. Share the impressive historical events.   If you enjoyed the game
+    and share our values, welcome to the club! Subscribe to us on social media, leave
+    feedback, and give us likes. Any activity is very important for us.   P.S. would
+    like to express our gratitude to Abai IT Valley technology cluster, of which
+    we are residents. Without their support and the work done, this project simply
+    would not have appeared.
+--- !u!222 &1083916736
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083916733}
+  m_CullTransparentMesh: 1
+--- !u!114 &1083916737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083916733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff881f7be7bdaaf46aec2bd026bacf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 
+  textRu: "\u041F\u0440\u0438\u0432\u0435\u0442, \u0434\u0430\u0432\u0430\u0439 \u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u0441\u044F!
+    \u041C\u044B \u043A\u043E\u043C\u0430\u043D\u0434\u0430 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0447\u0438\u043A\u043E\u0432
+    \u0438\u0437 \u0433\u043E\u0440\u043E\u0434\u0430 \u0421\u0435\u043C\u0435\u0439.
+    \u0410 \u0438\u0433\u0440\u0430 \u043A\u043E\u0442\u043E\u0440\u0443\u044E \u0432\u044B
+    \u0434\u0435\u0440\u0436\u0438\u0442\u0435 \u0432 \u0441\u0432\u043E\u0438\u0445
+    \u0440\u0443\u043A\u0430\u0445, \u044D\u0442\u043E \u043D\u0430\u0448 \u043F\u0435\u0440\u0432\u044B\u0439
+    \u043F\u0440\u043E\u0435\u043A\u0442 - Station \u201CA.I.D.A\u201D.   \u0415\u0449\u0435
+    \u0434\u043E \u043D\u0430\u0447\u0430\u043B\u0430 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0438,
+    \u043C\u044B \u0441\u0440\u0430\u0437\u0443 \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0438\u043B\u0438
+    \u0433\u043B\u0430\u0432\u043D\u043E\u0435 \u043A\u0440\u0435\u0434\u043E, \u043A\u043E\u0442\u043E\u0440\u043E\u0435
+    \u0438 \u0434\u0435\u043B\u0430\u0435\u0442 \u043D\u0430\u0448\u0443 \u0438\u043D\u0434\u0438
+    \u0441\u0442\u0443\u0434\u0438\u044E \u0443\u043D\u0438\u043A\u0430\u043B\u044C\u043D\u043E\u0439.
+    \u041C\u044B \u0431\u0443\u0434\u0435\u043C \u0434\u0435\u043B\u0430\u0442\u044C
+    \u0438\u0433\u0440\u044B \u043F\u0440\u043E \u041A\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043D
+    \u0438 \u043A\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043D\u0446\u0435\u0432! 
+    \u0412\u0435\u0440\u0438\u043C, \u0447\u0442\u043E \u0438\u0433\u0440\u044B \u0432
+    \u0443\u043D\u0438\u043A\u0430\u043B\u044C\u043D\u043E\u0439 \u043D\u0430\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E\u0439
+    \u0441\u0442\u0438\u043B\u0438\u0441\u0442\u0438\u043A\u0438, \u0431\u0443\u0434\u0443\u0442
+    \u0432\u044B\u0433\u043B\u044F\u0434\u0435\u0442\u044C \u043D\u0435 \u0445\u0443\u0436\u0435
+    \u043F\u0440\u043E\u0447\u0438\u0445. \u041F\u043E\u043A\u0430\u0437\u0430\u0442\u044C
+    \u043C\u0438\u0440\u0443 \u043A\u0440\u0435\u043F\u043E\u0441\u0442\u044C \u0434\u0443\u0445\u0430,
+    \u043D\u0440\u0430\u0432\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0441\u0442\u044C
+    \u0438 \u0434\u0443\u0445\u043E\u0432\u043D\u043E\u0441\u0442\u044C \u043D\u0430\u0448\u0435\u0433\u043E
+    \u043D\u0430\u0440\u043E\u0434\u0430. \u041F\u043E\u0434\u0435\u043B\u0438\u0442\u044C\u0441\u044F
+    \u0432\u043F\u0435\u0447\u0430\u0442\u043B\u044F\u044E\u0449\u0438\u043C\u0438
+    \u0438\u0441\u0442\u043E\u0440\u0438\u0447\u0435\u0441\u043A\u0438\u043C\u0438
+    \u0441\u043E\u0431\u044B\u0442\u0438\u044F\u043C\u0438.   \u0415\u0441\u043B\u0438
+    \u0432\u044B \u043F\u043E\u043B\u0443\u0447\u0438\u043B\u0438 \u0443\u0434\u043E\u0432\u043E\u043B\u044C\u0441\u0442\u0432\u0438\u0435
+    \u043E\u0433 \u0438\u0433\u0440\u044B \u0438 \u0440\u0430\u0437\u0434\u0435\u043B\u044F\u0435\u0442\u0435
+    \u043D\u0430\u0448\u0438 \u0446\u0435\u043D\u043D\u043E\u0441\u0442\u0438, \u0442\u043E
+    \u0434\u043E\u0431\u0440\u043E \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C
+    \u0432 \u043A\u043B\u0443\u0431! \u041F\u043E\u0434\u043F\u0438\u0441\u044B\u0432\u0430\u0439\u0442\u0435\u0441\u044C
+    \u043D\u0430 \u043D\u0430\u0441 \u0432 \u0441\u043E\u0446\u0438\u0430\u043B\u044C\u043D\u044B\u0445
+    \u0441\u0435\u0442\u044F\u0445, \u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0439\u0442\u0435
+    \u043E\u0442\u0437\u044B\u0432\u044B, \u0441\u0442\u0430\u0432\u044C\u0442\u0435
+    \u043B\u0430\u0439\u043A\u0438. \u041B\u044E\u0431\u0430\u044F \u0430\u043A\u0442\u0438\u0432\u043D\u043E\u0441\u0442\u044C
+    \u043E\u0447\u0435\u043D\u044C \u0432\u0430\u0436\u043D\u0430 \u0434\u043B\u044F
+    \u043D\u0430\u0441.   P.S \u0445\u043E\u0442\u0438\u043C \u0432\u044B\u0440\u0430\u0437\u0438\u0442\u044C
+    \u0431\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u043D\u043E\u0441\u0442\u044C
+    \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0438\u0447\u0435\u0441\u043A\u043E\u043C\u0443
+    \u043A\u043B\u0430\u0441\u0442\u0435\u0440\u0443 Abai IT Valley, \u0440\u0435\u0437\u0438\u0434\u0435\u043D\u0442\u0430\u043C\u0438
+    \u043A\u043E\u0442\u043E\u0440\u043E\u0433\u043E \u043C\u044B \u044F\u0432\u043B\u044F\u0435\u043C\u0441\u044F.
+    \u0411\u0435\u0437 \u0438\u0445 \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u043A\u0438
+    \u0438 \u043F\u0440\u043E\u0434\u0435\u043B\u0430\u043D\u043D\u043E\u0439 \u0440\u0430\u0431\u043E\u0442\u044B,
+    \u0434\u0430\u043D\u043D\u043E\u0433\u043E \u043F\u0440\u043E\u0435\u043A\u0442\u0430
+    \u0431\u044B \u043F\u0440\u043E\u0441\u0442\u043E \u043D\u0435 \u043F\u043E\u044F\u0432\u0438\u043B\u043E\u0441\u044C."
+  textEng: Hello, let's get acquainted! We are a team of developers from the city
+    of Semey. And the game you are holding in your hands is our first project - Station
+    "A.I.D.A.".   Even before development began, we immediately determined the main
+    credo, which makes our indie studio unique. We will be making games about Kazakhstan
+    and Kazakhstanis!  We believe that games in a unique national style will be as
+    good as the others. Show the world the fortress of spirit, morality and spirituality
+    of our people. Share the impressive historical events.   If you enjoyed the game
+    and share our values, welcome to the club! Subscribe to us on social media, leave
+    feedback, and give us likes. Any activity is very important for us.   P.S. would
+    like to express our gratitude to Abai IT Valley technology cluster, of which
+    we are residents. Without their support and the work done, this project simply
+    would not have appeared.
+  textKz: "\u0421\u0430\u043B\u0435\u043C, \u0442\u0430\u043D\u044B\u0441 \u0431\u043E\u043B\u0430\u0439\u044B\u043A!
+    \u0411\u0456\u0437 \u0421\u0435\u043C\u0435\u0439 \u049B\u0430\u043B\u0430\u0441\u044B\u043D\u0430\u043D
+    \u0448\u044B\u049B\u049B\u0430\u043D \u043E\u0439\u044B\u043D \u049B\u04B1\u0440\u0430\u0441\u0442\u044B\u0440\u0443\u0448\u044B
+    \u043A\u043E\u043C\u0430\u043D\u0434\u0430\u043C\u044B\u0437. \u0410\u043B \u049B\u043E\u043B\u0434\u0430\u0440\u044B\u043D\u0434\u0430
+    \u04B1\u0441\u0442\u0430\u043F \u0442\u04B1\u0440\u0493\u0430\u043D \u043E\u0439\u044B\u043D
+    - Station \u201CA.I.D.A\u201D, \u0431\u0456\u0437\u0434\u0456\u04A3 \u0430\u043B\u0493\u0430\u0448\u049B\u044B
+    \u0436\u043E\u0431\u0430\u043C\u044B\u0437.  \u049A\u04B1\u0440\u0443 \u0430\u043B\u0434\u044B\u043D\u0434\u0430
+    \u0431\u0456\u0437\u0434\u0456\u04A3 \u0438\u043D\u0434\u0438 \u0441\u0442\u0443\u0434\u0438\u044F\u043C\u044B\u0437\u0434\u044B\u04A3
+    \u0431\u0456\u0440\u0435\u0433\u0435\u0439 \u0435\u0440\u0435\u043A\u0448\u0435\u043B\u0456\u0433\u0456
+    \u0440\u0435\u0442\u0456\u043D\u0434\u0435 \u0431\u0456\u0437 \u0431\u0430\u0441\u0442\u044B
+    \u043A\u0440\u0435\u0434\u043E\u043C\u044B\u0437\u0434\u044B \u0430\u043D\u044B\u049B\u0442\u0430\u043F
+    \u0430\u043B\u0434\u044B\u049B. \u0411\u0456\u0437 \u043E\u0439\u044B\u043D\u0434\u0430\u0440\u044B\u043C\u044B\u0437\u0434\u044B
+    \u049A\u0430\u0437\u0430\u049B\u0441\u0442\u0430\u043D \u0436\u04D9\u043D\u0435
+    \u049A\u0430\u0437\u0430\u049B\u0441\u0442\u0430\u043D\u0434\u044B\u049B\u0442\u0430\u0440
+    \u0442\u0443\u0440\u0430\u043B\u044B \u0436\u0430\u0441\u0430\u0439\u0442\u044B\u043D
+    \u0431\u043E\u043B\u0434\u044B\u049B!   \u041E\u0439\u044B\u043D\u044B\u043C\u044B\u0437\u0434\u044B\u04A3
+    \u0431\u0456\u0440\u0435\u0433\u0435\u0439 \u04B1\u043B\u0442\u0442\u044B\u049B
+    \u0441\u0442\u0438\u043B\u0438\u0441\u0442\u0438\u043A\u0430\u0441\u044B \u0431\u0430\u0441\u049B\u0430
+    \u043E\u0439\u044B\u043D\u0434\u0430\u0440\u0434\u044B\u04A3 \u0441\u0442\u0438\u043B\u0438\u0441\u0442\u0438\u043A\u0430\u0441\u044B\u043D\u0430\u04A3
+    \u0435\u0448 \u043A\u0435\u043C \u0431\u043E\u043B\u043C\u0430\u0439\u0434\u044B
+    \u0434\u0435\u043F \u0441\u0435\u043D\u0435\u043C\u0456\u0437. \u04D8\u043B\u0435\u043C\u0433\u0435
+    \u0431\u0456\u0437\u0434\u0456\u04A3 \u0445\u0430\u043B\u049B\u044B\u043C\u044B\u0437\u0434\u044B\u04A3
+    \u0440\u0443\u0445 \u043C\u044B\u049B\u0442\u044B\u043B\u044B\u0493\u044B\u043D,
+    \u04D9\u0434\u0435\u043F\u0442\u0456\u043B\u0456\u0433\u0456\u04A3 \u0436\u04D9\u043D\u0435
+    \u0440\u0443\u0445\u0430\u043D\u0438\u044F\u0442\u0442\u044B\u043B\u044B\u0493\u044B\u043D
+    \u043A\u04E9\u0440\u0441\u0435\u0442\u0443 \u0436\u04D9\u043D\u0435 \u0442\u0430\u04A3
+    \u049B\u0430\u043B\u0434\u044B\u0440\u0430\u0442\u044B\u043D \u0442\u0430\u0440\u0438\u0445\u0438
+    \u043E\u049B\u0438\u0493\u0430\u043B\u0430\u0440\u043C\u0435\u043D \u0431\u04E9\u043B\u0456\u0441\u0435\u043C\u0456\u0437.  
+    \u0415\u0433\u0435\u0440 \u0441\u0456\u0437 \u0431\u0456\u0437\u0434\u0456\u04A3
+    \u043E\u0439\u044B\u043D\u043D\u0430\u04A3 \u043B\u04D9\u0437\u0437\u0430\u0442
+    \u0430\u043B\u044B\u043F, \u0431\u0456\u0437\u0434\u0456\u04A3 \u049B\u04B1\u043D\u0434\u044B\u043B\u044B\u049B\u0442\u0430\u0440\u044B\u043C\u044B\u0437\u0431\u0435\u0435
+    \u043E\u0440\u0442\u0430\u049B \u0431\u043E\u043B\u0441\u0430\u04A3\u044B\u0437,
+    \u0431\u0456\u0437\u0434\u0456\u04A3 \u043A\u043B\u0443\u0431\u044B\u043C\u044B\u0437\u0493\u0430
+    \u049B\u043E\u0448 \u043A\u0435\u043B\u0434\u0456\u04A3\u0456\u0437! \u04D8\u043B\u0435\u0443\u043C\u0435\u0442\u0442\u0456\u043A
+    \u0436\u0435\u043B\u0456\u043B\u0435\u0440\u0434\u0435 \u0431\u0456\u0437\u0433\u0435
+    \u049B\u043E\u0441\u044B\u043B\u044B\u04A3\u044B\u0437, \u043F\u0456\u043A\u0456\u0440
+    \u049B\u0430\u043B\u0434\u044B\u0440\u044B\u043F, \u043B\u0430\u0439\u043A \u0431\u0430\u0441\u044B\u04A3\u044B\u0437.
+    \u04D8\u0440 \u04D9\u0440\u0435\u043A\u0435\u0442 \u0431\u0456\u0437\u0433\u0435
+    \u04E9\u0442\u0435 \u043C\u0430\u04A3\u044B\u0437\u0434\u044B.   P.S. Abai IT
+    Valley \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0438\u044F\u043B\u044B\u049B
+    \u043A\u043B\u0430\u0441\u0441\u0442\u0435\u0440\u0456\u043D\u0435 \u0430\u043B\u0493\u044B\u0441\u044B\u043C\u044B\u0437\u0434\u044B
+    \u0431\u0456\u043B\u0434\u0456\u0440\u0435\u043C\u0456\u0437. \u0411\u04B1\u043B
+    \u043A\u043B\u0430\u0441\u0441\u0442\u0435\u0440\u0434\u0456\u04A3 \u0440\u0435\u0437\u0438\u0434\u0435\u043D\u0442\u0456
+    \u0431\u043E\u043B\u044B\u043F \u0442\u0430\u0431\u044B\u043B\u0430\u043C\u044B\u0437.
+    \u041E\u043B\u0430\u0440\u0434\u044B\u04A3 \u049B\u043E\u043B\u0434\u0430\u0443\u044B
+    \u0436\u04D9\u043D\u0435 \u043A\u04E9\u043C\u0435\u043A\u0442\u0435\u0441\u043A\u0435\u043D
+    \u0436\u04B1\u043C\u044B\u0441\u044B \u0430\u0440\u049B\u044B\u043B\u044B \u0431\u04B1\u043B
+    \u0436\u043E\u0431\u0430 \u0434\u04AF\u043D\u0438\u0435\u0433\u0435 \u043A\u0435\u043B\u043C\u0435\u0441
+    \u0435\u0434\u0456. "
 --- !u!1 &1403957935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,159 +1870,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403957935}
   m_CullTransparentMesh: 1
---- !u!1 &1412484780
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1412484781}
-  - component: {fileID: 1412484783}
-  - component: {fileID: 1412484782}
-  - component: {fileID: 1412484784}
-  m_Layer: 5
-  m_Name: Follow Us
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1412484781
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412484780}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 191039023}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -259.99994}
-  m_SizeDelta: {x: 301.7493, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1412484782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412484780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: FOLLOW US
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f7dc23af98da284478e77cf41d4edceb, type: 2}
-  m_sharedMaterial: {fileID: -1517009147826847940, guid: f7dc23af98da284478e77cf41d4edceb,
-    type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
-  m_fontWeight: 400
-  m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 30
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1412484783
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412484780}
-  m_CullTransparentMesh: 1
---- !u!114 &1412484784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412484780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff881f7be7bdaaf46aec2bd026bacf9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  language: 
-  textRu: "\u0421\u041B\u0415\u0414\u0418\u0422\u0415 \u0417\u0410 \u041D\u0410\u041C\u0418"
-  textEng: FOLLOW US
-  textKz: "\u0416\u0410\u0417\u042B\u041B\u042B\u04A2\u042B\u0417"
 --- !u!1 &1719662860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1998,274 +2098,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875532108}
   m_CullTransparentMesh: 1
---- !u!1 &1889012722
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1889012723}
-  - component: {fileID: 1889012725}
-  - component: {fileID: 1889012724}
-  - component: {fileID: 1889012726}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1889012723
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889012722}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 820014289}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000087709515, y: -211.78777}
-  m_SizeDelta: {x: 292.61, y: 870.2693}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1889012724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889012722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: Hello, let's get acquainted! We are a team of developers from the city
-    of Semey. And the game you are holding in your hands is our first project - Station
-    "A.I.D.A.".   Even before development began, we immediately determined the main
-    credo, which makes our indie studio unique. We will be making games about Kazakhstan
-    and Kazakhstanis!  We believe that games in a unique national style will be as
-    good as the others. Show the world the fortress of spirit, morality and spirituality
-    of our people. Share the impressive historical events.   If you enjoyed the game
-    and share our values, welcome to the club! Subscribe to us on social media, leave
-    feedback, and give us likes. Any activity is very important for us.   P.S. would
-    like to express our gratitude to Abai IT Valley technology cluster, of which
-    we are residents. Without their support and the work done, this project simply
-    would not have appeared.
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f7dc23af98da284478e77cf41d4edceb, type: 2}
-  m_sharedMaterial: {fileID: -1517009147826847940, guid: f7dc23af98da284478e77cf41d4edceb,
-    type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 20
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1889012725
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889012722}
-  m_CullTransparentMesh: 1
---- !u!114 &1889012726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889012722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff881f7be7bdaaf46aec2bd026bacf9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  language: 
-  textRu: "\u041F\u0440\u0438\u0432\u0435\u0442, \u0434\u0430\u0432\u0430\u0439 \u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u0441\u044F!
-    \u041C\u044B \u043A\u043E\u043C\u0430\u043D\u0434\u0430 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0447\u0438\u043A\u043E\u0432
-    \u0438\u0437 \u0433\u043E\u0440\u043E\u0434\u0430 \u0421\u0435\u043C\u0435\u0439.
-    \u0410 \u0438\u0433\u0440\u0430 \u043A\u043E\u0442\u043E\u0440\u0443\u044E \u0432\u044B
-    \u0434\u0435\u0440\u0436\u0438\u0442\u0435 \u0432 \u0441\u0432\u043E\u0438\u0445
-    \u0440\u0443\u043A\u0430\u0445, \u044D\u0442\u043E \u043D\u0430\u0448 \u043F\u0435\u0440\u0432\u044B\u0439
-    \u043F\u0440\u043E\u0435\u043A\u0442 - Station \u201CA.I.D.A\u201D.   \u0415\u0449\u0435
-    \u0434\u043E \u043D\u0430\u0447\u0430\u043B\u0430 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0438,
-    \u043C\u044B \u0441\u0440\u0430\u0437\u0443 \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0438\u043B\u0438
-    \u0433\u043B\u0430\u0432\u043D\u043E\u0435 \u043A\u0440\u0435\u0434\u043E, \u043A\u043E\u0442\u043E\u0440\u043E\u0435
-    \u0438 \u0434\u0435\u043B\u0430\u0435\u0442 \u043D\u0430\u0448\u0443 \u0438\u043D\u0434\u0438
-    \u0441\u0442\u0443\u0434\u0438\u044E \u0443\u043D\u0438\u043A\u0430\u043B\u044C\u043D\u043E\u0439.
-    \u041C\u044B \u0431\u0443\u0434\u0435\u043C \u0434\u0435\u043B\u0430\u0442\u044C
-    \u0438\u0433\u0440\u044B \u043F\u0440\u043E \u041A\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043D
-    \u0438 \u043A\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043D\u0446\u0435\u0432! 
-    \u0412\u0435\u0440\u0438\u043C, \u0447\u0442\u043E \u0438\u0433\u0440\u044B \u0432
-    \u0443\u043D\u0438\u043A\u0430\u043B\u044C\u043D\u043E\u0439 \u043D\u0430\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E\u0439
-    \u0441\u0442\u0438\u043B\u0438\u0441\u0442\u0438\u043A\u0438, \u0431\u0443\u0434\u0443\u0442
-    \u0432\u044B\u0433\u043B\u044F\u0434\u0435\u0442\u044C \u043D\u0435 \u0445\u0443\u0436\u0435
-    \u043F\u0440\u043E\u0447\u0438\u0445. \u041F\u043E\u043A\u0430\u0437\u0430\u0442\u044C
-    \u043C\u0438\u0440\u0443 \u043A\u0440\u0435\u043F\u043E\u0441\u0442\u044C \u0434\u0443\u0445\u0430,
-    \u043D\u0440\u0430\u0432\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0441\u0442\u044C
-    \u0438 \u0434\u0443\u0445\u043E\u0432\u043D\u043E\u0441\u0442\u044C \u043D\u0430\u0448\u0435\u0433\u043E
-    \u043D\u0430\u0440\u043E\u0434\u0430. \u041F\u043E\u0434\u0435\u043B\u0438\u0442\u044C\u0441\u044F
-    \u0432\u043F\u0435\u0447\u0430\u0442\u043B\u044F\u044E\u0449\u0438\u043C\u0438
-    \u0438\u0441\u0442\u043E\u0440\u0438\u0447\u0435\u0441\u043A\u0438\u043C\u0438
-    \u0441\u043E\u0431\u044B\u0442\u0438\u044F\u043C\u0438.   \u0415\u0441\u043B\u0438
-    \u0432\u044B \u043F\u043E\u043B\u0443\u0447\u0438\u043B\u0438 \u0443\u0434\u043E\u0432\u043E\u043B\u044C\u0441\u0442\u0432\u0438\u0435
-    \u043E\u0433 \u0438\u0433\u0440\u044B \u0438 \u0440\u0430\u0437\u0434\u0435\u043B\u044F\u0435\u0442\u0435
-    \u043D\u0430\u0448\u0438 \u0446\u0435\u043D\u043D\u043E\u0441\u0442\u0438, \u0442\u043E
-    \u0434\u043E\u0431\u0440\u043E \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C
-    \u0432 \u043A\u043B\u0443\u0431! \u041F\u043E\u0434\u043F\u0438\u0441\u044B\u0432\u0430\u0439\u0442\u0435\u0441\u044C
-    \u043D\u0430 \u043D\u0430\u0441 \u0432 \u0441\u043E\u0446\u0438\u0430\u043B\u044C\u043D\u044B\u0445
-    \u0441\u0435\u0442\u044F\u0445, \u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0439\u0442\u0435
-    \u043E\u0442\u0437\u044B\u0432\u044B, \u0441\u0442\u0430\u0432\u044C\u0442\u0435
-    \u043B\u0430\u0439\u043A\u0438. \u041B\u044E\u0431\u0430\u044F \u0430\u043A\u0442\u0438\u0432\u043D\u043E\u0441\u0442\u044C
-    \u043E\u0447\u0435\u043D\u044C \u0432\u0430\u0436\u043D\u0430 \u0434\u043B\u044F
-    \u043D\u0430\u0441.   P.S \u0445\u043E\u0442\u0438\u043C \u0432\u044B\u0440\u0430\u0437\u0438\u0442\u044C
-    \u0431\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u043D\u043E\u0441\u0442\u044C
-    \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0438\u0447\u0435\u0441\u043A\u043E\u043C\u0443
-    \u043A\u043B\u0430\u0441\u0442\u0435\u0440\u0443 Abai IT Valley, \u0440\u0435\u0437\u0438\u0434\u0435\u043D\u0442\u0430\u043C\u0438
-    \u043A\u043E\u0442\u043E\u0440\u043E\u0433\u043E \u043C\u044B \u044F\u0432\u043B\u044F\u0435\u043C\u0441\u044F.
-    \u0411\u0435\u0437 \u0438\u0445 \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u043A\u0438
-    \u0438 \u043F\u0440\u043E\u0434\u0435\u043B\u0430\u043D\u043D\u043E\u0439 \u0440\u0430\u0431\u043E\u0442\u044B,
-    \u0434\u0430\u043D\u043D\u043E\u0433\u043E \u043F\u0440\u043E\u0435\u043A\u0442\u0430
-    \u0431\u044B \u043F\u0440\u043E\u0441\u0442\u043E \u043D\u0435 \u043F\u043E\u044F\u0432\u0438\u043B\u043E\u0441\u044C."
-  textEng: Hello, let's get acquainted! We are a team of developers from the city
-    of Semey. And the game you are holding in your hands is our first project - Station
-    "A.I.D.A.".   Even before development began, we immediately determined the main
-    credo, which makes our indie studio unique. We will be making games about Kazakhstan
-    and Kazakhstanis!  We believe that games in a unique national style will be as
-    good as the others. Show the world the fortress of spirit, morality and spirituality
-    of our people. Share the impressive historical events.   If you enjoyed the game
-    and share our values, welcome to the club! Subscribe to us on social media, leave
-    feedback, and give us likes. Any activity is very important for us.   P.S. would
-    like to express our gratitude to Abai IT Valley technology cluster, of which
-    we are residents. Without their support and the work done, this project simply
-    would not have appeared.
-  textKz: "\u0421\u0430\u043B\u0435\u043C, \u0442\u0430\u043D\u044B\u0441 \u0431\u043E\u043B\u0430\u0439\u044B\u043A!
-    \u0411\u0456\u0437 \u0421\u0435\u043C\u0435\u0439 \u049B\u0430\u043B\u0430\u0441\u044B\u043D\u0430\u043D
-    \u0448\u044B\u049B\u049B\u0430\u043D \u043E\u0439\u044B\u043D \u049B\u04B1\u0440\u0430\u0441\u0442\u044B\u0440\u0443\u0448\u044B
-    \u043A\u043E\u043C\u0430\u043D\u0434\u0430\u043C\u044B\u0437. \u0410\u043B \u049B\u043E\u043B\u0434\u0430\u0440\u044B\u043D\u0434\u0430
-    \u04B1\u0441\u0442\u0430\u043F \u0442\u04B1\u0440\u0493\u0430\u043D \u043E\u0439\u044B\u043D
-    - Station \u201CA.I.D.A\u201D, \u0431\u0456\u0437\u0434\u0456\u04A3 \u0430\u043B\u0493\u0430\u0448\u049B\u044B
-    \u0436\u043E\u0431\u0430\u043C\u044B\u0437.  \u049A\u04B1\u0440\u0443 \u0430\u043B\u0434\u044B\u043D\u0434\u0430
-    \u0431\u0456\u0437\u0434\u0456\u04A3 \u0438\u043D\u0434\u0438 \u0441\u0442\u0443\u0434\u0438\u044F\u043C\u044B\u0437\u0434\u044B\u04A3
-    \u0431\u0456\u0440\u0435\u0433\u0435\u0439 \u0435\u0440\u0435\u043A\u0448\u0435\u043B\u0456\u0433\u0456
-    \u0440\u0435\u0442\u0456\u043D\u0434\u0435 \u0431\u0456\u0437 \u0431\u0430\u0441\u0442\u044B
-    \u043A\u0440\u0435\u0434\u043E\u043C\u044B\u0437\u0434\u044B \u0430\u043D\u044B\u049B\u0442\u0430\u043F
-    \u0430\u043B\u0434\u044B\u049B. \u0411\u0456\u0437 \u043E\u0439\u044B\u043D\u0434\u0430\u0440\u044B\u043C\u044B\u0437\u0434\u044B
-    \u049A\u0430\u0437\u0430\u049B\u0441\u0442\u0430\u043D \u0436\u04D9\u043D\u0435
-    \u049A\u0430\u0437\u0430\u049B\u0441\u0442\u0430\u043D\u0434\u044B\u049B\u0442\u0430\u0440
-    \u0442\u0443\u0440\u0430\u043B\u044B \u0436\u0430\u0441\u0430\u0439\u0442\u044B\u043D
-    \u0431\u043E\u043B\u0434\u044B\u049B!   \u041E\u0439\u044B\u043D\u044B\u043C\u044B\u0437\u0434\u044B\u04A3
-    \u0431\u0456\u0440\u0435\u0433\u0435\u0439 \u04B1\u043B\u0442\u0442\u044B\u049B
-    \u0441\u0442\u0438\u043B\u0438\u0441\u0442\u0438\u043A\u0430\u0441\u044B \u0431\u0430\u0441\u049B\u0430
-    \u043E\u0439\u044B\u043D\u0434\u0430\u0440\u0434\u044B\u04A3 \u0441\u0442\u0438\u043B\u0438\u0441\u0442\u0438\u043A\u0430\u0441\u044B\u043D\u0430\u04A3
-    \u0435\u0448 \u043A\u0435\u043C \u0431\u043E\u043B\u043C\u0430\u0439\u0434\u044B
-    \u0434\u0435\u043F \u0441\u0435\u043D\u0435\u043C\u0456\u0437. \u04D8\u043B\u0435\u043C\u0433\u0435
-    \u0431\u0456\u0437\u0434\u0456\u04A3 \u0445\u0430\u043B\u049B\u044B\u043C\u044B\u0437\u0434\u044B\u04A3
-    \u0440\u0443\u0445 \u043C\u044B\u049B\u0442\u044B\u043B\u044B\u0493\u044B\u043D,
-    \u04D9\u0434\u0435\u043F\u0442\u0456\u043B\u0456\u0433\u0456\u04A3 \u0436\u04D9\u043D\u0435
-    \u0440\u0443\u0445\u0430\u043D\u0438\u044F\u0442\u0442\u044B\u043B\u044B\u0493\u044B\u043D
-    \u043A\u04E9\u0440\u0441\u0435\u0442\u0443 \u0436\u04D9\u043D\u0435 \u0442\u0430\u04A3
-    \u049B\u0430\u043B\u0434\u044B\u0440\u0430\u0442\u044B\u043D \u0442\u0430\u0440\u0438\u0445\u0438
-    \u043E\u049B\u0438\u0493\u0430\u043B\u0430\u0440\u043C\u0435\u043D \u0431\u04E9\u043B\u0456\u0441\u0435\u043C\u0456\u0437.  
-    \u0415\u0433\u0435\u0440 \u0441\u0456\u0437 \u0431\u0456\u0437\u0434\u0456\u04A3
-    \u043E\u0439\u044B\u043D\u043D\u0430\u04A3 \u043B\u04D9\u0437\u0437\u0430\u0442
-    \u0430\u043B\u044B\u043F, \u0431\u0456\u0437\u0434\u0456\u04A3 \u049B\u04B1\u043D\u0434\u044B\u043B\u044B\u049B\u0442\u0430\u0440\u044B\u043C\u044B\u0437\u0431\u0435\u0435
-    \u043E\u0440\u0442\u0430\u049B \u0431\u043E\u043B\u0441\u0430\u04A3\u044B\u0437,
-    \u0431\u0456\u0437\u0434\u0456\u04A3 \u043A\u043B\u0443\u0431\u044B\u043C\u044B\u0437\u0493\u0430
-    \u049B\u043E\u0448 \u043A\u0435\u043B\u0434\u0456\u04A3\u0456\u0437! \u04D8\u043B\u0435\u0443\u043C\u0435\u0442\u0442\u0456\u043A
-    \u0436\u0435\u043B\u0456\u043B\u0435\u0440\u0434\u0435 \u0431\u0456\u0437\u0433\u0435
-    \u049B\u043E\u0441\u044B\u043B\u044B\u04A3\u044B\u0437, \u043F\u0456\u043A\u0456\u0440
-    \u049B\u0430\u043B\u0434\u044B\u0440\u044B\u043F, \u043B\u0430\u0439\u043A \u0431\u0430\u0441\u044B\u04A3\u044B\u0437.
-    \u04D8\u0440 \u04D9\u0440\u0435\u043A\u0435\u0442 \u0431\u0456\u0437\u0433\u0435
-    \u04E9\u0442\u0435 \u043C\u0430\u04A3\u044B\u0437\u0434\u044B.   P.S. Abai IT
-    Valley \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0438\u044F\u043B\u044B\u049B
-    \u043A\u043B\u0430\u0441\u0441\u0442\u0435\u0440\u0456\u043D\u0435 \u0430\u043B\u0493\u044B\u0441\u044B\u043C\u044B\u0437\u0434\u044B
-    \u0431\u0456\u043B\u0434\u0456\u0440\u0435\u043C\u0456\u0437. \u0411\u04B1\u043B
-    \u043A\u043B\u0430\u0441\u0441\u0442\u0435\u0440\u0434\u0456\u04A3 \u0440\u0435\u0437\u0438\u0434\u0435\u043D\u0442\u0456
-    \u0431\u043E\u043B\u044B\u043F \u0442\u0430\u0431\u044B\u043B\u0430\u043C\u044B\u0437.
-    \u041E\u043B\u0430\u0440\u0434\u044B\u04A3 \u049B\u043E\u043B\u0434\u0430\u0443\u044B
-    \u0436\u04D9\u043D\u0435 \u043A\u04E9\u043C\u0435\u043A\u0442\u0435\u0441\u043A\u0435\u043D
-    \u0436\u04B1\u043C\u044B\u0441\u044B \u0430\u0440\u049B\u044B\u043B\u044B \u0431\u04B1\u043B
-    \u0436\u043E\u0431\u0430 \u0434\u04AF\u043D\u0438\u0435\u0433\u0435 \u043A\u0435\u043B\u043C\u0435\u0441
-    \u0435\u0434\u0456. "
 --- !u!1 &1955409775
 GameObject:
   m_ObjectHideFlags: 0
@@ -2507,7 +2339,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 619939466}
+  - {fileID: 706145576}
   m_Father: {fileID: 191039023}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
