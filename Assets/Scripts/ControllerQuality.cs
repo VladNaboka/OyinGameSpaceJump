@@ -36,6 +36,7 @@ public class ControllerQuality : MonoBehaviour
     
     public void OpenPause()
     {
+        UISoundManager.instance.OnClickSound();
         pauseMenu.SetActive(!pauseMenu.activeSelf);
         if (pauseMenu.activeSelf)
         {

@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     }
     public void FadeOut(string sceneName)
     {
+        UISoundManager.instance.OnClickSound();
         sceneToLoad = sceneName;
         _anim.SetTrigger("FadeOut");
     }
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
     //}
     public void CloseApp()
     {
+        UISoundManager.instance.OnClickSound();
         Application.Quit();
     }
 

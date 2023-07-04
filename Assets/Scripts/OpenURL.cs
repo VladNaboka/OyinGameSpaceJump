@@ -6,10 +6,12 @@ public class OpenURL : MonoBehaviour
 {
     public void OpenTelegram()
     {
-        Application.OpenURL("tg://web.telegram.org/k/#@oiyndev");
+        UISoundManager.instance.OnClickSound();
+        Application.OpenURL("https://web.telegram.org/k/#@oiyndev");
     }
     public void OpenInstagram()
     {
+        UISoundManager.instance.OnClickSound();
         Application.OpenURL("https://www.instagram.com/oiyn_dev_studio/");
     }
 }

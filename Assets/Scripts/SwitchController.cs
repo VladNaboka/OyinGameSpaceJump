@@ -19,6 +19,7 @@ public class SwitchController : MonoBehaviour
 
     public void NextSlide()
     {
+        UISoundManager.instance.OnClickSound();
         currentSlideIndex++;
         ShowSlide(currentSlideIndex);
         UpdateButtonStates();
@@ -26,6 +27,7 @@ public class SwitchController : MonoBehaviour
 
     public void PreviousSlide()
     {
+        UISoundManager.instance.OnClickSound();
         currentSlideIndex--;
         ShowSlide(currentSlideIndex);
         UpdateButtonStates();

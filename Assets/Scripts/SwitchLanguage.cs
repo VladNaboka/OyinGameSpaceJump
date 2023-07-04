@@ -14,10 +14,12 @@ public class SwitchLanguage : MonoBehaviour
 
     public void Next()
     {
+        UISoundManager.instance.OnClickSound();
         SwitchLanguageController(1);
     }
     public void Back()
     {
+        UISoundManager.instance.OnClickSound();
         SwitchLanguageController(-1);
     }
 
