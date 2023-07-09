@@ -12,6 +12,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource edeathSound;
     public AudioSource landingSound;
 
+
     private bool isWalking;
 
     private void Start()
@@ -96,5 +97,19 @@ public class SoundManager : MonoBehaviour
     public void MuteSoundOn()
     {
         walkSound.Play();
+    }
+ /*   public void ToggleMusic()
+    {
+        musicSound.mute = !musicSound.mute;
+    }*/
+    public void ToggleSFX()
+    {
+        walkSound.mute = !walkSound.mute;
+        jumpSound.mute = !jumpSound.mute;
+        slideSound.mute = !slideSound.mute;
+        coinPickupSound.mute = !coinPickupSound.mute;
+        deathSound.mute = !deathSound.mute;
+        edeathSound.mute = !edeathSound.mute;
+        landingSound.mute = !landingSound.mute;
     }
 }
