@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerPowerUp : MonoBehaviour
 {
     [SerializeField] private GameObject _magnetField;
+    [SerializeField] private GameObject _magnetBar;
+    [SerializeField] private float _magnetDuration;
     public SoundManager magnet;
     public void Magnet()
     {
@@ -12,10 +14,12 @@ public class PlayerPowerUp : MonoBehaviour
     }
     public IEnumerator MagnetToPlayer()
     {
+        _magnetBar.SetActive(false);
         Debug.Log("Magnet active!");
         magnet.PlayMagnetPickupSound();
+        _magnetBar.SetActive(true);
         _magnetField.SetActive(true);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(_magnetDuration);
         _magnetField.SetActive(false);
         Debug.Log("Magnet de-active!");
     } 
