@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource deathSound;
     public AudioSource edeathSound;
     public AudioSource landingSound;
+    public AudioSource magnetSound;
 
 
     private bool isWalking;
@@ -70,6 +71,10 @@ public class SoundManager : MonoBehaviour
     {
         coinPickupSound.Play();
     }
+    public void PlayMagnetPickupSound()
+    {
+        magnetSound.Play();
+    }
     public void PlayDeathSound()
     {
         walkSound.Stop();
@@ -111,5 +116,6 @@ public class SoundManager : MonoBehaviour
         deathSound.mute = !deathSound.mute;
         edeathSound.mute = !edeathSound.mute;
         landingSound.mute = !landingSound.mute;
+        magnetSound.mute = !magnetSound.mute;
     }
 }
