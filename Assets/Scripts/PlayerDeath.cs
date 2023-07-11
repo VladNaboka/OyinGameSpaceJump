@@ -37,10 +37,9 @@ public class PlayerDeath : MonoBehaviour
         if (hit.collider.CompareTag("Obstacle"))
         {
             Debug.Log(hit.gameObject.name);
+            sfx.PlayDeathSound();
             _anim.Play("Hit");
             Death();
-
-            sfx.PlayDeathSound();
         }
     }
     private void OnTriggerEnter(Collider other)

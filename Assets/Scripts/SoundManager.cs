@@ -10,20 +10,22 @@ public class SoundManager : MonoBehaviour
     public AudioSource coinPickupSound;
     public AudioSource deathSound;
     public AudioSource edeathSound;
-    public AudioSource landingSound;
+    //public AudioSource landingSound;
     public AudioSource magnetSound;
 
 
     private bool isWalking;
+    private bool isDead;
 
     private void Start()
     {
         isWalking = true;
+        isDead = false;
     }
 
     public void PlayWalkSound()
     {
-        if (!isWalking)
+        if (!isWalking && !isDead)
         {
             walkSound.Play();
             isWalking = true;
@@ -77,18 +79,24 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayDeathSound()
     {
-        walkSound.Stop();
-        jumpSound.Stop();
-        slideSound.Stop();
-        landingSound.Stop();
-        deathSound.Play();
+        if (!isDead)
+        {
+            isDead = true;
+            walkSound.Stop();
+            StopWalkSound();
+            jumpSound.Stop();
+            slideSound.Stop();
+            deathSound.Play();
+            Debug.Log("DeathSound Played");
+        }
     }
     public void PlayEDeathSound()
     {
         walkSound.Stop();
+        StopWalkSound();
         jumpSound.Stop();
         slideSound.Stop();
-        landingSound.Stop();
+        //landingSound.Stop();
         edeathSound.Play();
     }
     public void MuteSoundOff()
@@ -96,7 +104,7 @@ public class SoundManager : MonoBehaviour
         walkSound.Stop();
         jumpSound.Stop();
         slideSound.Stop();
-        landingSound.Stop();
+        //landingSound.Stop();
         deathSound.Stop();
     }
     public void MuteSoundOn()
@@ -115,7 +123,7 @@ public class SoundManager : MonoBehaviour
         coinPickupSound.mute = !coinPickupSound.mute;
         deathSound.mute = !deathSound.mute;
         edeathSound.mute = !edeathSound.mute;
-        landingSound.mute = !landingSound.mute;
+        //landingSound.mute = !landingSound.mute;
         magnetSound.mute = !magnetSound.mute;
     }
 }
