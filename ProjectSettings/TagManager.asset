@@ -9,6 +9,7 @@ TagManager:
   - Electricity
   - Magnet
   - Coin
+  - GameMusic
   layers:
   - Default
   - TransparentFX

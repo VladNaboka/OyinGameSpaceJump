@@ -12,6 +12,8 @@ public class SoundManager : MonoBehaviour
     public AudioSource edeathSound;
     //public AudioSource landingSound;
     public AudioSource magnetSound;
+    public GameObject objectMusic;
+    private AudioSource musicSound;
 
 
     private bool isWalking;
@@ -21,6 +23,8 @@ public class SoundManager : MonoBehaviour
     {
         isWalking = true;
         isDead = false;
+        objectMusic =  GameObject.FindWithTag("GameMusic");
+        musicSound = objectMusic.GetComponent<AudioSource>(); 
     }
 
     public void PlayWalkSound()
@@ -111,10 +115,10 @@ public class SoundManager : MonoBehaviour
     {
         walkSound.Play();
     }
- /*   public void ToggleMusic()
+    public void ToggleMusic()
     {
         musicSound.mute = !musicSound.mute;
-    }*/
+    }
     public void ToggleSFX()
     {
         walkSound.mute = !walkSound.mute;

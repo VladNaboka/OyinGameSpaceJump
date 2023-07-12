@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class MusicDontDestroy : MonoBehaviour
 {
-    public static MusicDontDestroy Instance;
     private void Awake()
     {
-        if (Instance == null)
+        GameObject[] musicObj = GameObject.FindGameObjectsWithTag("GameMusic");
+        if(musicObj.Length > 1)
         {
-            transform.parent = null;
-            DontDestroyOnLoad(gameObject);
-            Instance = this;
+            Destroy(this.gameObject);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        DontDestroyOnLoad(this.gameObject);
     }
 
 }
