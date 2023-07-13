@@ -10,6 +10,7 @@ TagManager:
   - Magnet
   - Coin
   - GameMusic
+  - ClickSound
   layers:
   - Default
   - TransparentFX

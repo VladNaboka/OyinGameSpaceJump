@@ -1,9 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
+
+    public Button buttonMusic;
+    public Button buttonSFX;
+    public Sprite musicOn;
+    public Sprite musicOff;
+    public Sprite SFXOn;
+    public Sprite SFXOff;
+
     public AudioSource walkSound;
     public AudioSource jumpSound;
     public AudioSource slideSound;
@@ -14,6 +23,8 @@ public class SoundManager : MonoBehaviour
     public AudioSource magnetSound;
     public GameObject objectMusic;
     private AudioSource musicSound;
+    public GameObject objectCkilckButtonSound;
+    private AudioSource buttonSound;
 
 
     private bool isWalking;
@@ -24,7 +35,9 @@ public class SoundManager : MonoBehaviour
         isWalking = true;
         isDead = false;
         objectMusic =  GameObject.FindWithTag("GameMusic");
-        musicSound = objectMusic.GetComponent<AudioSource>(); 
+        musicSound = objectMusic.GetComponent<AudioSource>();
+        objectCkilckButtonSound = GameObject.FindWithTag("ClickSound");
+        buttonSound = objectCkilckButtonSound.GetComponent<AudioSource>();
     }
 
     public void PlayWalkSound()
@@ -118,9 +131,18 @@ public class SoundManager : MonoBehaviour
     public void ToggleMusic()
     {
         musicSound.mute = !musicSound.mute;
+        if(musicSound.mute )
+        {
+            buttonMusic.image.sprite = musicOff;
+        }
+        else
+        {
+            buttonMusic.image.sprite = musicOn;
+        }
     }
     public void ToggleSFX()
     {
+        buttonSound.mute = !buttonSound.mute;
         walkSound.mute = !walkSound.mute;
         jumpSound.mute = !jumpSound.mute;
         slideSound.mute = !slideSound.mute;
@@ -129,5 +151,14 @@ public class SoundManager : MonoBehaviour
         edeathSound.mute = !edeathSound.mute;
         //landingSound.mute = !landingSound.mute;
         magnetSound.mute = !magnetSound.mute;
+
+        if (walkSound.mute)
+        {
+            buttonSFX.image.sprite = SFXOff;
+        }
+        else if (!walkSound.mute)
+        {
+            buttonSFX.image.sprite = SFXOn;
+        }
     }
 }

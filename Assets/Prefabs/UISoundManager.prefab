@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 1868860399467318480}
   m_Layer: 0
   m_Name: ClickSound
-  m_TagString: Untagged
+  m_TagString: ClickSound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
