@@ -1161,13 +1161,18 @@ PrefabInstance:
       objectReference: {fileID: 330585549}
     - target: {fileID: 7934136555352021474, guid: 70963745e44b3ba4f86449e715989014,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934136555352021474, guid: 70963745e44b3ba4f86449e715989014,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 461831879}
     - target: {fileID: 7934136555352021474, guid: 70963745e44b3ba4f86449e715989014,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FadeOut
+      value: BackScene
       objectReference: {fileID: 0}
     - target: {fileID: 7934136555352021474, guid: 70963745e44b3ba4f86449e715989014,
         type: 3}
