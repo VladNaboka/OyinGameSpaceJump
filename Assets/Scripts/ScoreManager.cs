@@ -10,6 +10,7 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField] private Transform _player;
     [SerializeField] private TextMeshProUGUI _scoreText;
+    private string score;
     [SerializeField] private TMP_Text _highScoreText;
     public int HighScore { get; set; }
     private GameData _gameData = new GameData();
@@ -23,7 +24,8 @@ public class ScoreManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "GameScene")
         {
-            _scoreText.text = ((int)(_player.position.z / 2)).ToString();
+            score = ((int)(_player.position.z / 2)).ToString();
+            _scoreText.text = score;
             if (HighScore < (int)(_player.position.z / 2))
             {
                 HighScore = (int)(_player.position.z / 2);
