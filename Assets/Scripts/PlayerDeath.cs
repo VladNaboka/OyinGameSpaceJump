@@ -12,6 +12,7 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] private GameObject _vfx;
 
     private bool _isDead;
+    public static bool deadState;
 
     public event Action OnPlayerDied = default;
 
