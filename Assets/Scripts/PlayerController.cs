@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _switchDelay;
     [SerializeField] private float _playerSpeed = 8f;
     [SerializeField] private float _increaseAmount;
+    [SerializeField] private float rayCastDistance;
     private float _maxPlayerSpeed = 20f;
     private float _controllerHeight = 1.38f;
     private int _lineToMove = 1;
@@ -29,6 +30,8 @@ public class PlayerController : MonoBehaviour
     private bool _isSliding;
     private Vector3 _playerVelocity;
     private Coroutine _slideCoroutine;
+    private bool _leftObstacle;
+    private bool _rightObstacle;
 
 
     private void Awake()
@@ -58,6 +61,7 @@ public class PlayerController : MonoBehaviour
     {
         CheckGround();
         Move();
+        CheckCollisionWithObstacles();
     }
 
     private void Move()
@@ -161,4 +165,10 @@ public class PlayerController : MonoBehaviour
             StartCoroutine("IncreaseSpeed");
         }
     }
+    private void CheckCollisionWithObstacles()
+    {
+        _leftObstacle = Physics.Raycast(transform.position, Vector3.left, rayCastDistance, LayerMask.GetMask("Ground"));
+        _rightObstacle = Physics.Raycast(transform.position, Vector3.right, rayCastDistance, LayerMask.GetMask("Ground"));
+    }
+
 }
