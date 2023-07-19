@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     private bool _leftObstacle;
     private bool _rightObstacle;
 
+    public int raycastSwiped = 0;
 
     private void Awake()
     {
@@ -110,7 +111,7 @@ public class PlayerController : MonoBehaviour
         _slideCoroutine = StartCoroutine(SlideDown());
     }
 
-    private void OnSwiped(bool isLeft)
+    public void OnSwiped(bool isLeft)
     {
         _lineToMove = Mathf.Clamp(_lineToMove, 0, 2);
         Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
@@ -119,6 +120,8 @@ public class PlayerController : MonoBehaviour
             if (_lineToMove < 2)
             {
                 _lineToMove++;
+                raycastSwiped = 2;
+                Debug.Log("право");
                 //anim.SetTrigger("MoveRight");
             }
         }
@@ -127,9 +130,13 @@ public class PlayerController : MonoBehaviour
             if (_lineToMove > 0)
             {
                 _lineToMove--;
+                raycastSwiped = 1;
+                Debug.Log("лево");
                 //anim.SetTrigger("MoveLeft");
             }
         }
+        else
+           raycastSwiped = 0;
 
         if (_lineToMove == 0)
             targetPosition += Vector3.left * _lineDistance;

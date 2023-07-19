@@ -15,12 +15,14 @@ public class RespawnPlayer : MonoBehaviour
         {
             GameObject newPlayer = Instantiate(gameObject, spawnPoint.transform.position, Quaternion.identity);
             caracterObj.playerPos = newPlayer.transform;
-            newPlayer.GetComponentInChildren<Animator>().gameObject.transform.position = new Vector3(0, 0, 0.6f);
+            //newPlayer.GetComponentInChildren<Animator>().gameObject.transform.position = new Vector3(0, 0, 0.6f);
             newPlayer.GetComponent<PlayerController>().enabled = true;
             newPlayer.transform.parent = null;
-            Component[] allComponents = gameObject.GetComponentsInChildren(typeof(MonoBehaviour));
-            foreach (Component gameObjectComponent in allComponents)
-                Destroy((MonoBehaviour)gameObjectComponent);
+
+            Destroy(gameObject);
+            //Component[] allComponents = gameObject.GetComponentsInChildren(typeof(MonoBehaviour));
+            //foreach (Component gameObjectComponent in allComponents)
+            //    Destroy((MonoBehaviour)gameObjectComponent);
 
             //caracterObj.playerPos = gameObject.transform;
             //gameObject.GetComponent<PlayerController>().enabled = true;

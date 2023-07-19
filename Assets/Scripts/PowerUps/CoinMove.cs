@@ -15,7 +15,7 @@ public class CoinMove : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Coin"))
         {
-            Debug.Log("magnitnulo0");
+            //Debug.Log("magnitnulo0");
             //other.transform.position = Vector3.Lerp(transform.position, _playerPos.position, 50);
             other.transform.DOMove(_playerPos.position, _magneticTime);
             //other.gameObject.transform.position = _playerPos.position;

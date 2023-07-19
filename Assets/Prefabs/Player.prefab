@@ -621,6 +621,7 @@ GameObject:
   - component: {fileID: 1726805385505711265}
   - component: {fileID: 1726805385505711198}
   - component: {fileID: 1726805385505711199}
+  - component: {fileID: 2824629603840837550}
   - component: {fileID: 1726805385505711196}
   - component: {fileID: 1453744515}
   - component: {fileID: 1453744516}
@@ -688,6 +689,7 @@ MonoBehaviour:
   _switchDelay: 0.3
   _playerSpeed: 6.7
   _increaseAmount: 0.025
+  rayCastDistance: 0
 --- !u!114 &1726805385505711265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -736,6 +738,18 @@ MonoBehaviour:
   _magnetDuration: 5
   magnet: {fileID: 0}
   _isActive: 0
+--- !u!114 &2824629603840837550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726805385505711269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2ec064eccb0824dbaa9e06903f0f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &1726805385505711196
 AudioSource:
   m_ObjectHideFlags: 0
@@ -863,6 +877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
+  playerCharacter: {fileID: 0}
   caracterObj: {fileID: 0}
 --- !u!1 &1798053510551133630
 GameObject:
