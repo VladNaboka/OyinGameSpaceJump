@@ -13,7 +13,7 @@ public class PickupAnimation : MonoBehaviour
     }
     public void SpawnText()
     {
-        Debug.Log("spawn");
+        //Debug.Log("spawn");
         Instantiate(pickupText, spawnPosition);
     }
 }

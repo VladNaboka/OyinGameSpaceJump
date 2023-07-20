@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
 
     private string sceneToLoad;
 
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "NewGames")
+            UISoundManager.instance.SaveScene();
+    }
     public void GameOverScreen()
     {
         pauseSprite.SetActive(false);
@@ -47,13 +52,13 @@ public class GameManager : MonoBehaviour
 
     public void BackScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        Debug.Log(UISoundManager.instance.LoadScene());
+        SceneManager.LoadScene(UISoundManager.instance.LoadScene());
     }
     public void LoadIntro(string sceneName)
     {
         sceneToLoad = sceneName;
         _anim.SetTrigger("FadeOut");
-
     }
 }
 
