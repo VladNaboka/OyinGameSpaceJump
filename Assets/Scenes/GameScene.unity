@@ -2324,6 +2324,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
+--- !u!114 &1453744520 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1726805385505711267, guid: 3f311799d0d7c374c95bd939cecaccad,
+    type: 3}
+  m_PrefabInstance: {fileID: 1726805384073233886}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453744507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7c19c2a9d90f6409dd2ea69b9ab04d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1460019050
 GameObject:
   m_ObjectHideFlags: 0
@@ -4172,6 +4184,16 @@ PrefabInstance:
       propertyPath: _cameraMovement
       value: 
       objectReference: {fileID: 963194229}
+    - target: {fileID: 1726805385505711198, guid: 3f311799d0d7c374c95bd939cecaccad,
+        type: 3}
+      propertyPath: scriptInputPlayer
+      value: 
+      objectReference: {fileID: 819309855}
+    - target: {fileID: 1726805385505711198, guid: 3f311799d0d7c374c95bd939cecaccad,
+        type: 3}
+      propertyPath: scriptPlayerControler
+      value: 
+      objectReference: {fileID: 1453744520}
     - target: {fileID: 1726805385505711199, guid: 3f311799d0d7c374c95bd939cecaccad,
         type: 3}
       propertyPath: magnet

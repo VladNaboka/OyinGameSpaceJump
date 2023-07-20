@@ -10,6 +10,10 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] private CameraMovement _cameraMovement;
     [SerializeField] private Animator _anim;
     [SerializeField] private GameObject _vfx;
+    public Behaviour scriptInputPlayer;
+    public Behaviour scriptPlayerControler;
+
+    private Vector3 currentPosition;
 
     private bool _isDead;
     public static bool deadState;
@@ -21,6 +25,7 @@ public class PlayerDeath : MonoBehaviour
 
     private void Update()
     {
+        currentPosition = transform.position;
         //kostyl
         if(gameObject.transform.position.y < -1f)
         {
@@ -52,6 +57,18 @@ public class PlayerDeath : MonoBehaviour
             _anim.Play("Hit");
             ElectricityDeath();
         }
+        if (other.gameObject.CompareTag("TriggerDown"))
+        {
+            Debug.Log("Down");
+            _cameraMovement.enabled = false;
+            _anim.Play("Fall Flat");
+            Death();
+            sfx.PlayDeathSound();
+            scriptInputPlayer.enabled = false;
+            currentPosition.x = 0f;
+            currentPosition.z = 0f;
+            transform.position = currentPosition; 
+        }
     }
 
     private void Death()
@@ -61,6 +78,7 @@ public class PlayerDeath : MonoBehaviour
         OnPlayerDied?.Invoke();
         _playerInput.enabled = false;
         _gameManager.GameOverScreen();
+
     }
 
     private void ElectricityDeath()
