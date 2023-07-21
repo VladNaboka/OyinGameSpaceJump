@@ -122,6 +122,7 @@ public class PlayerController : MonoBehaviour
                 _lineToMove++;
                 raycastSwiped = 2;
                 Debug.Log("право");
+                _animator.Play("SwipeRight");
                 //anim.SetTrigger("MoveRight");
             }
         }
@@ -132,6 +133,7 @@ public class PlayerController : MonoBehaviour
                 _lineToMove--;
                 raycastSwiped = 1;
                 Debug.Log("лево");
+                _animator.Play("SwipeLeft");
                 //anim.SetTrigger("MoveLeft");
             }
         }
