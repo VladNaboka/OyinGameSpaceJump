@@ -9,16 +9,25 @@ using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Player")]
+    public GameObject _playerObject;
+    [Header("Scripts")]
     [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private PlayerDeath _playerDeath;
     [SerializeField] private SoundManager _soundManager;
     [SerializeField] private GroundCheck groundCheck;
     [SerializeField] private CharacterController _characterController;
+    [Header("Animator")]
     [SerializeField] private Animator _animator;
+    [Header("Variables")]
     [SerializeField] private float _switchDelay;
     [SerializeField] private float _playerSpeed = 8f;
     [SerializeField] private float _increaseAmount;
+    [Header("Raycast")]
     [SerializeField] private float rayCastDistance;
+    public int raycastSwiped = 0;
+
+
     private float _maxPlayerSpeed = 20f;
     private float _controllerHeight = 1.38f;
     private int _lineToMove = 1;
@@ -32,8 +41,6 @@ public class PlayerController : MonoBehaviour
     private Coroutine _slideCoroutine;
     private bool _leftObstacle;
     private bool _rightObstacle;
-
-    public int raycastSwiped = 0;
 
     private void Awake()
     {
@@ -122,7 +129,9 @@ public class PlayerController : MonoBehaviour
                 _lineToMove++;
                 raycastSwiped = 2;
                 Debug.Log("право");
-                _animator.Play("SwipeRight");
+                StartCoroutine(SwipeRight());
+
+                //_animator.Play("SwipeRight");
                 //anim.SetTrigger("MoveRight");
             }
         }
@@ -133,7 +142,8 @@ public class PlayerController : MonoBehaviour
                 _lineToMove--;
                 raycastSwiped = 1;
                 Debug.Log("лево");
-                _animator.Play("SwipeLeft");
+                StartCoroutine(SwipeLeft());
+                //_animator.Play("SwipeLeft");
                 //anim.SetTrigger("MoveLeft");
             }
         }
@@ -179,5 +189,16 @@ public class PlayerController : MonoBehaviour
         _leftObstacle = Physics.Raycast(transform.position, Vector3.left, rayCastDistance, LayerMask.GetMask("Ground"));
         _rightObstacle = Physics.Raycast(transform.position, Vector3.right, rayCastDistance, LayerMask.GetMask("Ground"));
     }
-
+    private IEnumerator SwipeLeft()
+    {
+        _playerObject.transform.DORotate(new Vector3(0, -30f, 0),0.2f);
+        yield return new WaitForSeconds(0.2f);
+        _playerObject.transform.DORotate(new Vector3(0, 0f, 0), 0.2f);
+    }
+    private IEnumerator SwipeRight()
+    {
+        _playerObject.transform.DORotate(new Vector3(0, 30f, 0), 0.2f);
+        yield return new WaitForSeconds(0.2f);
+        _playerObject.transform.DORotate(new Vector3(0, 0f, 0), 0.2f);
+    }
 }
