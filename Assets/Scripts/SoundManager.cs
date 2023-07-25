@@ -19,6 +19,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource coinPickupSound;
     public AudioSource deathSound;
     public AudioSource edeathSound;
+    public AudioSource slamSound;
     //public AudioSource landingSound;
     public AudioSource magnetSound;
     public GameObject objectMusic;
@@ -107,6 +108,10 @@ public class SoundManager : MonoBehaviour
             Debug.Log("DeathSound Played");
         }
     }
+    public void PlaySlamSound()
+    {
+        slamSound.Play();
+    }
     public void PlayEDeathSound()
     {
         walkSound.Stop();
@@ -151,6 +156,7 @@ public class SoundManager : MonoBehaviour
         edeathSound.mute = !edeathSound.mute;
         //landingSound.mute = !landingSound.mute;
         magnetSound.mute = !magnetSound.mute;
+        slamSound.mute = !slamSound.mute;
 
         if (walkSound.mute)
         {

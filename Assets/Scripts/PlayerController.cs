@@ -23,10 +23,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _switchDelay;
     [SerializeField] private float _playerSpeed = 8f;
     [SerializeField] private float _increaseAmount;
+    [Header("Slam Distances")]
+    [SerializeField] private float _leftSlamDist;
+    [SerializeField] private float _rightSlamDist;
+    private Vector3 _savedPosition;
     [Header("Raycast")]
     [SerializeField] private float rayCastDistance;
     public int raycastSwiped = 0;
-
+    [Header("Booleans")]
+    public bool _leftObstacle;
+    public bool _rightObstacle;
 
     private float _maxPlayerSpeed = 20f;
     private float _controllerHeight = 1.38f;
@@ -39,8 +45,8 @@ public class PlayerController : MonoBehaviour
     private bool _isSliding;
     private Vector3 _playerVelocity;
     private Coroutine _slideCoroutine;
-    private bool _leftObstacle;
-    private bool _rightObstacle;
+    
+
 
     private void Awake()
     {
@@ -69,7 +75,7 @@ public class PlayerController : MonoBehaviour
     {
         CheckGround();
         Move();
-        CheckCollisionWithObstacles();
+        //CheckCollisionWithObstacles();
     }
 
     private void Move()
@@ -124,7 +130,7 @@ public class PlayerController : MonoBehaviour
         Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
         if(!isLeft)
         {
-            if (_lineToMove < 2)
+            if (_lineToMove < 2 && !_rightObstacle)
             {
                 _lineToMove++;
                 raycastSwiped = 2;
@@ -134,10 +140,15 @@ public class PlayerController : MonoBehaviour
                 //_animator.Play("SwipeRight");
                 //anim.SetTrigger("MoveRight");
             }
+            else if(_rightObstacle)
+            {
+                Debug.Log("SLAM RIGHT");
+                StartCoroutine(SlamRight());
+            }
         }
         else if(isLeft)
         {
-            if (_lineToMove > 0)
+            if (_lineToMove > 0 && !_leftObstacle)
             {
                 _lineToMove--;
                 raycastSwiped = 1;
@@ -145,6 +156,11 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(SwipeLeft());
                 //_animator.Play("SwipeLeft");
                 //anim.SetTrigger("MoveLeft");
+            }
+            else if (_leftObstacle)
+            {
+                Debug.Log("SLAM LEFT");
+                StartCoroutine(SlamLeft());
             }
         }
         else
@@ -184,11 +200,11 @@ public class PlayerController : MonoBehaviour
             StartCoroutine("IncreaseSpeed");
         }
     }
-    private void CheckCollisionWithObstacles()
-    {
-        _leftObstacle = Physics.Raycast(transform.position, Vector3.left, rayCastDistance, LayerMask.GetMask("Ground"));
-        _rightObstacle = Physics.Raycast(transform.position, Vector3.right, rayCastDistance, LayerMask.GetMask("Ground"));
-    }
+    //private void CheckCollisionWithObstacles()
+    //{
+    //    _leftObstacle = Physics.Raycast(transform.position, Vector3.left, rayCastDistance, LayerMask.GetMask("Obstacle"));
+    //    _rightObstacle = Physics.Raycast(transform.position, Vector3.right, rayCastDistance, LayerMask.GetMask("Obstacle"));
+    //}
     private IEnumerator SwipeLeft()
     {
         _playerObject.transform.DORotate(new Vector3(0, -30f, 0),0.2f);
@@ -200,5 +216,31 @@ public class PlayerController : MonoBehaviour
         _playerObject.transform.DORotate(new Vector3(0, 30f, 0), 0.2f);
         yield return new WaitForSeconds(0.2f);
         _playerObject.transform.DORotate(new Vector3(0, 0f, 0), 0.2f);
+    }
+    
+    private IEnumerator SlamLeft()
+    {
+        Debug.Log("SlamLeft");
+        _soundManager.PlaySlamSound();
+        _savedPosition = _playerObject.transform.position;
+        float targetPos = _savedPosition.x - _rightSlamDist;
+        _playerObject.transform.DOMoveX(targetPos, 0.1f);
+        _playerObject.transform.DORotate(new Vector3(0, 0, 5f), 0.1f);
+        yield return new WaitForSeconds(0.1f);
+        _playerObject.transform.DOMoveX(_savedPosition.x, 0.2f);
+        _playerObject.transform.DORotate(new Vector3(0, 0, 0), 0.2f);
+        _savedPosition = Vector3.zero;
+    }
+    private IEnumerator SlamRight()
+    {
+        _soundManager.PlaySlamSound();
+        _savedPosition = _playerObject.transform.position;
+        float targetPos = _savedPosition.x + _rightSlamDist;
+        _playerObject.transform.DOMoveX(targetPos, 0.1f);
+        _playerObject.transform.DORotate(new Vector3(0, 0, -5f), 0.1f);
+        yield return new WaitForSeconds(0.1f);
+        _playerObject.transform.DOMoveX(_savedPosition.x, 0.2f);
+        _playerObject.transform.DORotate(new Vector3(0, 0, 0), 0.2f);
+        _savedPosition = Vector3.zero;
     }
 }

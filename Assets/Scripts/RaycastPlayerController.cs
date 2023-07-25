@@ -4,24 +4,46 @@ using UnityEngine;
 
 public class RaycastPlayerController : MonoBehaviour
 {
-    RaycastHit hit;
-    public float rayDistance;
+    [SerializeField] private float rayDistance;
+    [Range(-1f, 1f)] [SerializeField] private float _yDistance = -0.1f;
+    [Range(-1f, 1f)] [SerializeField] private float _zDistance;
+    private RaycastHit hit;
 
-    public PlayerController playerController;
+    private PlayerController _playerController;
+    private void Awake()
+    {
+        _playerController = GetComponent<PlayerController>();
+    }
     private void Update()
     {
-        Debug.DrawRay(transform.position, Vector3.right, Color.yellow);
-        Debug.DrawRay(transform.position, Vector3.left, Color.red);
+        Debug.DrawRay(transform.position + new Vector3(0, _yDistance, _zDistance), Vector3.right * rayDistance, Color.yellow);
+        Debug.DrawRay(transform.position + new Vector3(0, _yDistance, _zDistance), Vector3.left * rayDistance, Color.red);
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit))
+        if (Physics.Raycast(transform.position + new Vector3(0, _yDistance, _zDistance), 
+            transform.TransformDirection(Vector3.right * rayDistance), out hit))
         {
-            if (playerController.raycastSwiped == 2 && hit.collider.gameObject.name != "")
-                Debug.Log("Œ’ ≈¡¿“‹ “€ ¬–≈«¿À—ﬂ ¬ œ–¿¬”ﬁ —“Œ–ŒÕ”");
+            if (hit.collider.gameObject.name == "HighBoxObstacle")
+            {
+                _playerController._rightObstacle = true;
+            }
         }
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hit))
+        else
         {
-            if (playerController.raycastSwiped == 1 && hit.collider.gameObject.name != "")
-                Debug.Log("Œ’ ≈¡¿“‹ “€ ¬–≈«¿À—ﬂ ¬ À≈¬”ﬁ —“Œ–ŒÕ”");
+            _playerController._rightObstacle = false;
+        }
+
+
+        if (Physics.Raycast(transform.position + new Vector3(0, _yDistance, _zDistance), 
+            transform.TransformDirection(Vector3.left * rayDistance), out hit))
+        {
+            if (hit.collider.gameObject.name == "HighBoxObstacle")
+            {
+                _playerController._leftObstacle = true;
+            }
+        }
+        else
+        {
+            _playerController._leftObstacle = false;
         }
     }
 }
