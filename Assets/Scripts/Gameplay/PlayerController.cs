@@ -23,9 +23,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _switchDelay;
     [SerializeField] public float _playerSpeed = 8f;
     [SerializeField] private float _increaseAmount;
-    [Header("Slam Distances")]
+    [Header("Slam")]
     [SerializeField] private float _leftSlamDist;
     [SerializeField] private float _rightSlamDist;
+    [SerializeField] private float _startTimer;
+    private float _slamTimer = 0;
+    private bool _canSlam;
     private Vector3 _savedPosition;
     [Header("Raycast")]
     [SerializeField] private float rayCastDistance;
@@ -42,6 +45,7 @@ public class PlayerController : MonoBehaviour
     private float _gravityValue = -9.81f;
     private bool _isGrounded;
     private bool _isSliding;
+    private bool _isSlaming;
     private Vector3 _playerVelocity;
     private Coroutine _slideCoroutine;
     
@@ -71,6 +75,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         CheckGround();
+        HandleSlamTimer();
         Move();
         //CheckCollisionWithObstacles();
     }
@@ -125,7 +130,7 @@ public class PlayerController : MonoBehaviour
     {
         _lineToMove = Mathf.Clamp(_lineToMove, 0, 2);
         Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
-        if(!isLeft)
+        if(!isLeft && _canSlam)
         {
             if (_lineToMove < 2 && !_rightObstacle)
             {
@@ -137,11 +142,12 @@ public class PlayerController : MonoBehaviour
             }
             else if(_rightObstacle)
             {
+                _slamTimer = _startTimer;
                 Debug.Log("SLAM RIGHT");
                 StartCoroutine(SlamRight());
             }
         }
-        else if(isLeft)
+        else if(isLeft && _canSlam)
         {
             if (_lineToMove > 0 && !_leftObstacle)
             {
@@ -150,9 +156,11 @@ public class PlayerController : MonoBehaviour
                 //_animator.Play("SwipeLeft");
                 //anim.SetTrigger("MoveLeft");
             }
-            else if (_leftObstacle)
+            else if (_leftObstacle && _canSlam)
             {
                 Debug.Log("SLAM LEFT");
+                _slamTimer = _startTimer;
+
                 StartCoroutine(SlamLeft());
             }
         }
@@ -212,7 +220,13 @@ public class PlayerController : MonoBehaviour
         _playerObject.transform.DOMoveX(targetPos, 0.1f);
         _playerObject.transform.DORotate(new Vector3(0, 0, 5f), 0.1f);
         yield return new WaitForSeconds(0.1f);
-        _playerObject.transform.DOMoveX(_savedPosition.x, 0.2f);
+
+        //Back to place
+        if(_lineToMove == 1)
+            _playerObject.transform.DOMoveX(0, 0.2f);
+        else if(_lineToMove == 2)
+            _playerObject.transform.DOMoveX(1, 0.2f);
+
         _playerObject.transform.DORotate(new Vector3(0, 0, 0), 0.2f);
         _savedPosition = Vector3.zero;
     }
@@ -224,8 +238,27 @@ public class PlayerController : MonoBehaviour
         _playerObject.transform.DOMoveX(targetPos, 0.1f);
         _playerObject.transform.DORotate(new Vector3(0, 0, -5f), 0.1f);
         yield return new WaitForSeconds(0.1f);
-        _playerObject.transform.DOMoveX(_savedPosition.x, 0.2f);
+
+        //Back to place
+        if (_lineToMove == 1)
+            _playerObject.transform.DOMoveX(0, 0.2f);
+        else if (_lineToMove == 0)
+            _playerObject.transform.DOMoveX(-1, 0.2f);
+
         _playerObject.transform.DORotate(new Vector3(0, 0, 0), 0.2f);
         _savedPosition = Vector3.zero;
+    }
+    private void HandleSlamTimer()
+    {
+        if (_slamTimer <= 0)
+        {
+            _canSlam = true;
+        }
+        else
+        {
+            _canSlam = false;
+            _slamTimer -= Time.deltaTime;
+            Debug.Log(_slamTimer);
+        }
     }
 }

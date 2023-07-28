@@ -20,7 +20,7 @@ public class RaycastPlayerController : MonoBehaviour
         Debug.DrawRay(transform.position + new Vector3(0, _yDistance, _zDistance), Vector3.left * rayDistance, Color.red);
 
         if (Physics.Raycast(transform.position + new Vector3(0, _yDistance, _zDistance), 
-            transform.TransformDirection(Vector3.right * rayDistance), out hit))
+            transform.TransformDirection(Vector3.right * rayDistance), out hit, rayDistance))
         {
             if (hit.collider.gameObject.name == "HighBoxObstacle")
             {
@@ -34,7 +34,7 @@ public class RaycastPlayerController : MonoBehaviour
 
 
         if (Physics.Raycast(transform.position + new Vector3(0, _yDistance, _zDistance), 
-            transform.TransformDirection(Vector3.left * rayDistance), out hit))
+            transform.TransformDirection(Vector3.left * rayDistance), out hit, rayDistance))
         {
             if (hit.collider.gameObject.name == "HighBoxObstacle")
             {
