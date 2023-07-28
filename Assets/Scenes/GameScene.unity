@@ -4769,6 +4769,11 @@ PrefabInstance:
       objectReference: {fileID: 427118973}
     - target: {fileID: 1726805385505711267, guid: 3f311799d0d7c374c95bd939cecaccad,
         type: 3}
+      propertyPath: _startTimer
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726805385505711267, guid: 3f311799d0d7c374c95bd939cecaccad,
+        type: 3}
       propertyPath: _playerInput
       value: 
       objectReference: {fileID: 819309855}
