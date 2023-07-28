@@ -14,6 +14,7 @@ public class CoinManager : MonoBehaviour
 
     private void Start()
     {
+        NumberCoin = RespawnPlayer.Instance.coinScore;
         _textMP.text = NumberCoin.ToString();
     }
 

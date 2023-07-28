@@ -10,13 +10,14 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField] private Transform _player;
     [SerializeField] private TextMeshProUGUI _scoreText;
-    private string score;
+    public string score;
     [SerializeField] private TMP_Text _highScoreText;
     public int HighScore { get; set; }
     private GameData _gameData = new GameData();
 
     private void Start()
     {
+        score = RespawnPlayer.Instance.score.ToString();
         _highScoreText.text = HighScore.ToString();
     }
 

@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator _animator;
     [Header("Variables")]
     [SerializeField] private float _switchDelay;
-    [SerializeField] private float _playerSpeed = 8f;
+    [SerializeField] public float _playerSpeed = 8f;
     [SerializeField] private float _increaseAmount;
     [Header("Slam Distances")]
     [SerializeField] private float _leftSlamDist;
@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 _savedPosition;
     [Header("Raycast")]
     [SerializeField] private float rayCastDistance;
-    public int raycastSwiped = 0;
     [Header("Booleans")]
     public bool _leftObstacle;
     public bool _rightObstacle;
@@ -46,8 +45,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 _playerVelocity;
     private Coroutine _slideCoroutine;
     
-
-
     private void Awake()
     {
         _soundManager.PlayWalkSound();
@@ -133,9 +130,7 @@ public class PlayerController : MonoBehaviour
             if (_lineToMove < 2 && !_rightObstacle)
             {
                 _lineToMove++;
-                raycastSwiped = 2;
-                Debug.Log("право");
-                StartCoroutine(SwipeRight());
+                StartCoroutine(SwipeRotation(30));
 
                 //_animator.Play("SwipeRight");
                 //anim.SetTrigger("MoveRight");
@@ -151,9 +146,7 @@ public class PlayerController : MonoBehaviour
             if (_lineToMove > 0 && !_leftObstacle)
             {
                 _lineToMove--;
-                raycastSwiped = 1;
-                Debug.Log("лево");
-                StartCoroutine(SwipeLeft());
+                StartCoroutine(SwipeRotation(-30));
                 //_animator.Play("SwipeLeft");
                 //anim.SetTrigger("MoveLeft");
             }
@@ -163,8 +156,6 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(SlamLeft());
             }
         }
-        else
-           raycastSwiped = 0;
 
         if (_lineToMove == 0)
             targetPosition += Vector3.left * _lineDistance;
@@ -205,15 +196,9 @@ public class PlayerController : MonoBehaviour
     //    _leftObstacle = Physics.Raycast(transform.position, Vector3.left, rayCastDistance, LayerMask.GetMask("Obstacle"));
     //    _rightObstacle = Physics.Raycast(transform.position, Vector3.right, rayCastDistance, LayerMask.GetMask("Obstacle"));
     //}
-    private IEnumerator SwipeLeft()
+    private IEnumerator SwipeRotation(float rotation)
     {
-        _playerObject.transform.DORotate(new Vector3(0, -30f, 0),0.2f);
-        yield return new WaitForSeconds(0.2f);
-        _playerObject.transform.DORotate(new Vector3(0, 0f, 0), 0.2f);
-    }
-    private IEnumerator SwipeRight()
-    {
-        _playerObject.transform.DORotate(new Vector3(0, 30f, 0), 0.2f);
+        _playerObject.transform.DORotate(new Vector3(0, rotation, 0),0.2f);
         yield return new WaitForSeconds(0.2f);
         _playerObject.transform.DORotate(new Vector3(0, 0f, 0), 0.2f);
     }

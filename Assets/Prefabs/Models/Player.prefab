@@ -624,7 +624,6 @@ GameObject:
   - component: {fileID: 2824629603840837550}
   - component: {fileID: 1726805385505711196}
   - component: {fileID: 1453744515}
-  - component: {fileID: 1453744516}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -681,6 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7c19c2a9d90f6409dd2ea69b9ab04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerObject: {fileID: 0}
   _playerInput: {fileID: 0}
   _playerDeath: {fileID: 1726805385505711198}
   _soundManager: {fileID: 0}
@@ -690,8 +690,12 @@ MonoBehaviour:
   _switchDelay: 0.3
   _playerSpeed: 6.7
   _increaseAmount: 0.025
+  _leftSlamDist: 0
+  _rightSlamDist: 0
   rayCastDistance: 0
   raycastSwiped: 0
+  _leftObstacle: 0
+  _rightObstacle: 0
 --- !u!114 &1726805385505711265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -755,7 +759,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayDistance: 0
-  playerController: {fileID: 0}
+  _yDistance: -0.1
+  _zDistance: 0
 --- !u!82 &1726805385505711196
 AudioSource:
   m_ObjectHideFlags: 0
@@ -870,21 +875,6 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &1453744516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726805385505711269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f306ba98c74daf94c95093b14d595ea9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
-  playerCharacter: {fileID: 0}
-  caracterObj: {fileID: 0}
 --- !u!1 &1798053510551133630
 GameObject:
   m_ObjectHideFlags: 0
