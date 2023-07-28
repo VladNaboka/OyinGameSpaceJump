@@ -3945,7 +3945,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f306ba98c74daf94c95093b14d595ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerStatsScriptableObject: {fileID: 0}
+  _playerStatsScriptableObject: {fileID: 11400000, guid: 8e9063bd2e5e05449b17346d0662f9d8,
+    type: 2}
   playerController: {fileID: 1453744520}
   _scoreManager: {fileID: 1964483382}
   _coinManager: {fileID: 2115385258}
