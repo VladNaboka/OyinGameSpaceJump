@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class MenuCoinsAndMaxRec : MonoBehaviour
 {
     private GameData _gameData = new GameData();
-    [SerializeField] private TextMeshProUGUI _scoreManagerText;
-    [SerializeField] private TextMeshProUGUI _coinManagerText;
+    [SerializeField] private Text _scoreManagerText;
+    [SerializeField] private Text _coinManagerText;
 
     private void Awake()
     {

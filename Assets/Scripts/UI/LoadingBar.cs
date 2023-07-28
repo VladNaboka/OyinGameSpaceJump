@@ -9,20 +9,26 @@ public class LoadingBar : MonoBehaviour
     [SerializeField] private float _loadingAmount;
     private Slider _slider;
 
+
     private void Awake()
     {
         _slider = GetComponent<Slider>();
+
     }
     private void Update()
     {
         _slider.value += _loadingAmount;
         if(_slider.value > 60)
         {
-            _loadingAmount = 5;
+            _loadingAmount = 2;
         }
-        if (_slider.value >= 100)
+        if (_slider.value >= 100 && AuthorizationSystem._isAuth)
         {
             _gameManager.FadeOutLoading("MainMenu");
+        }
+        else if(_slider.value >= 100 && AuthorizationSystem._isAuth == false)
+        {
+            _gameManager.FadeOutLoading("AuthorizationScene");
         }
     }
 }

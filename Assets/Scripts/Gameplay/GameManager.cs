@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if(SceneManager.GetActiveScene().name == "MainMenu")
+        {
+
+        }
         //if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "NewGames")
         //    UISoundManager.instance.SaveScene();
     }
