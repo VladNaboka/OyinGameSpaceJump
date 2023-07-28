@@ -22,13 +22,9 @@ public class LoadingBar : MonoBehaviour
         {
             _loadingAmount = 2;
         }
-        if (_slider.value >= 100 && AuthorizationSystem._isAuth)
+        if (_slider.value >= 100)
         {
             _gameManager.FadeOutLoading("MainMenu");
-        }
-        else if(_slider.value >= 100 && AuthorizationSystem._isAuth == false)
-        {
-            _gameManager.FadeOutLoading("AuthorizationScene");
         }
     }
 }
