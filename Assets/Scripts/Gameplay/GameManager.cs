@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "NewGames")
-            UISoundManager.instance.SaveScene();
+        //if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "NewGames")
+        //    UISoundManager.instance.SaveScene();
     }
     public void GameOverScreen()
     {
@@ -35,6 +35,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         DOTween.Clear(true);
         SceneManager.LoadScene(sceneToLoad);
+    }
+    public void FadeOutLoading(string sceneName)
+    {
+        sceneToLoad = sceneName;
+        _anim.SetTrigger("FadeOut");
     }
     //public void MainMenu()
     //{

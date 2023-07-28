@@ -21,6 +21,7 @@ public class PlayerPowerUp : MonoBehaviour
     {
         _isActive = true;
         _magnetBar.SetActive(false);
+        _magnetField.SetActive(false);
         Debug.Log("Magnet active!");
         magnet.PlayMagnetPickupSound();
         _magnetBar.SetActive(true);

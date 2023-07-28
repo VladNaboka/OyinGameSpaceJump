@@ -13,7 +13,7 @@ public class DurationBar : MonoBehaviour
     {
         _bar = GetComponent<Slider>();
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if(_bar.value > 0)
         {
