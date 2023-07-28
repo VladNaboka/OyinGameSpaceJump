@@ -36,7 +36,7 @@ public class DataManager : MonoBehaviour
     private void SaveData()
     {
         _gameData.highscore = _scoreManager.HighScore;
-        _gameData.coins = _coinManager.NumberCoin;
+        _gameData.coins = _coinManager.CoinNumber;
         SaveSystem.SaveData(_gameData);
     }
 
@@ -44,6 +44,6 @@ public class DataManager : MonoBehaviour
     {
         _gameData = SaveSystem.LoadData();
         _scoreManager.HighScore = _gameData.highscore;
-        _coinManager.NumberCoin = _gameData.coins;
+        _coinManager.CoinNumber = _gameData.coins;
     }
 }

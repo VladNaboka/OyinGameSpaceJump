@@ -1,19 +1,38 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class PlayerInput : MonoBehaviour
 {
+    [SerializeField] private PlayerDeath _playerDeath;
     public static bool tap, swipeLeft, swipeRight, swipeUp, swipeDown;
     private bool isDraging = false;
     private Vector2 startTouch, swipeDelta;
 
+    private bool _canSwipe = true;
+
     public event Action Jumped = default;
     public event Action Slided = default;
-    public event Action<bool> Swiped = default;
+    public event Action<bool> Swiped;
+
+    private void OnEnable()
+    {
+        _playerDeath.OnPlayerDied += ChangeSwipeLimitations;
+    }
+
+    private void OnDisable()
+    {
+        _playerDeath.OnPlayerDied -= ChangeSwipeLimitations;
+    }
 
     private void Update()
+    {
+        if(_canSwipe)
+        CheckSwipe();
+    }
+
+    private void CheckSwipe()
     {
         tap = swipeDown = swipeUp = swipeLeft = swipeRight = false;
         #region ��-������
@@ -82,12 +101,16 @@ public class PlayerInput : MonoBehaviour
 
             Reset();
         }
-
     }
 
     private void Reset()
     {
         startTouch = swipeDelta = Vector2.zero;
         isDraging = false;
+    }
+
+    private void ChangeSwipeLimitations()
+    {
+        _canSwipe = false;
     }
 }

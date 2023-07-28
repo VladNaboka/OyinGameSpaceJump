@@ -7,42 +7,30 @@ using System;
 
 public class RespawnPlayer : MonoBehaviour
 {
+    [SerializeField] private PlayerStatsScriptableObject _playerStatsScriptableObject;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private ScoreManager _scoreManager;
     [SerializeField] private CoinManager _coinManager;
 
-    [SerializeField] private float speedPlayer;
-    public int score;
-    public int coinScore;
-
-    public static RespawnPlayer Instance;
     private void Awake()
     {
-        if (Instance == null)
+        if(_playerStatsScriptableObject.isRestarted)
         {
-            Instance = this;
+            playerController._playerSpeed = _playerStatsScriptableObject.speedPlayer;
+            _scoreManager.RestartedScore = _playerStatsScriptableObject.restartedScore;
+            _coinManager.CoinNumber = _playerStatsScriptableObject.coinScore;
+            //_playerStatsScriptableObject.SetDefaultValues();
+            _playerStatsScriptableObject.isRestarted = false;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
-        if (SceneManager.GetActiveScene().name == "GameScene")
-            DontDestroyOnLoad(gameObject);
-    }
-
-    private void Start()
-    {
-        if (speedPlayer > 6.7f)
-            playerController._playerSpeed = speedPlayer;
-        _scoreManager.score = score.ToString();
-        _coinManager.NumberCoin = coinScore;
     }
 
     public void Respawn()
     {
+        Debug.Log("Respawn");
         PlayerSpeeded();
-        score = Convert.ToInt32(_scoreManager.score);
-        coinScore = _coinManager.NumberCoin;
+        _playerStatsScriptableObject.isRestarted = true;
+        _playerStatsScriptableObject.restartedScore = Convert.ToInt32(_scoreManager.score);
+        _playerStatsScriptableObject.coinScore = _coinManager.CoinNumber;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -55,7 +43,7 @@ public class RespawnPlayer : MonoBehaviour
     private float PlayerSpeeded()
     {
         if (playerController._playerSpeed > 6.7f)
-            return speedPlayer = playerController._playerSpeed;
+            return _playerStatsScriptableObject.speedPlayer = playerController._playerSpeed;
         return 0;
     }
 }

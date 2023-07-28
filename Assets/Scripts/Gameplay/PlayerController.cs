@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         _playerInput.Jumped += OnJumped;
         _playerInput.Slided += OnSlided;
         _playerInput.Swiped += OnSwiped;
-        _playerDeath.OnPlayerDied += OnDied;
+        _playerDeath.OnPlayerDied += ChangePlayerSpeed;
     }
 
     private void OnDisable()
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         _playerInput.Jumped -= OnJumped;
         _playerInput.Slided -= OnSlided;
         _playerInput.Swiped -= OnSwiped;
-        _playerDeath.OnPlayerDied -= OnDied;
+        _playerDeath.OnPlayerDied -= ChangePlayerSpeed;
     }
 
     private void Update()
@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnDied()
+    private void ChangePlayerSpeed()
     {
         _playerSpeed = 0f;
         StopCoroutine("IncreaseSpeed");
@@ -230,6 +230,7 @@ public class PlayerController : MonoBehaviour
         _playerObject.transform.DORotate(new Vector3(0, 0, 0), 0.2f);
         _savedPosition = Vector3.zero;
     }
+
     private IEnumerator SlamRight()
     {
         _soundManager.PlaySlamSound();
@@ -248,6 +249,7 @@ public class PlayerController : MonoBehaviour
         _playerObject.transform.DORotate(new Vector3(0, 0, 0), 0.2f);
         _savedPosition = Vector3.zero;
     }
+
     private void HandleSlamTimer()
     {
         if (_slamTimer <= 0)

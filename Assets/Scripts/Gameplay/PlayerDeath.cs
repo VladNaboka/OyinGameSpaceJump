@@ -5,20 +5,19 @@ using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour
 {
-    [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private CameraMovement _cameraMovement;
     [SerializeField] private Animator _anim;
     [SerializeField] private GameObject _vfx;
-    public Behaviour scriptInputPlayer;
-    public Behaviour scriptPlayerControler;
+    //public Behaviour scriptInputPlayer;
+    //public Behaviour scriptPlayerControler;
 
     private Vector3 currentPosition;
 
     private bool _isDead;
     public static bool deadState;
 
-    public event Action OnPlayerDied = default;
+    public event Action OnPlayerDied;
 
     //[NonSerialized]public bool isDead;
     public SoundManager sfx;
@@ -64,7 +63,7 @@ public class PlayerDeath : MonoBehaviour
             _anim.Play("Fall Flat");
             Death();
             sfx.PlayDeathSound();
-            scriptInputPlayer.enabled = false;
+            //scriptInputPlayer.enabled = false;
             currentPosition.x = 0f;
             currentPosition.z = 0f;
             transform.position = currentPosition; 
@@ -76,9 +75,8 @@ public class PlayerDeath : MonoBehaviour
         //_cameraMovement.enabled = false;
         _isDead = true;
         OnPlayerDied?.Invoke();
-        _playerInput.enabled = false;
         _gameManager.GameOverScreen();
-
+        Debug.Log("Death");
     }
 
     private void ElectricityDeath()
