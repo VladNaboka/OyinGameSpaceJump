@@ -6,21 +6,22 @@ using TMPro;
 
 public class CoinManager : MonoBehaviour
 {
+    [SerializeField] private PlayerStatsScriptableObject _playerStatsScriptableObject;
     [SerializeField] TextMeshProUGUI _textMP;
-    public int NumberCoin { get; set;}
+    public int CoinNumber { get; set;}
     private GameData _gameData = new GameData();
 
     public SoundManager sfx;
 
     private void Start()
     {
-        _textMP.text = NumberCoin.ToString();
+        _textMP.text = CoinNumber.ToString();
     }
 
     public void AddCoinToCollect()
     {
-        NumberCoin++;
+        CoinNumber++;
         sfx.PlayCoinPickupSound();
-        _textMP.text = NumberCoin.ToString();
+        _textMP.text = CoinNumber.ToString();
     }
 }

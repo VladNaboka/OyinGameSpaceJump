@@ -1507,6 +1507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6dab6b4d5ea35449ca9121318d983a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerDeath: {fileID: 1453744512}
 --- !u!114 &928517598 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4847254424996293127, guid: 5ed8fe9632ff1c640bace589be0715c3,
@@ -1621,7 +1622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smooth: 5
-  _swipeController: {fileID: 819309855}
+  _playerInput: {fileID: 819309855}
   _distance: {x: 0, y: 2, z: -3.3}
   playerPos: {fileID: 427118972}
 --- !u!114 &963194230
@@ -3795,12 +3796,12 @@ GameObject:
   - component: {fileID: 1940269176}
   - component: {fileID: 1940269175}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: RewardedRestart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1940269174
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3866,8 +3867,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1964483382}
-        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+      - m_Target: {fileID: 1965152553}
+        m_TargetAssemblyTypeName: RespawnPlayer, Assembly-CSharp
         m_MethodName: Respawn
         m_Mode: 1
         m_Arguments:
@@ -3928,6 +3929,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d985e56d825be4ba9d5edd6c7dbba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1965152552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1965152554}
+  - component: {fileID: 1965152553}
+  m_Layer: 0
+  m_Name: Respawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1965152553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965152552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f306ba98c74daf94c95093b14d595ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerStatsScriptableObject: {fileID: 11400000, guid: 8e9063bd2e5e05449b17346d0662f9d8,
+    type: 2}
+  playerController: {fileID: 1453744520}
+  _scoreManager: {fileID: 1964483382}
+  _coinManager: {fileID: 2115385258}
+--- !u!4 &1965152554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965152552}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1985250445 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6051852528251053303, guid: 0c484e1f058c3ba4e8d62420abe00b62,
@@ -4099,6 +4149,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 409511647898930312, guid: cadb5af6d2c9b834597c2e8b4c5dc93b,
+        type: 3}
+      propertyPath: score
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 409511647898930312, guid: cadb5af6d2c9b834597c2e8b4c5dc93b,
         type: 3}
       propertyPath: _player
@@ -4782,6 +4837,11 @@ PrefabInstance:
       objectReference: {fileID: 427118973}
     - target: {fileID: 1726805385505711267, guid: 3f311799d0d7c374c95bd939cecaccad,
         type: 3}
+      propertyPath: _startTimer
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726805385505711267, guid: 3f311799d0d7c374c95bd939cecaccad,
+        type: 3}
       propertyPath: _playerInput
       value: 
       objectReference: {fileID: 819309855}
@@ -5208,12 +5268,12 @@ PrefabInstance:
     - target: {fileID: 3140633300345387715, guid: 3f311799d0d7c374c95bd939cecaccad,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.028164713
+      value: -0.028164715
       objectReference: {fileID: 0}
     - target: {fileID: 3140633300345387715, guid: 3f311799d0d7c374c95bd939cecaccad,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.014184296
+      value: 0.014184297
       objectReference: {fileID: 0}
     - target: {fileID: 3140633300345387715, guid: 3f311799d0d7c374c95bd939cecaccad,
         type: 3}
@@ -6715,8 +6775,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -4.0963836
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1453744516, guid: 3f311799d0d7c374c95bd939cecaccad, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f311799d0d7c374c95bd939cecaccad, type: 3}
 --- !u!1001 &1868860398822875193
 PrefabInstance:

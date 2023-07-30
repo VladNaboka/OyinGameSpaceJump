@@ -6,19 +6,19 @@ public class CameraMovement : MonoBehaviour
 {
     [Range(0f, 5f)]
     [SerializeField] private float smooth;
-    [SerializeField] private PlayerInput _swipeController;
+    [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private Vector3 _distance;
     public Transform playerPos;
     private bool _isSliding;
 
     private void OnEnable()
     {
-        _swipeController.Slided += OnSlided;
+        _playerInput.Slided += OnSlided;
     }
 
     private void OnDisable()
     {
-        _swipeController.Slided -= OnSlided;
+        _playerInput.Slided -= OnSlided;
     }
 
     private void LateUpdate()

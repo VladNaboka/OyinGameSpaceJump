@@ -23,14 +23,14 @@ public class ControllerQuality : MonoBehaviour
     }
     public void SetQualityLevel(int level)
     {
-        // Проверить, что уровень находится в допустимом диапазоне
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (level < 0 || level > QualitySettings.names.Length - 1)
         {
             Debug.LogError("Invalid quality level!");
             return;
         }
 
-        // Установить уровень качества графики
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         QualitySettings.SetQualityLevel(level, true);
     }
     

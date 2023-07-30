@@ -21,15 +21,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator _animator;
     [Header("Variables")]
     [SerializeField] private float _switchDelay;
-    [SerializeField] private float _playerSpeed = 8f;
+    [SerializeField] public float _playerSpeed = 8f;
     [SerializeField] private float _increaseAmount;
-    [Header("Slam Distances")]
+    [Header("Slam")]
     [SerializeField] private float _leftSlamDist;
     [SerializeField] private float _rightSlamDist;
+    [SerializeField] private float _startTimer;
+    private float _slamTimer = 0;
+    private bool _canSlam;
     private Vector3 _savedPosition;
     [Header("Raycast")]
     [SerializeField] private float rayCastDistance;
-    public int raycastSwiped = 0;
     [Header("Booleans")]
     public bool _leftObstacle;
     public bool _rightObstacle;
@@ -43,11 +45,10 @@ public class PlayerController : MonoBehaviour
     private float _gravityValue = -9.81f;
     private bool _isGrounded;
     private bool _isSliding;
+    private bool _isSlaming;
     private Vector3 _playerVelocity;
     private Coroutine _slideCoroutine;
     
-
-
     private void Awake()
     {
         _soundManager.PlayWalkSound();
@@ -59,7 +60,7 @@ public class PlayerController : MonoBehaviour
         _playerInput.Jumped += OnJumped;
         _playerInput.Slided += OnSlided;
         _playerInput.Swiped += OnSwiped;
-        _playerDeath.OnPlayerDied += OnDied;
+        _playerDeath.OnPlayerDied += ChangePlayerSpeed;
     }
 
     private void OnDisable()
@@ -68,12 +69,13 @@ public class PlayerController : MonoBehaviour
         _playerInput.Jumped -= OnJumped;
         _playerInput.Slided -= OnSlided;
         _playerInput.Swiped -= OnSwiped;
-        _playerDeath.OnPlayerDied -= OnDied;
+        _playerDeath.OnPlayerDied -= ChangePlayerSpeed;
     }
 
     private void Update()
     {
         CheckGround();
+        HandleSlamTimer();
         Move();
         //CheckCollisionWithObstacles();
     }
@@ -96,7 +98,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnDied()
+    private void ChangePlayerSpeed()
     {
         _playerSpeed = 0f;
         StopCoroutine("IncreaseSpeed");
@@ -128,43 +130,40 @@ public class PlayerController : MonoBehaviour
     {
         _lineToMove = Mathf.Clamp(_lineToMove, 0, 2);
         Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
-        if(!isLeft)
+        if(!isLeft && _canSlam)
         {
             if (_lineToMove < 2 && !_rightObstacle)
             {
                 _lineToMove++;
-                raycastSwiped = 2;
-                Debug.Log("право");
-                StartCoroutine(SwipeRight());
+                StartCoroutine(SwipeRotation(30));
 
                 //_animator.Play("SwipeRight");
                 //anim.SetTrigger("MoveRight");
             }
             else if(_rightObstacle)
             {
+                _slamTimer = _startTimer;
                 Debug.Log("SLAM RIGHT");
                 StartCoroutine(SlamRight());
             }
         }
-        else if(isLeft)
+        else if(isLeft && _canSlam)
         {
             if (_lineToMove > 0 && !_leftObstacle)
             {
                 _lineToMove--;
-                raycastSwiped = 1;
-                Debug.Log("лево");
-                StartCoroutine(SwipeLeft());
+                StartCoroutine(SwipeRotation(-30));
                 //_animator.Play("SwipeLeft");
                 //anim.SetTrigger("MoveLeft");
             }
-            else if (_leftObstacle)
+            else if (_leftObstacle && _canSlam)
             {
                 Debug.Log("SLAM LEFT");
+                _slamTimer = _startTimer;
+
                 StartCoroutine(SlamLeft());
             }
         }
-        else
-           raycastSwiped = 0;
 
         if (_lineToMove == 0)
             targetPosition += Vector3.left * _lineDistance;
@@ -205,15 +204,9 @@ public class PlayerController : MonoBehaviour
     //    _leftObstacle = Physics.Raycast(transform.position, Vector3.left, rayCastDistance, LayerMask.GetMask("Obstacle"));
     //    _rightObstacle = Physics.Raycast(transform.position, Vector3.right, rayCastDistance, LayerMask.GetMask("Obstacle"));
     //}
-    private IEnumerator SwipeLeft()
+    private IEnumerator SwipeRotation(float rotation)
     {
-        _playerObject.transform.DORotate(new Vector3(0, -30f, 0),0.2f);
-        yield return new WaitForSeconds(0.2f);
-        _playerObject.transform.DORotate(new Vector3(0, 0f, 0), 0.2f);
-    }
-    private IEnumerator SwipeRight()
-    {
-        _playerObject.transform.DORotate(new Vector3(0, 30f, 0), 0.2f);
+        _playerObject.transform.DORotate(new Vector3(0, rotation, 0),0.2f);
         yield return new WaitForSeconds(0.2f);
         _playerObject.transform.DORotate(new Vector3(0, 0f, 0), 0.2f);
     }
@@ -227,10 +220,17 @@ public class PlayerController : MonoBehaviour
         _playerObject.transform.DOMoveX(targetPos, 0.1f);
         _playerObject.transform.DORotate(new Vector3(0, 0, 5f), 0.1f);
         yield return new WaitForSeconds(0.1f);
-        _playerObject.transform.DOMoveX(_savedPosition.x, 0.2f);
+
+        //Back to place
+        if(_lineToMove == 1)
+            _playerObject.transform.DOMoveX(0, 0.2f);
+        else if(_lineToMove == 2)
+            _playerObject.transform.DOMoveX(1, 0.2f);
+
         _playerObject.transform.DORotate(new Vector3(0, 0, 0), 0.2f);
         _savedPosition = Vector3.zero;
     }
+
     private IEnumerator SlamRight()
     {
         _soundManager.PlaySlamSound();
@@ -239,8 +239,28 @@ public class PlayerController : MonoBehaviour
         _playerObject.transform.DOMoveX(targetPos, 0.1f);
         _playerObject.transform.DORotate(new Vector3(0, 0, -5f), 0.1f);
         yield return new WaitForSeconds(0.1f);
-        _playerObject.transform.DOMoveX(_savedPosition.x, 0.2f);
+
+        //Back to place
+        if (_lineToMove == 1)
+            _playerObject.transform.DOMoveX(0, 0.2f);
+        else if (_lineToMove == 0)
+            _playerObject.transform.DOMoveX(-1, 0.2f);
+
         _playerObject.transform.DORotate(new Vector3(0, 0, 0), 0.2f);
         _savedPosition = Vector3.zero;
+    }
+
+    private void HandleSlamTimer()
+    {
+        if (_slamTimer <= 0)
+        {
+            _canSlam = true;
+        }
+        else
+        {
+            _canSlam = false;
+            _slamTimer -= Time.deltaTime;
+            Debug.Log(_slamTimer);
+        }
     }
 }
