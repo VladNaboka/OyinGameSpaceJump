@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider soundSlider;
+
+
 
     public Button buttonMusic;
     public Button buttonSFX;
@@ -39,6 +44,17 @@ public class SoundManager : MonoBehaviour
         musicSound = objectMusic.GetComponent<AudioSource>();
         objectCkilckButtonSound = GameObject.FindWithTag("ClickSound");
         buttonSound = objectCkilckButtonSound.GetComponent<AudioSource>();
+        
+        if(!PlayerPrefs.HasKey("musicVolume") && !PlayerPrefs.HasKey("soundVolume"))
+        {
+            PlayerPrefs.SetFloat("musicVolume", 1);
+            PlayerPrefs.SetFloat("soundVolume", 1);
+            Load();
+        }
+        else
+        {
+            Load();
+        }
     }
 
     public void PlayWalkSound()
@@ -133,38 +149,38 @@ public class SoundManager : MonoBehaviour
     {
         walkSound.Play();
     }
-    public void ToggleMusic()
+    public void ChangeVolumeMusic()
     {
-        musicSound.mute = !musicSound.mute;
-        if(musicSound.mute )
-        {
-            buttonMusic.image.sprite = musicOff;
-        }
-        else
-        {
-            buttonMusic.image.sprite = musicOn;
-        }
+        musicSound.volume = musicSlider.value;
+        SaveMusic();
     }
-    public void ToggleSFX()
+    public void ChangeVolumeSFX()
     {
-        buttonSound.mute = !buttonSound.mute;
-        walkSound.mute = !walkSound.mute;
-        jumpSound.mute = !jumpSound.mute;
-        slideSound.mute = !slideSound.mute;
-        coinPickupSound.mute = !coinPickupSound.mute;
-        deathSound.mute = !deathSound.mute;
-        edeathSound.mute = !edeathSound.mute;
+        buttonSound.volume = soundSlider.value;
+        walkSound.volume = soundSlider.value;
+        jumpSound.volume = soundSlider.value;
+        slideSound.volume = soundSlider.value;
+        coinPickupSound.volume = soundSlider.value;
+        deathSound.volume = soundSlider.value;
+        edeathSound.volume = soundSlider.value;
         //landingSound.mute = !landingSound.mute;
-        magnetSound.mute = !magnetSound.mute;
-        slamSound.mute = !slamSound.mute;
+        magnetSound.volume = soundSlider.value;
+   /*     slamSound.mute = !slamSound.mute;*/
+        SaveSound();
+    }
 
-        if (walkSound.mute)
-        {
-            buttonSFX.image.sprite = SFXOff;
-        }
-        else if (!walkSound.mute)
-        {
-            buttonSFX.image.sprite = SFXOn;
-        }
+    private void Load()
+    {
+        musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        soundSlider.value = PlayerPrefs.GetFloat("soundVolume");
+    }
+
+    private void SaveMusic()
+    {
+        PlayerPrefs.SetFloat("musicVolume", musicSlider.value);
+    }
+    private void SaveSound()
+    {
+        PlayerPrefs.SetFloat("soundVolume", soundSlider.value);
     }
 }

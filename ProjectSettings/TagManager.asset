@@ -12,6 +12,7 @@ TagManager:
   - GameMusic
   - ClickSound
   - TriggerDown
+  - Volume
   layers:
   - Default
   - TransparentFX

@@ -681,6 +681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7c19c2a9d90f6409dd2ea69b9ab04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerObject: {fileID: 0}
   _playerInput: {fileID: 0}
   _playerDeath: {fileID: 1726805385505711198}
   _soundManager: {fileID: 0}
@@ -690,8 +691,12 @@ MonoBehaviour:
   _switchDelay: 0.3
   _playerSpeed: 6.7
   _increaseAmount: 0.025
+  _leftSlamDist: 0
+  _rightSlamDist: 0
   rayCastDistance: 0
   raycastSwiped: 0
+  _leftObstacle: 0
+  _rightObstacle: 0
 --- !u!114 &1726805385505711265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -755,7 +760,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayDistance: 0
-  playerController: {fileID: 0}
+  _yDistance: -0.1
+  _zDistance: 0
 --- !u!82 &1726805385505711196
 AudioSource:
   m_ObjectHideFlags: 0
@@ -768,7 +774,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fa00c4a9e84e62e4fb4d3d997da5258f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.18364237
   m_Pitch: 1
   Loop: 0
   Mute: 1

@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.UIElements;
 
 
 public class GameManager : MonoBehaviour
