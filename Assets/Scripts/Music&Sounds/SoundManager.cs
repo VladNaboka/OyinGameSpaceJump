@@ -9,15 +9,6 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider soundSlider;
 
-
-
-    public Button buttonMusic;
-    public Button buttonSFX;
-    public Sprite musicOn;
-    public Sprite musicOff;
-    public Sprite SFXOn;
-    public Sprite SFXOff;
-
     public AudioSource walkSound;
     public AudioSource jumpSound;
     public AudioSource slideSound;
