@@ -11,6 +11,7 @@ public class RespawnPlayer : MonoBehaviour
     [SerializeField] private PlayerController playerController;
     [SerializeField] private ScoreManager _scoreManager;
     [SerializeField] private CoinManager _coinManager;
+    [SerializeField] private int _respawnPrice = 5000;
 
     private void Awake()
     {
@@ -26,13 +27,18 @@ public class RespawnPlayer : MonoBehaviour
 
     public void Respawn()
     {
-        Debug.Log("Respawn");
-        PlayerSpeeded();
-        _playerStatsScriptableObject.isRestarted = true;
-        _playerStatsScriptableObject.restartedScore = Convert.ToInt32(_scoreManager.score);
-        _playerStatsScriptableObject.coinScore = _coinManager.CoinNumber;
+        if(_coinManager.CoinNumber >= _respawnPrice)
+        {
+            _coinManager.CoinNumber -= _respawnPrice;
+            Debug.Log("Respawn");
+            PlayerSpeeded();
+            _playerStatsScriptableObject.isRestarted = true;
+            _playerStatsScriptableObject.restartedScore = Convert.ToInt32(_scoreManager.score);
+            _playerStatsScriptableObject.coinScore = _coinManager.CoinNumber;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            DOTween.Clear(true);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     private void Update()
