@@ -142,7 +142,7 @@ public class SoundManager : MonoBehaviour
     }
     public void ChangeVolumeMusic()
     {
-        musicSound.volume = musicSlider.value;
+        musicSound.volume = musicSlider.value * 0.2f;
         SaveMusic();
     }
     public void ChangeVolumeSFX()
