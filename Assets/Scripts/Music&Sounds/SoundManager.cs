@@ -147,7 +147,7 @@ public class SoundManager : MonoBehaviour
     }
     public void ChangeVolumeSFX()
     {
-        buttonSound.volume = soundSlider.value;
+        buttonSound.volume = soundSlider.value * 0.2f;
         walkSound.volume = soundSlider.value;
         jumpSound.volume = soundSlider.value;
         slideSound.volume = soundSlider.value;
