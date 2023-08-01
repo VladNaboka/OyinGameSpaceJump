@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _gameOver;
     [SerializeField] private GameObject pauseSprite;
     [SerializeField] private Animator _anim;
+    [SerializeField] private GameObject[] _gameObjects;
 
     private string sceneToLoad;
 
@@ -25,6 +26,11 @@ public class GameManager : MonoBehaviour
     {
         pauseSprite.SetActive(false);
         _gameOver.SetActive(true);
+
+        for (int i = 0; i < _gameObjects.Length; i++)
+        {
+            _gameObjects[i].gameObject.SetActive(false);
+        }
     }
     public void FadeOut(string sceneName)
     {

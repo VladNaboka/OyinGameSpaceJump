@@ -21,18 +21,18 @@ public class ControllerQuality : MonoBehaviour
     {
         _speedCoroutine = player.GetComponent<PlayerController>().IncreaseSpeed();
     }
-    public void SetQualityLevel(int level)
-    {
-        // ���������, ��� ������� ��������� � ���������� ���������
-        if (level < 0 || level > QualitySettings.names.Length - 1)
-        {
-            Debug.LogError("Invalid quality level!");
-            return;
-        }
+    //public void SetQualityLevel(int level)
+    //{
+    //    // ���������, ��� ������� ��������� � ���������� ���������
+    //    if (level < 0 || level > QualitySettings.names.Length - 1)
+    //    {
+    //        Debug.LogError("Invalid quality level!");
+    //        return;
+    //    }
 
-        // ���������� ������� �������� �������
-        QualitySettings.SetQualityLevel(level, true);
-    }
+    //    // ���������� ������� �������� �������
+    //    QualitySettings.SetQualityLevel(level, true);
+    //}
     
     public void OpenPause()
     {

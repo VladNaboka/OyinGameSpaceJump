@@ -19,7 +19,7 @@ public class RespawnPlayer : MonoBehaviour
         {
             playerController._playerSpeed = _playerStatsScriptableObject.speedPlayer;
             _scoreManager.RestartedScore = _playerStatsScriptableObject.restartedScore;
-            _coinManager.CoinNumber = _playerStatsScriptableObject.coinScore;
+            _coinManager.CoinRun = _playerStatsScriptableObject.coinScore;
             //_playerStatsScriptableObject.SetDefaultValues();
             _playerStatsScriptableObject.isRestarted = false;
         }
@@ -34,7 +34,7 @@ public class RespawnPlayer : MonoBehaviour
             PlayerSpeeded();
             _playerStatsScriptableObject.isRestarted = true;
             _playerStatsScriptableObject.restartedScore = Convert.ToInt32(_scoreManager.score);
-            _playerStatsScriptableObject.coinScore = _coinManager.CoinNumber;
+            _playerStatsScriptableObject.coinScore = _coinManager.CoinRun;
 
             DOTween.Clear(true);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
