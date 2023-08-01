@@ -439,8 +439,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 
   textRu: "\u041F\u043E\u0434\u043A\u043B\u044E\u0447\u0438\u0442\u044C"
-  textEng: "\u049A\u043E\u0441\u0443 \u04AF\u0448\u0456\u043D "
-  textKz: Connect
+  textEng: Connect
+  textKz: "\u049A\u043E\u0441\u0443 \u04AF\u0448\u0456\u043D "
 --- !u!114 &259672002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -905,8 +905,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 
   textRu: "\u042F\u0437\u044B\u043A "
-  textEng: "\u0422\u0456\u043B "
-  textKz: 'Language '
+  textEng: 'Language '
+  textKz: "\u0422\u0456\u043B "
 --- !u!1 &592106389
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,8 +960,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 
   textRu: "\u041F\u043E\u0434\u043A\u043B\u044E\u0447\u0438\u0442\u044C"
-  textEng: "\u049A\u043E\u0441\u0443 \u04AF\u0448\u0456\u043D "
-  textKz: Connect
+  textEng: Connect
+  textKz: "\u049A\u043E\u0441\u0443 \u04AF\u0448\u0456\u043D "
 --- !u!114 &592106392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1905,8 +1905,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 
   textRu: "\u0413\u0440\u0430\u0444\u0438\u043A\u0430 "
-  textEng: "\u0413\u0440\u0430\u0444\u0438\u043A\u0430 "
-  textKz: Graphics
+  textEng: Graphics
+  textKz: "\u0413\u0440\u0430\u0444\u0438\u043A\u0430 "
 --- !u!114 &763778920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1921,8 +1921,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 
   textRu: "\u042D\u0444\u0444\u0435\u043A\u0442\u044B "
-  textEng: "\u04D8\u0441\u0435\u0440\u043B\u0435\u0440 "
-  textKz: Effects
+  textEng: Effects
+  textKz: "\u04D8\u0441\u0435\u0440\u043B\u0435\u0440 "
 --- !u!114 &763778921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1937,8 +1937,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 
   textRu: "\u041C\u0443\u0437\u044B\u043A\u0430 "
-  textEng: "\u04D8\u0443\u0435\u043D "
-  textKz: Music
+  textEng: Music
+  textKz: "\u04D8\u0443\u0435\u043D "
 --- !u!114 &763778922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1953,8 +1953,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 
   textRu: "\u0417\u0432\u0443\u043A "
-  textEng: "\u0414\u044B\u0431\u044B\u0441 "
-  textKz: Sound
+  textEng: Sound
+  textKz: "\u0414\u044B\u0431\u044B\u0441 "
 --- !u!114 &763778923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1969,8 +1969,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 
   textRu: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
-  textEng: "\u0411\u0430\u043F\u0442\u0430\u0443\u043B\u0430\u0440"
-  textKz: Settings
+  textEng: Settings
+  textKz: "\u0411\u0430\u043F\u0442\u0430\u0443\u043B\u0430\u0440"
 --- !u!114 &828235479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1985,8 +1985,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 
   textRu: "\u041F\u043E\u0434\u043A\u043B\u044E\u0447\u0438\u0442\u044C "
-  textEng: "\u049B\u043E\u0441\u0443 \u04AF\u0448\u0456\u043D "
-  textKz: Connect
+  textEng: Connect
+  textKz: "\u049B\u043E\u0441\u0443 \u04AF\u0448\u0456\u043D "
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2052,11 +2052,11 @@ MonoBehaviour:
   textRu: "\u0421\u0432\u044F\u0436\u0438\u0442\u0435 \u0441\u0432\u043E\u044E \u0443\u0447\u0435\u0442\u043D\u0443\u044E
     \u0437\u0430\u043F\u0438\u0441\u044C, \u0447\u0442\u043E\u0431\u044B \u043D\u0435
     \u043F\u043E\u0442\u0435\u0440\u044F\u0442\u044C \u0441\u0432\u043E\u0439 \u043F\u0440\u043E\u0433\u0440\u0435\u0441\u0441"
-  textEng: "\u041E\u0439\u044B\u043D\u0434\u0430\u0493\u044B \u043D\u04D9\u0442\u0438\u0436\u0435\u043B\u0435\u0440\u0456\u04A3\u0456\u0437\u0434\u0456
+  textEng: Link your account so you don't lose your progress
+  textKz: "\u041E\u0439\u044B\u043D\u0434\u0430\u0493\u044B \u043D\u04D9\u0442\u0438\u0436\u0435\u043B\u0435\u0440\u0456\u04A3\u0456\u0437\u0434\u0456
     \u0436\u043E\u0493\u0430\u043B\u0442\u043F\u0430\u0443 \u04AF\u0448\u0456\u043D
     \u0435\u0441\u0435\u043F\u0442\u0456\u043A \u0436\u0430\u0437\u0431\u0430\u04A3\u044B\u0437\u0434\u044B
     \u043E\u0439\u044B\u043D\u043C\u0435\u043D \u0431\u0430\u0439\u043B\u0430\u043D\u044B\u0441\u0442\u044B\u0440\u044B\u04A3\u044B\u0437 "
-  textKz: Link your account so you don't lose your progress
 --- !u!1 &919237935
 GameObject:
   m_ObjectHideFlags: 0
@@ -2672,8 +2672,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 
   textRu: "\u0420\u0435\u0436\u0438\u043C \u0443\u043B\u044C\u0442\u0440\u0430 "
-  textEng: "\u0423\u043B\u044C\u0442\u0440\u0430 \u0440\u0435\u0436\u0438\u043C\u0456 "
-  textKz: Ultra mode
+  textEng: Ultra mode
+  textKz: "\u0423\u043B\u044C\u0442\u0440\u0430 \u0440\u0435\u0436\u0438\u043C\u0456"
 --- !u!114 &1949504974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2688,8 +2688,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 
   textRu: "\u0410\u0432\u0442\u043E\u0440\u044B"
-  textEng: "\u0410\u0432\u0442\u043E\u0440\u043B\u0430\u0440 "
-  textKz: Authors
+  textEng: Authors
+  textKz: "\u0410\u0432\u0442\u043E\u0440\u043B\u0430\u0440 "
 --- !u!114 &2051250186 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9099384186740913036, guid: 70963745e44b3ba4f86449e715989014,
