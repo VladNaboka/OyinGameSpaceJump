@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 142958175}
   - component: {fileID: 142958177}
   - component: {fileID: 142958176}
+  - component: {fileID: 142958178}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -210,6 +211,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142958174}
   m_CullTransparentMesh: 1
+--- !u!114 &142958178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142958174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff881f7be7bdaaf46aec2bd026bacf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 
+  textRu: "\u041F\u0440\u043E\u0439\u0434\u0435\u043D\u043D\u043E\u0435 \u0437\u0430
+    \u0437\u0430\u0431\u0435\u0433 "
+  textEng: Distance traveled per race
+  textKz: "\u041A\u0435\u0434\u0435\u0440\u0433\u0456\u043C\u0435\u043D \u0436\u04AF\u0433\u0456\u0440\u0443\u0434\u0456\u04A3
+    \u043D\u04D9\u0442\u0438\u0436\u0435\u0441\u0456 "
 --- !u!1 &265247811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,6 +1878,7 @@ GameObject:
   - component: {fileID: 855091551}
   - component: {fileID: 855091553}
   - component: {fileID: 855091552}
+  - component: {fileID: 855091554}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -1928,6 +1948,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855091550}
   m_CullTransparentMesh: 1
+--- !u!114 &855091554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855091550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff881f7be7bdaaf46aec2bd026bacf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 
+  textRu: "\u041C\u0435\u043D\u044E "
+  textEng: "\u041C\u04D9\u0437\u0456\u0440 "
+  textKz: Menu
 --- !u!1 &902292146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,6 +1975,7 @@ GameObject:
   - component: {fileID: 902292147}
   - component: {fileID: 902292149}
   - component: {fileID: 902292148}
+  - component: {fileID: 902292150}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -2008,6 +2045,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902292146}
   m_CullTransparentMesh: 1
+--- !u!114 &902292150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902292146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff881f7be7bdaaf46aec2bd026bacf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 
+  textRu: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C \u0438\u0433\u0440\u0443?"
+  textEng: Continue playing
+  textKz: "\u041E\u0439\u044B\u043D\u0434\u044B \u0436\u0430\u043B\u0493\u0430\u0441\u0442\u044B\u0440\u0443 "
 --- !u!1 &920276803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,6 +2072,7 @@ GameObject:
   - component: {fileID: 920276804}
   - component: {fileID: 920276806}
   - component: {fileID: 920276805}
+  - component: {fileID: 920276807}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -2088,6 +2142,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920276803}
   m_CullTransparentMesh: 1
+--- !u!114 &920276807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920276803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff881f7be7bdaaf46aec2bd026bacf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 
+  textRu: "\u041D\u0435\u0442"
+  textEng: Not
+  textKz: "\u0416\u043E\u049B"
 --- !u!114 &928517598 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4847254424996293127, guid: 5ed8fe9632ff1c640bace589be0715c3,
@@ -2419,6 +2489,7 @@ GameObject:
   - component: {fileID: 1042633902}
   - component: {fileID: 1042633904}
   - component: {fileID: 1042633903}
+  - component: {fileID: 1042633905}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -2488,6 +2559,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042633901}
   m_CullTransparentMesh: 1
+--- !u!114 &1042633905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042633901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff881f7be7bdaaf46aec2bd026bacf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 
+  textRu: "\u041D\u0430\u0447\u0430\u0442\u044C \u0437\u0430\u043D\u043E\u0432\u043E"
+  textEng: Start over
+  textKz: "\u049A\u0430\u0439\u0442\u0430\u0434\u0430\u043D \u0431\u0430\u0441\u0442\u0430\u0443 "
 --- !u!1 &1061796717
 GameObject:
   m_ObjectHideFlags: 0
@@ -3724,6 +3811,7 @@ GameObject:
   - component: {fileID: 1545072129}
   - component: {fileID: 1545072131}
   - component: {fileID: 1545072130}
+  - component: {fileID: 1545072132}
   m_Layer: 5
   m_Name: Text (Legacy) (1)
   m_TagString: Untagged
@@ -3794,6 +3882,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545072128}
   m_CullTransparentMesh: 1
+--- !u!114 &1545072132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545072128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff881f7be7bdaaf46aec2bd026bacf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 
+  textRu: "\u0421\u043E\u0431\u0440\u0430\u043D\u043E \u043C\u043E\u043D\u0435\u0442
+    \u0437\u0430 \u0437\u0430\u0431\u0435\u0433"
+  textEng: Collected coins for the race
+  textKz: "\u041A\u0435\u0434\u0435\u0440\u0433\u0456\u043C\u0435\u043D \u0436\u04AF\u0433\u0456\u0440\u0443
+    \u043A\u0435\u0437\u0456\u043D\u0434\u0435 \u0436\u0438\u043D\u0430\u0493\u0430\u043D
+    \u0442\u0435\u04A3\u0433\u0435\u043B\u0435\u0440 "
 --- !u!82 &1606794247 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 8346168150675403099, guid: caaef7182fda70d488813b0021cb532c,
@@ -4615,6 +4722,7 @@ GameObject:
   - component: {fileID: 1881466460}
   - component: {fileID: 1881466462}
   - component: {fileID: 1881466461}
+  - component: {fileID: 1881466463}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -4684,6 +4792,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881466459}
   m_CullTransparentMesh: 1
+--- !u!114 &1881466463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881466459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff881f7be7bdaaf46aec2bd026bacf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 
+  textRu: "\u0414\u0430"
+  textEng: Yes
+  textKz: "\u0418\u04D9"
 --- !u!1 &1881765516
 GameObject:
   m_ObjectHideFlags: 0
@@ -4752,6 +4876,7 @@ GameObject:
   - component: {fileID: 1890486115}
   - component: {fileID: 1890486117}
   - component: {fileID: 1890486116}
+  - component: {fileID: 1890486118}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -4821,6 +4946,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890486114}
   m_CullTransparentMesh: 1
+--- !u!114 &1890486118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890486114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff881f7be7bdaaf46aec2bd026bacf9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: 
+  textRu: "\u0422\u044B \u0445\u043E\u0447\u0435\u0448\u044C \u0441\u0434\u0430\u0442\u044C\u0441\u044F? "
+  textEng: "\u0411\u0435\u0440\u0456\u043B\u0433\u0456\u043D \u043A\u0435\u043B\u0435\u0434\u0456
+    \u043C\u0430? "
+  textKz: Do you want to give up?
 --- !u!1 &1897523230
 GameObject:
   m_ObjectHideFlags: 0
