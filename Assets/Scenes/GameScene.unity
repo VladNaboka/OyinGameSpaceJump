@@ -5293,7 +5293,7 @@ MonoBehaviour:
   playerController: {fileID: 1453744520}
   _scoreManager: {fileID: 1964483382}
   _coinManager: {fileID: 2115385258}
-  _respawnPrice: 1
+  _respawnPrice: 5000
 --- !u!4 &1965152554
 Transform:
   m_ObjectHideFlags: 0
