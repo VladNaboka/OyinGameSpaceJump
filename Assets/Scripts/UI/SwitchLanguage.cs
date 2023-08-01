@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Unity.VisualScripting.Icons;
 
 public class SwitchLanguage : MonoBehaviour
 {
@@ -12,11 +13,13 @@ public class SwitchLanguage : MonoBehaviour
 
     private void Start()
     {
-        currentLanguageIndex = 0;
+        //currentLanguageIndex = 0;
         toggleIndex = PlayerPrefs.GetInt("Toggle"); 
+        Debug.Log("Toggle index is:" + toggleIndex);
+        Debug.Log("Language is:" + PlayerPrefs.GetString("Language"));
         toggles[toggleIndex].isOn = true;
     }
-    public void Next()
+    public void Next() 
     {
         UISoundManager.instance.OnClickSound();
         SwitchLanguageController(1);
@@ -76,12 +79,12 @@ public class SwitchLanguage : MonoBehaviour
     private void SwitchToLanguage(string language)
     {
         PlayerPrefs.SetString("Language", language);
+        Debug.Log("Language selected: " + language);
     }
 
     private void IsOnToggle(int toggle)
     {
+        Debug.Log("Toggle index: " + toggle);
         PlayerPrefs.SetInt("Toggle", toggle);
     }
-
-
 }
