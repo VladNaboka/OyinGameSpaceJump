@@ -8,6 +8,7 @@ using System;
 public class RespawnPlayer : MonoBehaviour
 {
     [SerializeField] private PlayerStatsScriptableObject _playerStatsScriptableObject;
+    [SerializeField] private DataManager _dataManager;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private ScoreManager _scoreManager;
     [SerializeField] private CoinManager _coinManager;
@@ -29,7 +30,8 @@ public class RespawnPlayer : MonoBehaviour
     {
         if(_coinManager.CoinNumber >= _respawnPrice)
         {
-            _coinManager.CoinNumber -= _respawnPrice;
+            _coinManager.CoinNumber = _coinManager.CoinNumber - _respawnPrice;
+            _dataManager.SaveData();
             Debug.Log("Respawn");
             PlayerSpeeded();
             _playerStatsScriptableObject.isRestarted = true;

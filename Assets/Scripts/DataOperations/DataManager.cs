@@ -33,7 +33,7 @@ public class DataManager : MonoBehaviour
         SaveData();
     }
 
-    private void SaveData()
+    public void SaveData()
     {
         _gameData.highscore = _scoreManager.HighScore;
         _gameData.coins = _coinManager.CoinNumber;

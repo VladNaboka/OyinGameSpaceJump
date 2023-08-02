@@ -4400,6 +4400,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743436180}
   m_CullTransparentMesh: 1
+--- !u!114 &1748215350 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7946180673758484495, guid: 170d2001248ed7e45a79c71306f01bad,
+    type: 3}
+  m_PrefabInstance: {fileID: 7946180672967582408}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e71e40ebdea18c4f878ea2a8485569d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1753183589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5290,10 +5302,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerStatsScriptableObject: {fileID: 11400000, guid: 8e9063bd2e5e05449b17346d0662f9d8,
     type: 2}
+  _dataManager: {fileID: 1748215350}
   playerController: {fileID: 1453744520}
   _scoreManager: {fileID: 1964483382}
   _coinManager: {fileID: 2115385258}
-  _respawnPrice: 5000
+  _respawnPrice: 1000
 --- !u!4 &1965152554
 Transform:
   m_ObjectHideFlags: 0
