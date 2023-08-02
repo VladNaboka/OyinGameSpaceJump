@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SwitchController : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class SwitchController : MonoBehaviour
         currentSlideIndex++;
         ShowSlide(currentSlideIndex);
         UpdateButtonStates();
+        if(currentSlideIndex > slides.Length -1)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 
     public void PreviousSlide()
@@ -43,7 +48,7 @@ public class SwitchController : MonoBehaviour
 
     private void UpdateButtonStates()
     {
-        nextButton.interactable = currentSlideIndex < slides.Length - 1;
+        //nextButton.interactable = currentSlideIndex < slides.Length - 1;
         prevButton.interactable = currentSlideIndex > 0;
     }
 }
