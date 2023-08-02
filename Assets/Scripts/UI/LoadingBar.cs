@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class LoadingBar : MonoBehaviour
 {
-    [SerializeField] private GameManager _gameManager;
+    [SerializeField] private GameObject _music;
+    [SerializeField] private GameObject _loadingScreen;
     [SerializeField] private float _loadingAmount;
     private Slider _slider;
 
@@ -17,14 +18,15 @@ public class LoadingBar : MonoBehaviour
     }
     private void Update()
     {
-        _slider.value += _loadingAmount;
+        _slider.value += _loadingAmount * Time.deltaTime;
         if(_slider.value > 60)
         {
-            _loadingAmount = 2;
+            _loadingAmount = 30;
         }
         if (_slider.value >= 100)
         {
-            _gameManager.FadeOutLoading("MainMenu");
+            _loadingScreen.SetActive(false);
+            _music.SetActive(true);
         }
     }
 }
